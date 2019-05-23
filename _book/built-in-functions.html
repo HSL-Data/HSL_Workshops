@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.5 Built-in Functions | UVA Health Sciences Library Workshops</title>
+  <meta name="description" content="This site hosts workshop tutorials for researchers in the life sciences at the University of Virginia to learn R skills." />
+  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.5 Built-in Functions | UVA Health Sciences Library Workshops" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This site hosts workshop tutorials for researchers in the life sciences at the University of Virginia to learn R skills." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.5 Built-in Functions | UVA Health Sciences Library Workshops" />
+  
+  <meta name="twitter:description" content="This site hosts workshop tutorials for researchers in the life sciences at the University of Virginia to learn R skills." />
+  
+
+<meta name="author" content="Data Services @ HSL" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="basic-operations.html">
+<link rel="next" href="nesting-functions.html">
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Getting Started</a></li>
+<li class="chapter" data-level="2" data-path="about-the-instructors.html"><a href="about-the-instructors.html"><i class="fa fa-check"></i><b>2</b> About the Instructors</a></li>
+<li class="chapter" data-level="3" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>3</b> Introduction</a></li>
+<li class="chapter" data-level="4" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>4</b> Introduction to R</a><ul>
+<li class="chapter" data-level="4.1" data-path="introduction-to-r-and-rstudio.html"><a href="introduction-to-r-and-rstudio.html"><i class="fa fa-check"></i><b>4.1</b> Introduction to R and RStudio</a></li>
+<li class="chapter" data-level="4.2" data-path="set-up-project-and-move-dataset.html"><a href="set-up-project-and-move-dataset.html"><i class="fa fa-check"></i><b>4.2</b> Set up Project and move dataset</a></li>
+<li class="chapter" data-level="4.3" data-path="comments.html"><a href="comments.html"><i class="fa fa-check"></i><b>4.3</b> Comments</a></li>
+<li class="chapter" data-level="4.4" data-path="basic-operations.html"><a href="basic-operations.html"><i class="fa fa-check"></i><b>4.4</b> Basic operations</a></li>
+<li class="chapter" data-level="4.5" data-path="built-in-functions.html"><a href="built-in-functions.html"><i class="fa fa-check"></i><b>4.5</b> Built-in Functions</a></li>
+<li class="chapter" data-level="4.6" data-path="nesting-functions.html"><a href="nesting-functions.html"><i class="fa fa-check"></i><b>4.6</b> Nesting Functions</a></li>
+<li class="chapter" data-level="4.7" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>4.7</b> Vectors</a></li>
+<li class="chapter" data-level="4.8" data-path="indexing-vectors.html"><a href="indexing-vectors.html"><i class="fa fa-check"></i><b>4.8</b> Indexing vectors</a></li>
+<li class="chapter" data-level="4.9" data-path="data-frames.html"><a href="data-frames.html"><i class="fa fa-check"></i><b>4.9</b> Data Frames</a></li>
+<li class="chapter" data-level="4.10" data-path="our-data.html"><a href="our-data.html"><i class="fa fa-check"></i><b>4.10</b> Our data</a></li>
+<li class="chapter" data-level="4.11" data-path="inspecting-data-frames.html"><a href="inspecting-data-frames.html"><i class="fa fa-check"></i><b>4.11</b> Inspecting Data frames</a></li>
+<li class="chapter" data-level="4.12" data-path="accessing-variables-subsetting-data-frames.html"><a href="accessing-variables-subsetting-data-frames.html"><i class="fa fa-check"></i><b>4.12</b> Accessing variables &amp; subsetting data frames</a></li>
+<li class="chapter" data-level="4.13" data-path="filtering-a-data-frame.html"><a href="filtering-a-data-frame.html"><i class="fa fa-check"></i><b>4.13</b> Filtering a data frame</a></li>
+<li class="chapter" data-level="4.14" data-path="base-plotting-histogram-and-scatterplot.html"><a href="base-plotting-histogram-and-scatterplot.html"><i class="fa fa-check"></i><b>4.14</b> Base plotting – histogram and scatterplot</a></li>
+<li class="chapter" data-level="4.15" data-path="write-out-csv-file-of-filtered-dataframe.html"><a href="write-out-csv-file-of-filtered-dataframe.html"><i class="fa fa-check"></i><b>4.15</b> Write out csv file of filtered dataframe</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="taming-wild-data.html"><a href="taming-wild-data.html"><i class="fa fa-check"></i><b>5</b> Taming Wild Data</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#our-data-1"><i class="fa fa-check"></i><b>5.0.1</b> Our data</a></li>
+<li class="chapter" data-level="5.0.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#set-up-project-download-data"><i class="fa fa-check"></i><b>5.0.2</b> Set up project &amp; Download data</a></li>
+<li class="chapter" data-level="5.1" data-path="tibbles-v-dataframe.html"><a href="tibbles-v-dataframe.html"><i class="fa fa-check"></i><b>5.1</b> Tibbles v. dataframe</a></li>
+<li class="chapter" data-level="5.2" data-path="the-pipe.html"><a href="the-pipe.html"><i class="fa fa-check"></i><b>5.2</b> The pipe: <strong>%&gt;%</strong></a></li>
+<li class="chapter" data-level="5.3" data-path="the-dplyr-package.html"><a href="the-dplyr-package.html"><i class="fa fa-check"></i><b>5.3</b> The dplyr package</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="the-dplyr-package.html"><a href="the-dplyr-package.html#filter"><i class="fa fa-check"></i><b>5.3.1</b> filter()</a></li>
+<li class="chapter" data-level="5.3.2" data-path="the-dplyr-package.html"><a href="the-dplyr-package.html#select"><i class="fa fa-check"></i><b>5.3.2</b> select()</a></li>
+<li class="chapter" data-level="5.3.3" data-path="the-dplyr-package.html"><a href="the-dplyr-package.html#dplyr-in-action"><i class="fa fa-check"></i><b>5.3.3</b> dplyr in action</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="exercise-1.html"><a href="exercise-1.html"><i class="fa fa-check"></i><b>5.4</b> EXERCISE 1</a></li>
+<li class="chapter" data-level="5.5" data-path="separate.html"><a href="separate.html"><i class="fa fa-check"></i><b>5.5</b> Separate</a></li>
+<li class="chapter" data-level="5.6" data-path="resources-for-regular-expressions.html"><a href="resources-for-regular-expressions.html"><i class="fa fa-check"></i><b>5.6</b> Resources for Regular Expressions</a></li>
+<li class="chapter" data-level="5.7" data-path="exercise-2.html"><a href="exercise-2.html"><i class="fa fa-check"></i><b>5.7</b> EXERCISE 2</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="exercise-2.html"><a href="exercise-2.html#merge-gene-ontologies"><i class="fa fa-check"></i><b>5.7.1</b> Merge Gene Ontologies</a></li>
+<li class="chapter" data-level="5.7.2" data-path="exercise-2.html"><a href="exercise-2.html#fix-nutrient-names"><i class="fa fa-check"></i><b>5.7.2</b> Fix Nutrient names</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="break.html"><a href="break.html"><i class="fa fa-check"></i><b>5.8</b> Break</a></li>
+<li class="chapter" data-level="5.9" data-path="more-fun-with-dplyr.html"><a href="more-fun-with-dplyr.html"><i class="fa fa-check"></i><b>5.9</b> More fun with dplyr</a></li>
+<li class="chapter" data-level="5.10" data-path="exercise-3.html"><a href="exercise-3.html"><i class="fa fa-check"></i><b>5.10</b> EXERCISE 3</a><ul>
+<li class="chapter" data-level="5.10.1" data-path="exercise-3.html"><a href="exercise-3.html#arrange"><i class="fa fa-check"></i><b>5.10.1</b> arrange()</a></li>
+</ul></li>
+<li class="chapter" data-level="5.11" data-path="exercise-4.html"><a href="exercise-4.html"><i class="fa fa-check"></i><b>5.11</b> EXERCISE 4</a><ul>
+<li class="chapter" data-level="5.11.1" data-path="exercise-4.html"><a href="exercise-4.html#summarize"><i class="fa fa-check"></i><b>5.11.1</b> summarize()</a></li>
+<li class="chapter" data-level="5.11.2" data-path="exercise-4.html"><a href="exercise-4.html#group_by"><i class="fa fa-check"></i><b>5.11.2</b> group_by()</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="exercise-5.html"><a href="exercise-5.html"><i class="fa fa-check"></i><b>5.12</b> EXERCISE 5</a></li>
+<li class="chapter" data-level="5.13" data-path="exercise-6.html"><a href="exercise-6.html"><i class="fa fa-check"></i><b>5.13</b> EXERCISE 6</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html"><i class="fa fa-check"></i><b>6</b> Data Visualization with ggplot2</a><ul>
+<li class="chapter" data-level="6.1" data-path="resources-to-learn-ggplot2.html"><a href="resources-to-learn-ggplot2.html"><i class="fa fa-check"></i><b>6.1</b> Resources to learn ggplot2</a></li>
+<li class="chapter" data-level="6.2" data-path="make-sure-everyone-has-tidyverse-or-readr-dplyr-ggplot2.html"><a href="make-sure-everyone-has-tidyverse-or-readr-dplyr-ggplot2.html"><i class="fa fa-check"></i><b>6.2</b> Make sure everyone has tidyverse or readr, dplyr, ggplot2</a></li>
+<li class="chapter" data-level="6.3" data-path="download-data-and-make-a-new-project.html"><a href="download-data-and-make-a-new-project.html"><i class="fa fa-check"></i><b>6.3</b> Download data and make a new project</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="download-data-and-make-a-new-project.html"><a href="download-data-and-make-a-new-project.html#gapminder-data"><i class="fa fa-check"></i><b>6.3.1</b> Gapminder data</a></li>
+<li class="chapter" data-level="6.3.2" data-path="download-data-and-make-a-new-project.html"><a href="download-data-and-make-a-new-project.html#dplyr-review"><i class="fa fa-check"></i><b>6.3.2</b> dplyr review</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="about-ggplot2.html"><a href="about-ggplot2.html"><i class="fa fa-check"></i><b>6.4</b> About ggplot2</a></li>
+<li class="chapter" data-level="6.5" data-path="plotting-bivariate-data-continuous-y-by-continuous-x.html"><a href="plotting-bivariate-data-continuous-y-by-continuous-x.html"><i class="fa fa-check"></i><b>6.5</b> Plotting bivariate data: continuous Y by continuous X</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="plotting-bivariate-data-continuous-y-by-continuous-x.html"><a href="plotting-bivariate-data-continuous-y-by-continuous-x.html#adding-layers"><i class="fa fa-check"></i><b>6.5.1</b> Adding layers</a></li>
+<li class="chapter" data-level="6.5.2" data-path="plotting-bivariate-data-continuous-y-by-continuous-x.html"><a href="plotting-bivariate-data-continuous-y-by-continuous-x.html#faceting"><i class="fa fa-check"></i><b>6.5.2</b> Faceting</a></li>
+<li class="chapter" data-level="6.5.3" data-path="plotting-bivariate-data-continuous-y-by-continuous-x.html"><a href="plotting-bivariate-data-continuous-y-by-continuous-x.html#saving-plots"><i class="fa fa-check"></i><b>6.5.3</b> Saving plots</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="plotting-bivariate-data-continuous-y-by-categorical-x.html"><a href="plotting-bivariate-data-continuous-y-by-categorical-x.html"><i class="fa fa-check"></i><b>6.6</b> Plotting bivariate data: continuous Y by categorical X</a></li>
+<li class="chapter" data-level="6.7" data-path="plotting-univariate-continuous-data.html"><a href="plotting-univariate-continuous-data.html"><i class="fa fa-check"></i><b>6.7</b> Plotting univariate continuous data</a></li>
+<li class="chapter" data-level="6.8" data-path="publication-ready-plots-themes.html"><a href="publication-ready-plots-themes.html"><i class="fa fa-check"></i><b>6.8</b> Publication-ready plots &amp; themes</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">UVA Health Sciences Library Workshops</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="built-in-functions" class="section level2">
+<h2><span class="header-section-number">4.5</span> Built-in Functions</h2>
+<p>R has built-in functions.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">144</span>)</code></pre>
+<pre><code>## [1] 12</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="dv">1000</span>)</code></pre>
+<pre><code>## [1] 6.907755</code></pre>
+<ul>
+<li><p>When we computed that log you may or may not have noticed that it was the natural … base e … log … what if we wanted log base 10?</p></li>
+<li><p>Let’s get help by typing a question mark in front of the function’s name, or <code>help(functionname)</code>:</p></li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">help</span>(log)
+?log <span class="co">#same as above</span></code></pre>
+<ul>
+<li>So going through the help file we get our answer right away in the description section</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="dv">1000</span>)</code></pre>
+<pre><code>## [1] 6.907755</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log10</span>(<span class="dv">1000</span>)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="dv">1000</span>, <span class="dt">base=</span><span class="dv">10</span>)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<ul>
+<li><p>The <code>base=</code> part inside the parentheses is called an <em>argument</em>, and most functions have arguments. Arguments modify the behavior of the function. Functions need some input (e.g., some data, an object) and arguments allow for options to change what the function will return, or how to treat the data provided.</p></li>
+<li><p>Note syntax highlighting when typing this into the editor. Also note that I explicity told the log function the name of the <code>base</code> argument … I didn’t have to do this…</p></li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="dv">1000</span>,<span class="dv">10</span>)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<ul>
+<li><p>This also works just fine in this case… but it’s worth pointing out that explicility calling out argument names will be necessary in some cases and improves readability of your code.</p></li>
+<li><p>Another note about this example … if we had paid a little more attention to the original call to the log function then we may not have had to dig into the help at all …</p></li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#log()</span></code></pre>
+<ul>
+<li>Check out the code suggestion … again with RStudio features … so RStudio tells us as we type the function name what parameters it accepts … pretty cool.</li>
+</ul>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="basic-operations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="nesting-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
