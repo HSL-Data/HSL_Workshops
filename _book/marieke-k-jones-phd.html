@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5.3 The dplyr package | UVA Health Sciences Library Workshops</title>
+  <title>2.2 Marieke K Jones, PhD | UVA Health Sciences Library Workshops</title>
   <meta name="description" content="This site hosts workshop tutorials for researchers in the life sciences at the University of Virginia to learn R skills." />
   <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5.3 The dplyr package | UVA Health Sciences Library Workshops" />
+  <meta property="og:title" content="2.2 Marieke K Jones, PhD | UVA Health Sciences Library Workshops" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5.3 The dplyr package | UVA Health Sciences Library Workshops" />
+  <meta name="twitter:title" content="2.2 Marieke K Jones, PhD | UVA Health Sciences Library Workshops" />
   
   <meta name="twitter:description" content="This site hosts workshop tutorials for researchers in the life sciences at the University of Virginia to learn R skills." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="the-pipe.html">
-<link rel="next" href="exercise-1.html">
+<link rel="prev" href="david-n-martin-ms.html">
+<link rel="next" href="intro.html">
 <script src="assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -210,106 +210,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-dplyr-package" class="section level2">
-<h2><span class="header-section-number">5.3</span> The dplyr package</h2>
-<p>The <a href="https://github.com/hadley/dplyr">dplyr package</a> is a relatively new R package that makes data manipulation fast and easy. It imports functionality from another package called magrittr that allows you to chain commands together into a pipeline that will completely change the way you write R code such that you’re writing code the way you’re thinking about the problem.</p>
-<p>The dplyr package gives you a handful of useful <strong>verbs</strong> for managing data. On their own they don’t do anything that base R can’t do. The first two verbs we will learn are filter and select</p>
-<ol style="list-style-type: decimal">
-<li><code>filter()</code></li>
-<li><code>select()</code></li>
-</ol>
-<p>They all take a data frame or tibble as their input for the first argument, and they all return a data frame or tibble as output.</p>
-<div id="filter" class="section level3">
-<h3><span class="header-section-number">5.3.1</span> filter()</h3>
-<p>If you want to filter <strong>rows</strong> of the data where some condition is true, use the <code>filter()</code> function.</p>
-<ol style="list-style-type: decimal">
-<li>The first argument is the data frame you want to filter, e.g. <code>filter(mydata, ...</code>.</li>
-<li>The second argument is a condition you must satisfy, e.g. <code>filter(clean, variable == &quot;levelA&quot;)</code>.</li>
-</ol>
+<div id="marieke-k-jones-phd" class="section level2">
+<h2><span class="header-section-number">2.2</span> Marieke K Jones, PhD</h2>
+<p>Marieke is the Research Data Specialist in the Health Sciences Library. She teaches open enrollment workshops in R, consults with researchers about statistics and data analysis, and teaches the BIMS8380 statistics course. Her PhD is in Environmental Science and Policy and she conducted her dissertation research on reproductive physiology and endocrinology.</p>
 <ul>
-<li><code>==</code>: Equal to</li>
-<li><code>!=</code>: Not equal to</li>
-<li><code>&gt;</code>, <code>&gt;=</code>: Greater than, greater than or equal to</li>
-<li><code>&lt;</code>, <code>&lt;=</code>: Less than, less than or equal to</li>
+<li>Email: <a href="mailto:marieke@virginia.edu" class="email">marieke@virginia.edu</a></li>
+<li>GitHub: <a href="https://github.com/mariekekjones">github.com/mariekekjones</a></li>
 </ul>
-<p>If you want to satisfy <em>all</em> of multiple conditions, you can use the “and” operator, <code>&amp;</code>.</p>
-<p>The “or” operator <code>|</code> (the pipe character, usually shift-backslash) will return a subset that meet <em>any</em> of the conditions.</p>
+
 </div>
-<div id="select" class="section level3">
-<h3><span class="header-section-number">5.3.2</span> select()</h3>
-<p>Whereas the <code>filter()</code> function allows you to return only certain <em>rows</em> matching a condition, the <code>select()</code> function returns only certain <em>columns</em>. The first argument is the data, and subsequent arguments are the columns you want.</p>
-</div>
-<div id="dplyr-in-action" class="section level3">
-<h3><span class="header-section-number">5.3.3</span> dplyr in action</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># filter for species virginica</span>
-iris <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(Species <span class="op">==</span><span class="st"> &quot;virginica&quot;</span>)</code></pre>
-<pre><code>## # A tibble: 50 x 5
-##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species  
-##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;    
-##  1          6.3         3.3          6           2.5 virginica
-##  2          5.8         2.7          5.1         1.9 virginica
-##  3          7.1         3            5.9         2.1 virginica
-##  4          6.3         2.9          5.6         1.8 virginica
-##  5          6.5         3            5.8         2.2 virginica
-##  6          7.6         3            6.6         2.1 virginica
-##  7          4.9         2.5          4.5         1.7 virginica
-##  8          7.3         2.9          6.3         1.8 virginica
-##  9          6.7         2.5          5.8         1.8 virginica
-## 10          7.2         3.6          6.1         2.5 virginica
-## # … with 40 more rows</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># filter for where sepal length &gt;= 6.5</span>
-iris <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(Sepal.Length <span class="op">&gt;=</span><span class="st"> </span><span class="fl">6.5</span>)</code></pre>
-<pre><code>## # A tibble: 35 x 5
-##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species   
-##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;     
-##  1          7           3.2          4.7         1.4 versicolor
-##  2          6.9         3.1          4.9         1.5 versicolor
-##  3          6.5         2.8          4.6         1.5 versicolor
-##  4          6.6         2.9          4.6         1.3 versicolor
-##  5          6.7         3.1          4.4         1.4 versicolor
-##  6          6.6         3            4.4         1.4 versicolor
-##  7          6.8         2.8          4.8         1.4 versicolor
-##  8          6.7         3            5           1.7 versicolor
-##  9          6.7         3.1          4.7         1.5 versicolor
-## 10          7.1         3            5.9         2.1 virginica 
-## # … with 25 more rows</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># filter for where sepal length &gt;= 6.5 then select the species column</span>
-iris <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(Sepal.Length <span class="op">&gt;=</span><span class="st"> </span><span class="fl">6.5</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(Species)</code></pre>
-<pre><code>## # A tibble: 35 x 1
-##    Species   
-##    &lt;fct&gt;     
-##  1 versicolor
-##  2 versicolor
-##  3 versicolor
-##  4 versicolor
-##  5 versicolor
-##  6 versicolor
-##  7 versicolor
-##  8 versicolor
-##  9 versicolor
-## 10 virginica 
-## # … with 25 more rows</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># filter for where sepal length &gt;= 6.5 then select the species column then table the frequency of each species</span>
-iris <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(Sepal.Length <span class="op">&gt;=</span><span class="st"> </span><span class="fl">6.5</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(Species) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">table</span>()</code></pre>
-<pre><code>## .
-##     setosa versicolor  virginica 
-##          0          9         26</code></pre>
-</div>
-</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="the-pipe.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercise-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="david-n-martin-ms.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="assets/gitbook-2.6.7/js/app.min.js"></script>
