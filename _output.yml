@@ -1,7 +1,12 @@
 bookdown::gitbook:
   lib_dir: assets
-  split_by: section
+  split_by: chapter
   config:
+    toc:
+      collapse: subsection
+      scroll_highlight: yes
+      before: null
+      after: null
     toolbar:
       position: static
 bookdown::pdf_book:
