@@ -40,7 +40,7 @@ Great! Now you will see four panes
 
 - Before we can start writing code we need to set up our project workspace ... go to File --> New Project--> New Directory. I will name mine IntroR and it will be a subfolder on my desktop
 
-![New R Project](images/NewRproj.png){width=150px}
+![New R Project](images/NewRproj.png){width=350px}
 
 - When we start reading in data it will be important that the _code and the data are in the same place._ Creating a project creates an Rproj file that opens R running _in that folder_. If you are familiar with working directories, this process is setting the working directory for this project as this folder. This way, when you want to read in dataset _whatever.txt_, you just tell it the filename rather than a full path. This is critical for reproducibility, and we'll talk about that more later
 
