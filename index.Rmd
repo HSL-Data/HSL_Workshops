@@ -4,11 +4,13 @@ author: "Data Services @ HSL"
 date: "last updated `r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [book.bib, packages.bib]
-biblio-style: apalike
-link-citations: yes
 description: "This site hosts workshop tutorials for researchers in the life sciences at the University of Virginia to learn R skills."
-favicon: "favicon.ico"
+url: 'https://hsl-workshops.netlify.com/'
+github-repo: "HSL-Data/HSL_Workshops"
+cover-image: "images/UVA_HSL.png"
+apple-touch-icon: "images/UVA_HSL.png"
+apple-touch-icon-size: 120
+favicon: "images/UVA_HSL.png"
 ---
 
 # Welcome {-}
