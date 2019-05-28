@@ -2,7 +2,7 @@
 
 R is the underlying statistical computing environment. You can think of this like the engine of a car. That makes RStudio like the dashboard.
 
-![](images/engine.jpg){width=250px} ![](images/dashboard.jpg){width=250px}
+![R is the engine](images/engine.jpg){width=250px} ![RStudio is the dashboard](images/dashboard.jpg){width=250px}
 
 RStudio is an integrated development environment (IDE) that allows us to interact with R. RStudio sits on top of R and makes writing and executing R code a lot easier. We'll be benefiting from many of the added features that come with RStudio and we will point them out as we go.
 
@@ -20,77 +20,103 @@ Great! Now you will see four panes
     - Environment/history on the top right
     - Plots/help on the bottom right
     
+![Four pane layout in RStudio](images/RStudioPanes.png){width=350px}
+    
 - On the top left is the script or editor window. This is where we are going to write all of our code.
 
-- On the lower left we have the console window. This is where R is running, and this is what you would see if you opened R instead of RStudio. In this pane we can see the code we sent and then the answer.
+- On the lower left we have the console window. This is where R is running, and this is what you would see if you opened R instead of RStudio. In this pane we can see the code we send and then the answer.
 
 - The top right has the environment and history tabs. The Environment is a list of all objects that are saved in memory. The History tab shows all commands that have been run.
 
 - On the bottom right hand side there's a window with Files ... that's your file structure in the working directory ... Plots (SHOW PLOTS) ... this is where your visualizations will appear ... Packages (SHOW PACKAGES) ... these are all of the installed packages ...checked are loaded. unchecked aren't ... Help (show help) ... help files are very important in R, you'll spend a lot of time here ... and Viewer for viewing other kinds of output, like web content
 
-- To change your preferences for the pane layout go to RStudio --> Preferences --> Pane Layout
+- To change your preferences for the pane layout go to Tools --> Global Options --> Pane Layout. The Global Options menu is also where you can change the font size, background color, and other useful preferences.
+
+- There is one preference that we recommend you change right now. That is the _soft wrap_ feature that will wrap long lines of code or comments onto several lines so that you do not need to scroll right to see the whole code or sentence. Go to Tools --> Global Options --> Code and click the box next to _Soft Wrap R Source files_
 
 ## Set up Project and move dataset
+
 - I mentioned that RStudio has a lot of pretty handy features ... one of those is the project structure
 
-- Before we can start writing code we need to set up our project workspace ... go to File and then click New Project ... and create this is a new directory ... for lack of a more creative example mine will be called IntroR and will be a subfolder of my home directory
+- Before we can start writing code we need to set up our project workspace ... go to File --> New Project--> New Directory. I will name mine IntroR and it will be a subfolder on my desktop
 
-- When we start reading in data it'll be important that the _code and the data are in the same place._ Creating a project creates an Rproj file that opens R running _in that folder_. This way, when you want to read in dataset _whatever.txt_, you just tell it the filename rather than a full path. This is critical for reproducibility, and we'll talk about that more later
+![New R Project](images/NewRproj.png){width=150px}
 
-- Now to get things arranged for later we need to download the dataset we are going to use from the library website. _https://data.hsl.virginia.edu/workshop-materials_ or short URL _https://goo.gl/tmmfyY_
+- When we start reading in data it will be important that the _code and the data are in the same place._ Creating a project creates an Rproj file that opens R running _in that folder_. If you are familiar with working directories, this process is setting the working directory for this project as this folder. This way, when you want to read in dataset _whatever.txt_, you just tell it the filename rather than a full path. This is critical for reproducibility, and we'll talk about that more later
 
-- Move our dataset to our IntroR directory. You can use whatever method you need ... if you're on Mac there's finder... or Windows my computer etc ... to move the gapminder.csv file into our R project directory
-**[MOVE FILE]**
-**[STICKY CHECK]**
+- Now to get things arranged for later we need to download the dataset we are going to use. Right click to download the file to your computer.
+
+[gapminder data set](data/gapminder.csv)
+
+- Move the dataset to your IntroR directory. You can use whatever method you need. If you're on a Mac there's the finder. In Windows, use the file browser to move the gapminder.csv file into your R project directory
 
 - Now that we have a project and the dataset, let's open up a new script and begin coding! Go to file new --> new R script
 
 - Code that you type into the console is code that R executes. From here forward we will use the editor window to write a script that we can save to a file and run it again whenever we want to. We usually give it a `.R` extension, but it's just a plain text file so it can be opened by any text editor program. 
 
-- When you want to send commands from your editor to the console, use `CMD`+`Enter` (`Ctrl`+`Enter` on Windows). Way faster than the Run button
-
-## Comments
-- Anything after a `#` sign is a comment. Use them liberally to *comment your code*. 
-- In R, anything after the # symbol, hashtag, pound sign is a comment ... that means it won't be executed ...
-- Commenting is helpful when you're testing things out during your analysis ... you can 'turn off' parts of your script
-- But comments are also a big part of making your work reproducible for others and for your future self when you open this script a few months from now and need to remember what you were doing
-- Use comments liberally to describe what's going on in your code
-- Here's my first comment
-**Write first comment to explain code**
-
-- Let's save our script before we get any further
-Go up to File > Save As ... and for lack of a more creative name ... let's go with intro.R
-
 ## Basic operations
-R can be used as a glorified calculator. Try typing this in directly into the console. Make sure you're typing into into the editor, not the console, and save your script. Use the run button, or press `CMD`+`Enter` (`Ctrl`+`Enter` on Windows).
+R can be used as a calculator. Make sure you're typing into into the editor, not the console. Use the run button in the top right of the script to run the code.
 
 ```{r calculator}
 2+2
+```
+
+Notice the output in the console that tells us the code we wrote and the answer. Let's try some others.
+
+```{r}
 5*4
 2^3
 ```
 
-R knows order of operations and scientific notation.
+- Instead of using the Run button to run code, let's try the keyboard shortcut to run code. To send code from the editor to the console, use `CMD`+`Enter` (Mac) or `Ctrl`+`Enter` (Windows). This is **way** faster than using your mouse to hit the Run button each time.
+
+- Go back to your code above and run them using the keyboard. We can also run multiple lines of code at once. Now highlight 2 lines of code and run them together.
+
+## Comments
+
+- Anything after a `#` sign is a comment. Use them liberally to *comment your code*. 
+- In R, anything after the # symbol, hashtag, pound sign is a comment ... that means it won't be executed ...
+- Commenting is helpful when you're testing things out during your analysis ... you can 'turn off' parts of your script
+- But comments are also a big part of making your work reproducible for others and for your future self when you open this script a few months from now and need to remember what you were doing
+- Use comments liberally to describe what the code does and importantly, why you want to do what you are doing
+
+```{r}
+# Here is a comment
+# Note that anything after the # is considered a comment
+```
+
+- Let's save our script before we get any further
+
+Go up to File --> Save As and let's go with "intro.R"
+
+R also knows order of operations and scientific notation.
 
 ```{r calculator2}
-2+3*4/(5+3)*15/2^2+3*4^2
+(5 + 3)^2
+5 + 3^2
+
 5e4
 ```
 
-However, to do useful and interesting things, we need to assign _values_ to _objects_. To create objects, we need to give it a name followed by the assignment operator `<-` and the value we want to give it:
+Let's learn to create R objects next. We assign _values_ to _objects_ using the assignment operator "<-". This arrow is typed with a less than sign followed by a dash. We first name the object on the left and then provide the assignment operator `<-`, and then the value.
+
+Let's create an object called weight kg that takes the value 55.
 
 ```{r assignment}
 weight_kg <- 55
 ```
 
-`<-` is the assignment operator. Assigns values on the right to objects on the left, it is like an arrow that points from the value to the object. Mostly similar to `=` but not always. Learn to use `<-` as it is good programming practice. Using `=` in place of `<-` can lead to issues down the line. The keyboard shortcut for inserting the `<-` operator is `Alt-dash`.
+Look in the Environment pane (top right) to see your new R object!
 
-- Objects can be given any name such as `x`, `current_temperature`, or `subject_id`. You want your object names to be explicit and not too long. They cannot start with a number (`2x` is not valid but `x2` is). R is case sensitive (e.g., `weight_kg` is different from `Weight_kg`). 
+`<-` is the assignment operator in R. It assigns values on the right to object names on the left. Think of it like an arrow that points from the value to the object. The `<-` is mostly similar to `=` but not always. Learn to use `<-` as it is good R programming practice. Using `=` in place of `<-` can lead to issues down the line. The keyboard shortcut for inserting the `<-` operator is `option + dash`(Mac) and `Alt + dash` (Windows).
+
+- Objects can be given any name such as `x`, `current_temperature`, or `subject_id`, but they may not have a space in the name. You want your object names to be explicit and not too long. They also cannot start with a number (`2x` is not valid but `x2` is). R is case sensitive (e.g., `weight_kg` is different from `Weight_kg`). 
 
 ```{r case sensitive}
 Weight_kg <- 55
 ```
-**Show in environment that there are 2 weight objects**
+
+Look in the Environment pane to see that there are now 2 different weight objects since we used different casing in the spelling of the object names.
 
 - There are some names that cannot be used because they represent the names of fundamental functions in R (e.g., `if`, `else`, `for`). In general, even if it's allowed, it's best to not use other function names, which we'll get into shortly (e.g., `c`, `T`, `mean`, `data`, `df`, `weights`). In doubt check the help to see if the name is already in use. It's also best to avoid dots (`.`) within a variable name as in `my.dataset`. It is also recommended to use nouns for variable names, and verbs for function names to help yourself remember what each object is.
 
@@ -99,7 +125,7 @@ Weight_kg <- 55
 data()
 ```
 
-When assigning a value to an object, R does not print anything. You can force to print the value by typing the name:
+When assigning a value to an object, R does not print anything. You can ask to print the value by typing the object name:
 
 ```{r printAssignment}
 weight_kg
@@ -118,13 +144,13 @@ weight_kg <- 57.5
 2.2 * weight_kg
 ```
 
-This means that assigning a value to one variable does not change the values of other variables. For example, let's store the animal's weight in pounds in a variable.
+Let's store the animal's weight in pounds in a new object
 
 ```{r calculationWithVar}
 weight_lb <- 2.2 * weight_kg
 ```
 
-and then change `weight_kg` to 100.
+and then we'll change `weight_kg` to 100.
 
 ```{r modAssignment2}
 weight_kg <- 100
@@ -132,7 +158,13 @@ weight_kg <- 100
 
 What do you think is the current content of the object `weight_lb`? 126.5 or 220? Why?
 
-You can see what objects (variables) are stored by viewing the Environment tab in Rstudio. You can also use the `ls()` function. You can remove objects (variables) with the `rm()` function. You can do this one at a time or remove several objects at once. You can also use the little broom button in your environment pane to remove everything from your environment.
+Check your answer
+
+```{r}
+weight_lb
+```
+
+You can see which objects are stored by looking at the Environment pane. You can also use the `ls()` function to print all the object names to the console. You can remove objects with the `rm()` function. You can do this one at a time or remove several objects at once by separating their names with `,`. The broom button in the Environment pane will remove all objects from your environment.
 
 ```{r rm, eval=FALSE}
 ls()
@@ -144,6 +176,8 @@ ls()
 ----
 
 **EXERCISE 1**
+
+Try these on your own before looking at the answers below!
 
 A. You have a patient with a height (inches) of 73 and a weight (lbs) of 203. Create r objects labeled 'height' and 'weight'.
 

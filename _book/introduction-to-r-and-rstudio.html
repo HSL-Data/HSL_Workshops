@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Introduction to R and RStudio | UVA Health Sciences Library Workshops</title>
-  <meta name="description" content="This site hosts workshop tutorials for researchers in the life sciences at the University of Virginia to learn R skills." />
+  <meta name="description" content="This site hosts workshop tutorial materials for researchers in the life sciences at the University of Virginia to learn R skills." />
   <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Introduction to R and RStudio | UVA Health Sciences Library Workshops" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://hsl-workshops.netlify.com/" />
   <meta property="og:image" content="https://hsl-workshops.netlify.com/images/UVA_HSL.png" />
-  <meta property="og:description" content="This site hosts workshop tutorials for researchers in the life sciences at the University of Virginia to learn R skills." />
+  <meta property="og:description" content="This site hosts workshop tutorial materials for researchers in the life sciences at the University of Virginia to learn R skills." />
   <meta name="github-repo" content="HSL-Data/HSL_Workshops" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 1 Introduction to R and RStudio | UVA Health Sciences Library Workshops" />
   
-  <meta name="twitter:description" content="This site hosts workshop tutorials for researchers in the life sciences at the University of Virginia to learn R skills." />
+  <meta name="twitter:description" content="This site hosts workshop tutorial materials for researchers in the life sciences at the University of Virginia to learn R skills." />
   <meta name="twitter:image" content="https://hsl-workshops.netlify.com/images/UVA_HSL.png" />
 
 <meta name="author" content="Data Services @ HSL" />
@@ -134,8 +134,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="introduction-to-r-and-rstudio.html"><a href="introduction-to-r-and-rstudio.html"><i class="fa fa-check"></i><b>1</b> Introduction to R and RStudio</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction-to-r-and-rstudio.html"><a href="introduction-to-r-and-rstudio.html#panes-in-rstudio"><i class="fa fa-check"></i><b>1.1</b> Panes in RStudio</a></li>
 <li class="chapter" data-level="1.2" data-path="introduction-to-r-and-rstudio.html"><a href="introduction-to-r-and-rstudio.html#set-up-project-and-move-dataset"><i class="fa fa-check"></i><b>1.2</b> Set up Project and move dataset</a></li>
-<li class="chapter" data-level="1.3" data-path="introduction-to-r-and-rstudio.html"><a href="introduction-to-r-and-rstudio.html#comments"><i class="fa fa-check"></i><b>1.3</b> Comments</a></li>
-<li class="chapter" data-level="1.4" data-path="introduction-to-r-and-rstudio.html"><a href="introduction-to-r-and-rstudio.html#basic-operations"><i class="fa fa-check"></i><b>1.4</b> Basic operations</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-r-and-rstudio.html"><a href="introduction-to-r-and-rstudio.html#basic-operations"><i class="fa fa-check"></i><b>1.3</b> Basic operations</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-r-and-rstudio.html"><a href="introduction-to-r-and-rstudio.html#comments"><i class="fa fa-check"></i><b>1.4</b> Comments</a></li>
 <li class="chapter" data-level="1.5" data-path="introduction-to-r-and-rstudio.html"><a href="introduction-to-r-and-rstudio.html#built-in-functions"><i class="fa fa-check"></i><b>1.5</b> Built-in Functions</a></li>
 <li class="chapter" data-level="1.6" data-path="introduction-to-r-and-rstudio.html"><a href="introduction-to-r-and-rstudio.html#nesting-functions"><i class="fa fa-check"></i><b>1.6</b> Nesting Functions</a></li>
 <li class="chapter" data-level="1.7" data-path="introduction-to-r-and-rstudio.html"><a href="introduction-to-r-and-rstudio.html#vectors"><i class="fa fa-check"></i><b>1.7</b> Vectors</a></li>
@@ -214,7 +214,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="introduction-to-r-and-rstudio" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction to R and RStudio</h1>
 <p>R is the underlying statistical computing environment. You can think of this like the engine of a car. That makes RStudio like the dashboard.</p>
-<p><img src="images/engine.jpg" width="250" /> <img src="images/dashboard.jpg" width="250" /></p>
+<p><img src="images/engine.jpg" alt="R is the engine" width="250" /> <img src="images/dashboard.jpg" alt="RStudio is the dashboard" width="250" /></p>
 <p>RStudio is an integrated development environment (IDE) that allows us to interact with R. RStudio sits on top of R and makes writing and executing R code a lot easier. We’ll be benefiting from many of the added features that come with RStudio and we will point them out as we go.</p>
 <div id="panes-in-rstudio" class="section level2">
 <h2><span class="header-section-number">1.1</span> Panes in RStudio</h2>
@@ -229,70 +229,94 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Environment/history on the top right</li>
 <li>Plots/help on the bottom right</li>
 </ul></li>
+</ul>
+<div class="figure">
+<img src="images/RStudioPanes.png" alt="Four pane layout in RStudio" width="350" />
+<p class="caption">Four pane layout in RStudio</p>
+</div>
+<ul>
 <li><p>On the top left is the script or editor window. This is where we are going to write all of our code.</p></li>
-<li><p>On the lower left we have the console window. This is where R is running, and this is what you would see if you opened R instead of RStudio. In this pane we can see the code we sent and then the answer.</p></li>
+<li><p>On the lower left we have the console window. This is where R is running, and this is what you would see if you opened R instead of RStudio. In this pane we can see the code we send and then the answer.</p></li>
 <li><p>The top right has the environment and history tabs. The Environment is a list of all objects that are saved in memory. The History tab shows all commands that have been run.</p></li>
 <li><p>On the bottom right hand side there’s a window with Files … that’s your file structure in the working directory … Plots (SHOW PLOTS) … this is where your visualizations will appear … Packages (SHOW PACKAGES) … these are all of the installed packages …checked are loaded. unchecked aren’t … Help (show help) … help files are very important in R, you’ll spend a lot of time here … and Viewer for viewing other kinds of output, like web content</p></li>
-<li><p>To change your preferences for the pane layout go to RStudio –&gt; Preferences –&gt; Pane Layout</p></li>
+<li><p>To change your preferences for the pane layout go to Tools –&gt; Global Options –&gt; Pane Layout. The Global Options menu is also where you can change the font size, background color, and other useful preferences.</p></li>
+<li><p>There is one preference that we recommend you change right now. That is the <em>soft wrap</em> feature that will wrap long lines of code or comments onto several lines so that you do not need to scroll right to see the whole code or sentence. Go to Tools –&gt; Global Options –&gt; Code and click the box next to <em>Soft Wrap R Source files</em></p></li>
 </ul>
 </div>
 <div id="set-up-project-and-move-dataset" class="section level2">
 <h2><span class="header-section-number">1.2</span> Set up Project and move dataset</h2>
 <ul>
 <li><p>I mentioned that RStudio has a lot of pretty handy features … one of those is the project structure</p></li>
-<li><p>Before we can start writing code we need to set up our project workspace … go to File and then click New Project … and create this is a new directory … for lack of a more creative example mine will be called IntroR and will be a subfolder of my home directory</p></li>
-<li><p>When we start reading in data it’ll be important that the <em>code and the data are in the same place.</em> Creating a project creates an Rproj file that opens R running <em>in that folder</em>. This way, when you want to read in dataset <em>whatever.txt</em>, you just tell it the filename rather than a full path. This is critical for reproducibility, and we’ll talk about that more later</p></li>
-<li><p>Now to get things arranged for later we need to download the dataset we are going to use from the library website. _<a href="https://data.hsl.virginia.edu/workshop-materials_" class="uri">https://data.hsl.virginia.edu/workshop-materials_</a> or short URL _<a href="https://goo.gl/tmmfyY_" class="uri">https://goo.gl/tmmfyY_</a></p></li>
-<li><p>Move our dataset to our IntroR directory. You can use whatever method you need … if you’re on Mac there’s finder… or Windows my computer etc … to move the gapminder.csv file into our R project directory
-<strong>[MOVE FILE]</strong>
-<strong>[STICKY CHECK]</strong></p></li>
+<li><p>Before we can start writing code we need to set up our project workspace … go to File –&gt; New Project–&gt; New Directory. I will name mine IntroR and it will be a subfolder on my desktop</p></li>
+</ul>
+<div class="figure">
+<img src="images/NewRproj.png" alt="New R Project" width="150" />
+<p class="caption">New R Project</p>
+</div>
+<ul>
+<li><p>When we start reading in data it will be important that the <em>code and the data are in the same place.</em> Creating a project creates an Rproj file that opens R running <em>in that folder</em>. If you are familiar with working directories, this process is setting the working directory for this project as this folder. This way, when you want to read in dataset <em>whatever.txt</em>, you just tell it the filename rather than a full path. This is critical for reproducibility, and we’ll talk about that more later</p></li>
+<li><p>Now to get things arranged for later we need to download the dataset we are going to use. Right click to download the file to your computer.</p></li>
+</ul>
+<p><a href="data/gapminder.csv">gapminder data set</a></p>
+<ul>
+<li><p>Move the dataset to your IntroR directory. You can use whatever method you need. If you’re on a Mac there’s the finder. In Windows, use the file browser to move the gapminder.csv file into your R project directory</p></li>
 <li><p>Now that we have a project and the dataset, let’s open up a new script and begin coding! Go to file new –&gt; new R script</p></li>
 <li><p>Code that you type into the console is code that R executes. From here forward we will use the editor window to write a script that we can save to a file and run it again whenever we want to. We usually give it a <code>.R</code> extension, but it’s just a plain text file so it can be opened by any text editor program.</p></li>
-<li><p>When you want to send commands from your editor to the console, use <code>CMD</code>+<code>Enter</code> (<code>Ctrl</code>+<code>Enter</code> on Windows). Way faster than the Run button</p></li>
+</ul>
+</div>
+<div id="basic-operations" class="section level2">
+<h2><span class="header-section-number">1.3</span> Basic operations</h2>
+<p>R can be used as a calculator. Make sure you’re typing into into the editor, not the console. Use the run button in the top right of the script to run the code.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">+</span><span class="dv">2</span></code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>Notice the output in the console that tells us the code we wrote and the answer. Let’s try some others.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span><span class="op">*</span><span class="dv">4</span></code></pre>
+<pre><code>## [1] 20</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">^</span><span class="dv">3</span></code></pre>
+<pre><code>## [1] 8</code></pre>
+<ul>
+<li><p>Instead of using the Run button to run code, let’s try the keyboard shortcut to run code. To send code from the editor to the console, use <code>CMD</code>+<code>Enter</code> (Mac) or <code>Ctrl</code>+<code>Enter</code> (Windows). This is <strong>way</strong> faster than using your mouse to hit the Run button each time.</p></li>
+<li><p>Go back to your code above and run them using the keyboard. We can also run multiple lines of code at once. Now highlight 2 lines of code and run them together.</p></li>
 </ul>
 </div>
 <div id="comments" class="section level2">
-<h2><span class="header-section-number">1.3</span> Comments</h2>
+<h2><span class="header-section-number">1.4</span> Comments</h2>
 <ul>
 <li>Anything after a <code>#</code> sign is a comment. Use them liberally to <em>comment your code</em>.</li>
 <li>In R, anything after the # symbol, hashtag, pound sign is a comment … that means it won’t be executed …</li>
 <li>Commenting is helpful when you’re testing things out during your analysis … you can ‘turn off’ parts of your script</li>
 <li>But comments are also a big part of making your work reproducible for others and for your future self when you open this script a few months from now and need to remember what you were doing</li>
-<li>Use comments liberally to describe what’s going on in your code</li>
-<li><p>Here’s my first comment
-<strong>Write first comment to explain code</strong></p></li>
-<li><p>Let’s save our script before we get any further
-Go up to File &gt; Save As … and for lack of a more creative name … let’s go with intro.R</p></li>
+<li>Use comments liberally to describe what the code does and importantly, why you want to do what you are doing</li>
 </ul>
-</div>
-<div id="basic-operations" class="section level2">
-<h2><span class="header-section-number">1.4</span> Basic operations</h2>
-<p>R can be used as a glorified calculator. Try typing this in directly into the console. Make sure you’re typing into into the editor, not the console, and save your script. Use the run button, or press <code>CMD</code>+<code>Enter</code> (<code>Ctrl</code>+<code>Enter</code> on Windows).</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">+</span><span class="dv">2</span></code></pre>
-<pre><code>## [1] 4</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span><span class="op">*</span><span class="dv">4</span></code></pre>
-<pre><code>## [1] 20</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">^</span><span class="dv">3</span></code></pre>
-<pre><code>## [1] 8</code></pre>
-<p>R knows order of operations and scientific notation.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">+</span><span class="dv">3</span><span class="op">*</span><span class="dv">4</span><span class="op">/</span>(<span class="dv">5</span><span class="op">+</span><span class="dv">3</span>)<span class="op">*</span><span class="dv">15</span><span class="op">/</span><span class="dv">2</span><span class="op">^</span><span class="dv">2</span><span class="op">+</span><span class="dv">3</span><span class="op">*</span><span class="dv">4</span><span class="op">^</span><span class="dv">2</span></code></pre>
-<pre><code>## [1] 55.625</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Here is a comment</span>
+<span class="co"># Note that anything after the # is considered a comment</span></code></pre>
+<ul>
+<li>Let’s save our script before we get any further</li>
+</ul>
+<p>Go up to File –&gt; Save As and let’s go with “intro.R”</p>
+<p>R also knows order of operations and scientific notation.</p>
+<pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span>)<span class="op">^</span><span class="dv">2</span></code></pre>
+<pre><code>## [1] 64</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span><span class="op">^</span><span class="dv">2</span></code></pre>
+<pre><code>## [1] 14</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="fl">5e4</span></code></pre>
 <pre><code>## [1] 50000</code></pre>
-<p>However, to do useful and interesting things, we need to assign <em>values</em> to <em>objects</em>. To create objects, we need to give it a name followed by the assignment operator <code>&lt;-</code> and the value we want to give it:</p>
+<p>Let’s learn to create R objects next. We assign <em>values</em> to <em>objects</em> using the assignment operator “&lt;-”. This arrow is typed with a less than sign followed by a dash. We first name the object on the left and then provide the assignment operator <code>&lt;-</code>, and then the value.</p>
+<p>Let’s create an object called weight kg that takes the value 55.</p>
 <pre class="sourceCode r"><code class="sourceCode r">weight_kg &lt;-<span class="st"> </span><span class="dv">55</span></code></pre>
-<p><code>&lt;-</code> is the assignment operator. Assigns values on the right to objects on the left, it is like an arrow that points from the value to the object. Mostly similar to <code>=</code> but not always. Learn to use <code>&lt;-</code> as it is good programming practice. Using <code>=</code> in place of <code>&lt;-</code> can lead to issues down the line. The keyboard shortcut for inserting the <code>&lt;-</code> operator is <code>Alt-dash</code>.</p>
+<p>Look in the Environment pane (top right) to see your new R object!</p>
+<p><code>&lt;-</code> is the assignment operator in R. It assigns values on the right to object names on the left. Think of it like an arrow that points from the value to the object. The <code>&lt;-</code> is mostly similar to <code>=</code> but not always. Learn to use <code>&lt;-</code> as it is good R programming practice. Using <code>=</code> in place of <code>&lt;-</code> can lead to issues down the line. The keyboard shortcut for inserting the <code>&lt;-</code> operator is <code>option + dash</code>(Mac) and <code>Alt + dash</code> (Windows).</p>
 <ul>
-<li>Objects can be given any name such as <code>x</code>, <code>current_temperature</code>, or <code>subject_id</code>. You want your object names to be explicit and not too long. They cannot start with a number (<code>2x</code> is not valid but <code>x2</code> is). R is case sensitive (e.g., <code>weight_kg</code> is different from <code>Weight_kg</code>).</li>
+<li>Objects can be given any name such as <code>x</code>, <code>current_temperature</code>, or <code>subject_id</code>, but they may not have a space in the name. You want your object names to be explicit and not too long. They also cannot start with a number (<code>2x</code> is not valid but <code>x2</code> is). R is case sensitive (e.g., <code>weight_kg</code> is different from <code>Weight_kg</code>).</li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r">Weight_kg &lt;-<span class="st"> </span><span class="dv">55</span></code></pre>
-<p><strong>Show in environment that there are 2 weight objects</strong></p>
+<p>Look in the Environment pane to see that there are now 2 different weight objects since we used different casing in the spelling of the object names.</p>
 <ul>
 <li><p>There are some names that cannot be used because they represent the names of fundamental functions in R (e.g., <code>if</code>, <code>else</code>, <code>for</code>). In general, even if it’s allowed, it’s best to not use other function names, which we’ll get into shortly (e.g., <code>c</code>, <code>T</code>, <code>mean</code>, <code>data</code>, <code>df</code>, <code>weights</code>). In doubt check the help to see if the name is already in use. It’s also best to avoid dots (<code>.</code>) within a variable name as in <code>my.dataset</code>. It is also recommended to use nouns for variable names, and verbs for function names to help yourself remember what each object is.</p></li>
 <li><p>It is perfectly reasonable to think that data is a great name for your dataset but as you start to type it the autocomplete function in RStudio tells you that data already exists</p></li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>()</code></pre>
-<p>When assigning a value to an object, R does not print anything. You can force to print the value by typing the name:</p>
+<p>When assigning a value to an object, R does not print anything. You can ask to print the value by typing the object name:</p>
 <pre class="sourceCode r"><code class="sourceCode r">weight_kg</code></pre>
 <pre><code>## [1] 55</code></pre>
 <p>Now that R has <code>weight_kg</code> in memory, we can do arithmetic with it. For instance, we may want to convert this weight in pounds (weight in pounds is 2.2 times the weight in kg).</p>
@@ -302,18 +326,22 @@ Go up to File &gt; Save As … and for lack of a more creative name … let’s 
 <pre class="sourceCode r"><code class="sourceCode r">weight_kg &lt;-<span class="st"> </span><span class="fl">57.5</span>
 <span class="fl">2.2</span> <span class="op">*</span><span class="st"> </span>weight_kg</code></pre>
 <pre><code>## [1] 126.5</code></pre>
-<p>This means that assigning a value to one variable does not change the values of other variables. For example, let’s store the animal’s weight in pounds in a variable.</p>
+<p>Let’s store the animal’s weight in pounds in a new object</p>
 <pre class="sourceCode r"><code class="sourceCode r">weight_lb &lt;-<span class="st"> </span><span class="fl">2.2</span> <span class="op">*</span><span class="st"> </span>weight_kg</code></pre>
-<p>and then change <code>weight_kg</code> to 100.</p>
+<p>and then we’ll change <code>weight_kg</code> to 100.</p>
 <pre class="sourceCode r"><code class="sourceCode r">weight_kg &lt;-<span class="st"> </span><span class="dv">100</span></code></pre>
 <p>What do you think is the current content of the object <code>weight_lb</code>? 126.5 or 220? Why?</p>
-<p>You can see what objects (variables) are stored by viewing the Environment tab in Rstudio. You can also use the <code>ls()</code> function. You can remove objects (variables) with the <code>rm()</code> function. You can do this one at a time or remove several objects at once. You can also use the little broom button in your environment pane to remove everything from your environment.</p>
+<p>Check your answer</p>
+<pre class="sourceCode r"><code class="sourceCode r">weight_lb</code></pre>
+<pre><code>## [1] 126.5</code></pre>
+<p>You can see which objects are stored by looking at the Environment pane. You can also use the <code>ls()</code> function to print all the object names to the console. You can remove objects with the <code>rm()</code> function. You can do this one at a time or remove several objects at once by separating their names with <code>,</code>. The broom button in the Environment pane will remove all objects from your environment.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>()
 <span class="kw">rm</span>(weight_lb, Weight_kg)
 <span class="kw">ls</span>()
 <span class="co"># weight_lb # oops! you should get an error because weight_lb no longer exists!</span></code></pre>
 <hr />
 <p><strong>EXERCISE 1</strong></p>
+<p>Try these on your own before looking at the answers below!</p>
 <p>A. You have a patient with a height (inches) of 73 and a weight (lbs) of 203. Create r objects labeled ‘height’ and ‘weight’.</p>
 <p>B. Convert ‘weight’ to ‘weight_kg’ by dividing by 2.2. Convert ‘height’ to ‘height_m’ by dividing by 39.37</p>
 <p>C. Calculate a new object ‘bmi’ where BMI = weight_kg / (height_m*height_m)</p>
@@ -2294,12 +2322,12 @@ We can try to let R decide how many breaks to insert in the histogram, or we can
 <p><strong>Exercise 5</strong>
 Create a plot to show the relationship between continent and life expectancy. If there is time add color, axis labels, and a title</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(gm<span class="op">$</span>continent, gm<span class="op">$</span>lifeExp)</code></pre>
-<p><img src="Book_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="Book_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># does not work if dataframe is a tibble</span>
 
 <span class="co"># for tibble data</span>
 <span class="kw">boxplot</span>(gm<span class="op">$</span>lifeExp <span class="op">~</span><span class="st"> </span>gm<span class="op">$</span>continent)</code></pre>
-<p><img src="Book_files/figure-html/unnamed-chunk-24-2.png" width="672" /></p>
+<p><img src="Book_files/figure-html/unnamed-chunk-27-2.png" width="672" /></p>
 </div>
 <div id="write-out-csv-file-of-filtered-dataframe" class="section level2">
 <h2><span class="header-section-number">1.15</span> Write out csv file of filtered dataframe</h2>

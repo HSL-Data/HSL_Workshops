@@ -4,7 +4,7 @@ author: "Data Services @ HSL"
 date: "last updated `r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-description: "This site hosts workshop tutorials for researchers in the life sciences at the University of Virginia to learn R skills."
+description: "This site hosts workshop tutorial materials for researchers in the life sciences at the University of Virginia to learn R skills."
 url: 'https://hsl-workshops.netlify.com/'
 github-repo: "HSL-Data/HSL_Workshops"
 cover-image: "images/UVA_HSL.png"
@@ -17,7 +17,7 @@ favicon: "images/UVA_HSL.png"
 
 ![](images/UVA_HSL.png){width=250px}
 
-This site hosts workshop tutorials for researchers in the life sciences at the University of Virginia to learn R skills
+This site hosts workshop tutorial materials to support our in-person workshops targeted to researchers in the life sciences at the University of Virginia to learn R skills
 
 ## Getting Started {-}
 
@@ -47,7 +47,8 @@ David is the Clinical Data Research Specialist at the Health Sciences Library wh
 
 ![Marieke Jones, PhD](images/MKJ_edited_cropped.jpg){width=350px}
 
-Marieke is the Research Data Specialist in the Health Sciences Library. She teaches open enrollment workshops in R, consults with researchers about statistics and data analysis, and teaches the BIMS8380 statistics course. Her PhD is in Environmental Science and Policy and she conducted her dissertation research on reproductive physiology and endocrinology.
+Marieke is the Research Data Specialist in the Health Sciences Library. She teaches open enrollment workshops in R, consults with researchers about statistics and data analysis, and teaches the BIMS8380 statistics course and co-teaches the BIMS8382 Data Science course. Her PhD is in Environmental Science and Policy and she conducted her dissertation research on the reproductive physiology, endocrinology, and metabolomics of an endangered wolf species.
 
 - Email: marieke@virginia.edu
+- twitter: @marieke_k_jones
 - GitHub: [github.com/mariekekjones](https://github.com/mariekekjones)
