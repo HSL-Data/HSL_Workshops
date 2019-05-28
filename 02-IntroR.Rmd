@@ -20,7 +20,7 @@ Great! Now you will see four panes
     - Environment/history on the top right
     - Plots/help on the bottom right
     
-![Four pane layout in RStudio](images/RStudioPanes.png){width=350px}
+![Four pane layout in RStudio](images/RStudioPanes.png){width=600px}
     
 - On the top left is the script or editor window. This is where we are going to write all of our code.
 
