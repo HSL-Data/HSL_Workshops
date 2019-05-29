@@ -1,6 +1,6 @@
 # (PART) Core Lessons {-}
 
-# Introduction to R and RStudio
+# Introduction to R and RStudio {#Intro}
 
 R is the underlying statistical computing environment. You can think of this like the engine of a car. That makes RStudio like the dashboard.
 
@@ -36,7 +36,7 @@ To change your preferences for the pane layout go to Tools --> Global Options --
 
 There is one preference that we recommend you change right now. That is the _soft wrap_ feature that will wrap long lines of code or comments onto several lines so that you do not need to scroll right to see the whole code or sentence. Go to Tools --> Global Options --> Code and click the box next to _Soft Wrap R Source files_
 
-## Set up Project and move dataset
+## Set up an R Project
 
 I mentioned previously that RStudio has a lot of pretty handy features. One of those is the project structure
 
@@ -286,7 +286,7 @@ myval <- log(1000, base = 10)
 sqrt(myval)
 ```
 
-In the next chapter, we'll learn a different method of chaining functions together that is more readable. \@ref(pipe)
+In the next chapter, we'll learn a different method of chaining functions together that is more readable. Jump to section \@ref(pipe)
 
 ----
 
@@ -483,7 +483,7 @@ Let's look at this object by calling its name
 gm
 ```
 
-Printing large data sets to the console is ugly. In the next chapter, we will learn about a modification to dataframes that make them nicer to print /@ref(tibble). 
+Printing large data sets to the console is ugly. In the next chapter, we will learn about a modification to dataframes that make them nicer to print. Jump to section /@ref(tibble)
 
 For now, let's use the `View()` function to look at the data. Note that this is a read only viewer - not like Excel where you can go in and change cell values etc. This feature helps with reproducibility.
 
@@ -586,7 +586,7 @@ In other words, we might be interested in the life expectancy for a particular c
 
 ----
 
-## EXERCISE 3
+## EXERCISE 1.3
 
 1. What’s the standard deviation of the life expectancy (hint: get help on the `sd` function with `?sd`)
 2. What’s the mean population size in millions? (hint: divide by `1000000`, or alternatively, `1e6`).
@@ -620,7 +620,7 @@ mean(gm$pop, na.rm = TRUE)
 
 ## Subsetting a dataframe
 
-Often we would like to see only certain rows or perform a function on a given set of rows. To subset a dataframe, we will first learn the function `subset()`. In Chapter 2, we will learn another way of subsetting rows using the filter function /@ref(filter)
+Often we would like to see only certain rows or perform a function on a given set of rows. To subset a dataframe, we will first learn the function `subset()`. In Chapter 2, we will learn another way of subsetting rows using the filter function. Jump to section /@ref(filter)
 
 - The first argument to `subset()` is the dataframe we are subsetting from.
 - The second argument provides the logical criteria the row will have to meet to be returned.
@@ -670,7 +670,7 @@ subset(gm, subset = pop > mean(gm$pop))
 
 ---
 
-## EXERCISE 4
+## EXERCISE 1.4
 
 Use the `subset()` function to return rows matching the given criteria.
 
@@ -696,7 +696,7 @@ subset(gm, subset = gdpPercap < 300 | lifeExp < 30)
 
 Plots are a great way to help us explore our dataset to see relationships, investigate interactions, diagnose problems, etc.
 
-Here we will introduce plotting using base R (without loading any extra packages). Chapter 3 /@ref(ggplot2) is all about plotting using the premier plotting package in R, ggplot2.
+Here we will introduce plotting using base R (without loading any extra packages). Chapter 3 is all about plotting using the premier plotting package in R, ggplot2. Jump to /@ref(ggplot)
 
 Let's start out with a histogram of the life expectancy variable from gm.
 
@@ -754,7 +754,7 @@ There are hundreds of plotting parameters you can use to customize your plot's a
 
 ---
 
-## Exercise 5
+## EXERCISE 1.5
 
 Create a plot to show the relationship between continent and life expectancy. Optional: Add color, axis labels, and a title
 

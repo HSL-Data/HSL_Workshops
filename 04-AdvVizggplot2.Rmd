@@ -1,4 +1,4 @@
-# Data Visualization with ggplot2 {#ggplot2}
+# Data Visualization with ggplot2
 
 ```{r init, include=F}
 library(knitr)
@@ -94,7 +94,7 @@ mean(lifeExp), mean(gdp))
 
 ![](img/nest_vs_pipe.png)
 
-## About ggplot2
+## About ggplot2 {#ggplot}
 
 **ggplot2** is a widely used R package that extends R's visualization capabilities. It takes the hassle out of things like creating legends, mapping other variables to scales like color, or faceting plots into small multiples. We'll learn about what all these things mean shortly. 
 
