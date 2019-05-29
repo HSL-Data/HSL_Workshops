@@ -30,7 +30,12 @@ Great! Now you will see four panes
 
 - The top right has the environment and history tabs. The Environment is a list of all objects that are saved in memory. The History tab shows all commands that have been run.
 
-- On the bottom right hand side there's a window with Files ... that's your file structure in the working directory ... Plots (SHOW PLOTS) ... this is where your visualizations will appear ... Packages (SHOW PACKAGES) ... these are all of the installed packages ...checked are loaded. unchecked aren't ... Help (show help) ... help files are very important in R, you'll spend a lot of time here ... and Viewer for viewing other kinds of output, like web content
+- On the bottom right hand side there's a window with several tabs.
+    - Files shows the file structure of the working directory.
+    - Plots is where your visualizations will appear. 
+    - Packages shows all of the installed packages where checked ones are loaded and unchecked packages are not loaded.
+    - Help shows information about functions.
+    - Viewer for viewing other kinds of output, like web content.
 
 To change your preferences for the pane layout go to Tools --> Global Options --> Pane Layout. The Global Options menu is also where you can change the font size, background color, and other useful preferences.
 
@@ -66,14 +71,14 @@ Code that you type into the console is code that R executes. From here forward w
 R can be used as a calculator. Make sure you're typing into into the editor, not the console. Use the run button in the top right of the script to run the code.
 
 ```{r calculator}
-2+2
+2 + 2
 ```
 
 Notice the output in the console that tells us the code we wrote and the answer. Let's try some others.
 
 ```{r}
-5*4
-2^3
+5 * 4
+2 ^3
 ```
 
 Instead of using the Run button to run code, let's try the keyboard shortcut to run code. To send code from the editor to the console, use `CMD`+`Enter` (Mac) or `Ctrl`+`Enter` (Windows). This is **way** faster than using your mouse to hit the Run button each time.
@@ -636,36 +641,30 @@ There are six logical operators in R:
 
 And you can chain multiple conditions together with an AND operator **&** or an OR **|** operator
 
-Let's see how it works by subsetting for year equals 1982 
-
-```{r}
-subset(gm, subset = year == 1982)
-```
-
-We do not need to specify `gm$year` because the first argument told R we would be operating within the gm dataframe. Therefore, we need only specify the variable name in the subset argument.
-
-Now let's see rows from the United States. First let's use `View()` to see how USA is spelled. Click on the country column header to sort by country to quickly navigate to the _U_ section.
+Let's see how it works by subsetting for rows from the United States. First let's use `View()` to see how USA is spelled. Click on the country column header to sort by country to quickly navigate to the _U_ section.
 
 ```{r, eval=FALSE}
 View(gm)
 ```
 
-Ok, now that we know how it is spelled, we can write a line of code to subset for where country is 'United States'. We need the '' or "" because country is a character (factor) variable
+Ok, now that we know how it is spelled, we can write a line of code to subset for where country is 'United States'. We need the quotes because country is a character (factor) variable.
 
 ```{r}
 subset(gm, subset = country == 'United States')
 ```
 
-Now let's return the data that meets both of those criteria at once. We'll use the `&` to combine the year and country criteria
+We do not need to specify `gm$country` because the first argument told R we would be operating within the gm dataframe. Therefore, we need only specify the variable name in the subset argument.
+
+Now let's return the data that meets multiple criteria at once. We'll use the `&` to combine the year == 1982 and country == "United States" criteria
 
 ```{r subset}
 subset(gm, subset = year == 1982 & country == 'United States')
 ```
 
-We'll do one more together before you can practice on your own. Let's subset the gm dataset for where the population was higher than the average population of the whole dataset
+We'll do one more together before you can practice on your own. Let's subset the gm dataset for rows where the population is higher than 1 billion (1e9)
 
 ```{r}
-subset(gm, subset = pop > mean(gm$pop))
+subset(gm, subset = pop > 1e9)
 ```
 
 ---
@@ -747,7 +746,9 @@ plot(gm$gdpPercap, gm$lifeExp, pch = 16, col = "red", main = "Life Exp vs GDP")
 Finally, we'll add an xlabel and a ylabel both in quotes.
 
 ```{r}
-plot(gm$gdpPercap, gm$lifeExp, pch = 16, col = "red", main = "Life Exp vs GDP", ylab = "Life Expectancy (years)", xlab = "Per-capita GDP ($)")
+plot(gm$gdpPercap, gm$lifeExp, pch = 16, col = "red", main = "Life Exp vs GDP", 
+     ylab = "Life Expectancy (years)", 
+     xlab = "Per-capita GDP ($)")
 ```
 
 There are hundreds of plotting parameters you can use to customize your plot's appearance. I know these parameters because I have learned them. The internet is your friend in this case, so if you forget how to modify a parameter, don't be afraid to Google it.
