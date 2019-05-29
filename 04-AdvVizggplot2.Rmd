@@ -1,4 +1,4 @@
-# Data Visualization with ggplot2
+# Data Visualization with ggplot2 {#ggplot2}
 
 ```{r init, include=F}
 library(knitr)

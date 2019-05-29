@@ -54,7 +54,7 @@ class(original)
 
 If you have other "regular" data frames in your workspace, the `as_tibble()` function will convert it into the special dplyr `tbl` that displays nicely (e.g.: `iris <- as_tibble(iris)`). You don't have to turn all your data frame objects into tibbles, but it does make working with large datasets a bit easier.
 
-## Tibbles v. dataframe
+## Tibbles v. dataframe {#tibble}
 Tibbles are the tidyverse version of a dataframe and preserve all of the functionality of data frames (Hadley Wickham et al could not write over data.frame to make tibble). Main difference in loading is that string variables (letters) do not get read in as factors in tibbles where as they do in data.frames.
 
 When you print (i.e., display) a tibble, it only shows the first 10 rows and all the columns that fit on one screen. It also prints an abbreviated description of the column type. 
@@ -71,7 +71,7 @@ iris
 class(iris)
 ```
 
-## The pipe: **%>%**
+## The pipe: **%>%** {#pipe}
 
 The dplyr package imports functionality from the [magrittr](https://github.com/smbache/magrittr) package that lets you _pipe_ the output of one function to the input of another, so you can avoid nesting functions. It looks like this: **`%>%`**. Quick keyboard shortcut is `Command+Shift+M` (mac) or `Control+Shift+M` (pc). You don't have to load the magrittr package to use it since dplyr imports its functionality when you load the dplyr package. 
 
@@ -95,7 +95,7 @@ The dplyr package gives you a handful of useful **verbs** for managing data. On 
 
 They all take a data frame or tibble as their input for the first argument, and they all return a data frame or tibble as output.
 
-### filter()
+### filter() {#filter}
 
 If you want to filter **rows** of the data where some condition is true, use the `filter()` function. 
 
