@@ -1,1 +1,1 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/ for how to compile this example.
+This is the repository housing all content for the UVA Health Sciences Library Workshops page. You can see the **rendered website** at https://hsl-workshops.netlify.com/
