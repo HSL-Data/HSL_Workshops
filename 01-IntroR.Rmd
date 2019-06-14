@@ -561,7 +561,7 @@ The structure tells us that gm is a dataframe object and it specifies the dimens
 - `pop` is an integer variable. The first 10 values of the variable are listed
 - `gdpPercap` is a numeric variable. The first 5 values of the variable are listed
 
-## Accessing variables & subsetting data frames
+## Accessing variables
 
 Notice in the `str()` output that there is a `$` in front of each of the variable names. That symbol is how we access invidual variables / columns / vectors from a dataframe object
 
