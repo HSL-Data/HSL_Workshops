@@ -148,7 +148,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.13" data-path="Intro.html"><a href="Intro.html#dataframes"><i class="fa fa-check"></i><b>1.13</b> DataFrames</a></li>
 <li class="chapter" data-level="1.14" data-path="Intro.html"><a href="Intro.html#the-gapminder-data"><i class="fa fa-check"></i><b>1.14</b> The Gapminder data</a></li>
 <li class="chapter" data-level="1.15" data-path="Intro.html"><a href="Intro.html#inspecting-dataframes"><i class="fa fa-check"></i><b>1.15</b> Inspecting Dataframes</a></li>
-<li class="chapter" data-level="1.16" data-path="Intro.html"><a href="Intro.html#accessing-variables-subsetting-data-frames"><i class="fa fa-check"></i><b>1.16</b> Accessing variables &amp; subsetting data frames</a></li>
+<li class="chapter" data-level="1.16" data-path="Intro.html"><a href="Intro.html#accessing-variables"><i class="fa fa-check"></i><b>1.16</b> Accessing variables</a></li>
 <li class="chapter" data-level="1.17" data-path="Intro.html"><a href="Intro.html#exercise-1.3"><i class="fa fa-check"></i><b>1.17</b> EXERCISE 1.3</a></li>
 <li class="chapter" data-level="1.18" data-path="Intro.html"><a href="Intro.html#subsetting-a-dataframe"><i class="fa fa-check"></i><b>1.18</b> Subsetting a dataframe</a></li>
 <li class="chapter" data-level="1.19" data-path="Intro.html"><a href="Intro.html#exercise-1.4"><i class="fa fa-check"></i><b>1.19</b> EXERCISE 1.4</a></li>
@@ -157,51 +157,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.22" data-path="Intro.html"><a href="Intro.html#write-csv-file"><i class="fa fa-check"></i><b>1.22</b> Write csv file</a></li>
 <li class="chapter" data-level="1.23" data-path="Intro.html"><a href="Intro.html#saving-your-work-and-quitting-r"><i class="fa fa-check"></i><b>1.23</b> Saving your work and quitting R</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="taming-wild-data.html"><a href="taming-wild-data.html"><i class="fa fa-check"></i><b>2</b> Taming Wild Data</a><ul>
-<li class="chapter" data-level="2.0.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#our-data"><i class="fa fa-check"></i><b>2.0.1</b> Our data</a></li>
-<li class="chapter" data-level="2.0.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#set-up-project-download-data"><i class="fa fa-check"></i><b>2.0.2</b> Set up project &amp; Download data</a></li>
-<li class="chapter" data-level="2.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#tibble"><i class="fa fa-check"></i><b>2.1</b> Tibbles v. dataframe</a></li>
-<li class="chapter" data-level="2.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#pipe"><i class="fa fa-check"></i><b>2.2</b> The pipe: <strong>%&gt;%</strong></a></li>
-<li class="chapter" data-level="2.3" data-path="taming-wild-data.html"><a href="taming-wild-data.html#the-dplyr-package"><i class="fa fa-check"></i><b>2.3</b> The dplyr package</a><ul>
-<li class="chapter" data-level="2.3.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#filter"><i class="fa fa-check"></i><b>2.3.1</b> filter()</a></li>
-<li class="chapter" data-level="2.3.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#select"><i class="fa fa-check"></i><b>2.3.2</b> select()</a></li>
-<li class="chapter" data-level="2.3.3" data-path="taming-wild-data.html"><a href="taming-wild-data.html#dplyr-in-action"><i class="fa fa-check"></i><b>2.3.3</b> dplyr in action</a></li>
+<li class="chapter" data-level="2" data-path="manipulating-data.html"><a href="manipulating-data.html"><i class="fa fa-check"></i><b>2</b> Manipulating Data</a><ul>
+<li class="chapter" data-level="2.1" data-path="manipulating-data.html"><a href="manipulating-data.html#r-packages"><i class="fa fa-check"></i><b>2.1</b> R Packages</a></li>
+<li class="chapter" data-level="2.2" data-path="manipulating-data.html"><a href="manipulating-data.html#read-in-data"><i class="fa fa-check"></i><b>2.2</b> Read in data</a></li>
+<li class="chapter" data-level="2.3" data-path="manipulating-data.html"><a href="manipulating-data.html#review"><i class="fa fa-check"></i><b>2.3</b> Review</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="manipulating-data.html"><a href="manipulating-data.html#our-data"><i class="fa fa-check"></i><b>2.3.1</b> Our data</a></li>
+<li class="chapter" data-level="2.3.2" data-path="manipulating-data.html"><a href="manipulating-data.html#reading-in-data"><i class="fa fa-check"></i><b>2.3.2</b> Reading in data</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-1"><i class="fa fa-check"></i><b>2.4</b> EXERCISE 1</a></li>
-<li class="chapter" data-level="2.5" data-path="taming-wild-data.html"><a href="taming-wild-data.html#separate"><i class="fa fa-check"></i><b>2.5</b> Separate</a></li>
-<li class="chapter" data-level="2.6" data-path="taming-wild-data.html"><a href="taming-wild-data.html#resources-for-regular-expressions"><i class="fa fa-check"></i><b>2.6</b> Resources for Regular Expressions</a></li>
-<li class="chapter" data-level="2.7" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-2"><i class="fa fa-check"></i><b>2.7</b> EXERCISE 2</a><ul>
-<li class="chapter" data-level="2.7.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#merge-gene-ontologies"><i class="fa fa-check"></i><b>2.7.1</b> Merge Gene Ontologies</a></li>
-<li class="chapter" data-level="2.7.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#fix-nutrient-names"><i class="fa fa-check"></i><b>2.7.2</b> Fix Nutrient names</a></li>
+<li class="chapter" data-level="2.4" data-path="manipulating-data.html"><a href="manipulating-data.html#the-dplyr-package"><i class="fa fa-check"></i><b>2.4</b> The dplyr package</a></li>
+<li class="chapter" data-level="2.5" data-path="manipulating-data.html"><a href="manipulating-data.html#dplyr-verbs"><i class="fa fa-check"></i><b>2.5</b> dplyr verbs</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="manipulating-data.html"><a href="manipulating-data.html#filter"><i class="fa fa-check"></i><b>2.5.1</b> filter()</a></li>
+<li class="chapter" data-level="2.5.2" data-path="manipulating-data.html"><a href="manipulating-data.html#select"><i class="fa fa-check"></i><b>2.5.2</b> select()</a></li>
+<li class="chapter" data-level="2.5.3" data-path="manipulating-data.html"><a href="manipulating-data.html#mutate"><i class="fa fa-check"></i><b>2.5.3</b> mutate()</a></li>
+<li class="chapter" data-level="2.5.4" data-path="manipulating-data.html"><a href="manipulating-data.html#arrange"><i class="fa fa-check"></i><b>2.5.4</b> arrange()</a></li>
+<li class="chapter" data-level="2.5.5" data-path="manipulating-data.html"><a href="manipulating-data.html#summarize"><i class="fa fa-check"></i><b>2.5.5</b> summarize()</a></li>
+<li class="chapter" data-level="2.5.6" data-path="manipulating-data.html"><a href="manipulating-data.html#group_by"><i class="fa fa-check"></i><b>2.5.6</b> group_by()</a></li>
 </ul></li>
-<li class="chapter" data-level="2.8" data-path="taming-wild-data.html"><a href="taming-wild-data.html#break"><i class="fa fa-check"></i><b>2.8</b> Break</a></li>
-<li class="chapter" data-level="2.9" data-path="taming-wild-data.html"><a href="taming-wild-data.html#more-fun-with-dplyr"><i class="fa fa-check"></i><b>2.9</b> More fun with dplyr</a></li>
-<li class="chapter" data-level="2.10" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-3"><i class="fa fa-check"></i><b>2.10</b> EXERCISE 3</a><ul>
-<li class="chapter" data-level="2.10.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#arrange"><i class="fa fa-check"></i><b>2.10.1</b> arrange()</a></li>
+<li class="chapter" data-level="2.6" data-path="manipulating-data.html"><a href="manipulating-data.html#the-pipe"><i class="fa fa-check"></i><b>2.6</b> The pipe: <strong>%&gt;%</strong></a><ul>
+<li class="chapter" data-level="2.6.1" data-path="manipulating-data.html"><a href="manipulating-data.html#how-works"><i class="fa fa-check"></i><b>2.6.1</b> How %&gt;% works</a></li>
+<li class="chapter" data-level="2.6.2" data-path="manipulating-data.html"><a href="manipulating-data.html#nesting-versus"><i class="fa fa-check"></i><b>2.6.2</b> Nesting versus %&gt;%</a></li>
+<li class="chapter" data-level="2.6.3" data-path="manipulating-data.html"><a href="manipulating-data.html#piping-exercises"><i class="fa fa-check"></i><b>2.6.3</b> Piping exercises</a></li>
+<li class="chapter" data-level="2.6.4" data-path="manipulating-data.html"><a href="manipulating-data.html#piping-into-plots"><i class="fa fa-check"></i><b>2.6.4</b> Piping into plots</a></li>
+<li class="chapter" data-level="2.6.5" data-path="manipulating-data.html"><a href="manipulating-data.html#about-ggplot2"><i class="fa fa-check"></i><b>2.6.5</b> About ggplot2</a></li>
+<li class="chapter" data-level="2.6.6" data-path="manipulating-data.html"><a href="manipulating-data.html#continuous-x-by-continuous-y"><i class="fa fa-check"></i><b>2.6.6</b> Continuous X by Continuous Y</a></li>
+<li class="chapter" data-level="2.6.7" data-path="manipulating-data.html"><a href="manipulating-data.html#add-color-by-factorage"><i class="fa fa-check"></i><b>2.6.7</b> Add color by factor(Age)</a></li>
+<li class="chapter" data-level="2.6.8" data-path="manipulating-data.html"><a href="manipulating-data.html#categorical-x-continuous-y-boxplot"><i class="fa fa-check"></i><b>2.6.8</b> Categorical X, Continuous Y –&gt; Boxplot</a></li>
+<li class="chapter" data-level="2.6.9" data-path="manipulating-data.html"><a href="manipulating-data.html#line-plot"><i class="fa fa-check"></i><b>2.6.9</b> Line plot</a></li>
 </ul></li>
-<li class="chapter" data-level="2.11" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-4"><i class="fa fa-check"></i><b>2.11</b> EXERCISE 4</a><ul>
-<li class="chapter" data-level="2.11.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#summarize"><i class="fa fa-check"></i><b>2.11.1</b> summarize()</a></li>
-<li class="chapter" data-level="2.11.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#group_by"><i class="fa fa-check"></i><b>2.11.2</b> group_by()</a></li>
+<li class="chapter" data-level="2.7" data-path="manipulating-data.html"><a href="manipulating-data.html#resources"><i class="fa fa-check"></i><b>2.7</b> Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="2.12" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-5"><i class="fa fa-check"></i><b>2.12</b> EXERCISE 5</a></li>
-<li class="chapter" data-level="2.13" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-6"><i class="fa fa-check"></i><b>2.13</b> EXERCISE 6</a></li>
+<li class="chapter" data-level="3" data-path="taming-wild-data.html"><a href="taming-wild-data.html"><i class="fa fa-check"></i><b>3</b> Taming Wild Data</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#our-data-1"><i class="fa fa-check"></i><b>3.0.1</b> Our data</a></li>
+<li class="chapter" data-level="3.0.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#set-up-project-download-data"><i class="fa fa-check"></i><b>3.0.2</b> Set up project &amp; Download data</a></li>
+<li class="chapter" data-level="3.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#tibble"><i class="fa fa-check"></i><b>3.1</b> Tibbles v. dataframe</a></li>
+<li class="chapter" data-level="3.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#pipe"><i class="fa fa-check"></i><b>3.2</b> The pipe: <strong>%&gt;%</strong></a></li>
+<li class="chapter" data-level="3.3" data-path="taming-wild-data.html"><a href="taming-wild-data.html#the-dplyr-package-1"><i class="fa fa-check"></i><b>3.3</b> The dplyr package</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="manipulating-data.html"><a href="manipulating-data.html#filter"><i class="fa fa-check"></i><b>3.3.1</b> filter()</a></li>
+<li class="chapter" data-level="3.3.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#select-1"><i class="fa fa-check"></i><b>3.3.2</b> select()</a></li>
+<li class="chapter" data-level="3.3.3" data-path="taming-wild-data.html"><a href="taming-wild-data.html#dplyr-in-action"><i class="fa fa-check"></i><b>3.3.3</b> dplyr in action</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html"><i class="fa fa-check"></i><b>3</b> Data Visualization with ggplot2</a><ul>
-<li class="chapter" data-level="3.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#resources-to-learn-ggplot2"><i class="fa fa-check"></i><b>3.1</b> Resources to learn ggplot2</a></li>
-<li class="chapter" data-level="3.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#make-sure-everyone-has-tidyverse-or-readr-dplyr-ggplot2"><i class="fa fa-check"></i><b>3.2</b> Make sure everyone has tidyverse or readr, dplyr, ggplot2</a></li>
-<li class="chapter" data-level="3.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#download-data-and-make-a-new-project"><i class="fa fa-check"></i><b>3.3</b> Download data and make a new project</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#gapminder-data"><i class="fa fa-check"></i><b>3.3.1</b> Gapminder data</a></li>
-<li class="chapter" data-level="3.3.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#dplyr-review"><i class="fa fa-check"></i><b>3.3.2</b> dplyr review</a></li>
+<li class="chapter" data-level="3.4" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-1"><i class="fa fa-check"></i><b>3.4</b> EXERCISE 1</a></li>
+<li class="chapter" data-level="3.5" data-path="taming-wild-data.html"><a href="taming-wild-data.html#separate"><i class="fa fa-check"></i><b>3.5</b> Separate</a></li>
+<li class="chapter" data-level="3.6" data-path="taming-wild-data.html"><a href="taming-wild-data.html#resources-for-regular-expressions"><i class="fa fa-check"></i><b>3.6</b> Resources for Regular Expressions</a></li>
+<li class="chapter" data-level="3.7" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-2"><i class="fa fa-check"></i><b>3.7</b> EXERCISE 2</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#merge-gene-ontologies"><i class="fa fa-check"></i><b>3.7.1</b> Merge Gene Ontologies</a></li>
+<li class="chapter" data-level="3.7.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#fix-nutrient-names"><i class="fa fa-check"></i><b>3.7.2</b> Fix Nutrient names</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#ggplot"><i class="fa fa-check"></i><b>3.4</b> About ggplot2</a></li>
-<li class="chapter" data-level="3.5" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-continuous-x"><i class="fa fa-check"></i><b>3.5</b> Plotting bivariate data: continuous Y by continuous X</a><ul>
-<li class="chapter" data-level="3.5.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#adding-layers"><i class="fa fa-check"></i><b>3.5.1</b> Adding layers</a></li>
-<li class="chapter" data-level="3.5.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#faceting"><i class="fa fa-check"></i><b>3.5.2</b> Faceting</a></li>
-<li class="chapter" data-level="3.5.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#saving-plots"><i class="fa fa-check"></i><b>3.5.3</b> Saving plots</a></li>
+<li class="chapter" data-level="3.8" data-path="taming-wild-data.html"><a href="taming-wild-data.html#break"><i class="fa fa-check"></i><b>3.8</b> Break</a></li>
+<li class="chapter" data-level="3.9" data-path="taming-wild-data.html"><a href="taming-wild-data.html#more-fun-with-dplyr"><i class="fa fa-check"></i><b>3.9</b> More fun with dplyr</a></li>
+<li class="chapter" data-level="3.10" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-3"><i class="fa fa-check"></i><b>3.10</b> EXERCISE 3</a><ul>
+<li class="chapter" data-level="3.10.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#arrange-1"><i class="fa fa-check"></i><b>3.10.1</b> arrange()</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-categorical-x"><i class="fa fa-check"></i><b>3.6</b> Plotting bivariate data: continuous Y by categorical X</a></li>
-<li class="chapter" data-level="3.7" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-univariate-continuous-data"><i class="fa fa-check"></i><b>3.7</b> Plotting univariate continuous data</a></li>
-<li class="chapter" data-level="3.8" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#publication-ready-plots-themes"><i class="fa fa-check"></i><b>3.8</b> Publication-ready plots &amp; themes</a></li>
+<li class="chapter" data-level="3.11" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-4"><i class="fa fa-check"></i><b>3.11</b> EXERCISE 4</a><ul>
+<li class="chapter" data-level="3.11.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#summarize-1"><i class="fa fa-check"></i><b>3.11.1</b> summarize()</a></li>
+<li class="chapter" data-level="3.11.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#group_by-1"><i class="fa fa-check"></i><b>3.11.2</b> group_by()</a></li>
+</ul></li>
+<li class="chapter" data-level="3.12" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-5"><i class="fa fa-check"></i><b>3.12</b> EXERCISE 5</a></li>
+<li class="chapter" data-level="3.13" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-6"><i class="fa fa-check"></i><b>3.13</b> EXERCISE 6</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html"><i class="fa fa-check"></i><b>4</b> Data Visualization with ggplot2</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#resources-to-learn-ggplot2"><i class="fa fa-check"></i><b>4.1</b> Resources to learn ggplot2</a></li>
+<li class="chapter" data-level="4.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#make-sure-everyone-has-tidyverse-or-readr-dplyr-ggplot2"><i class="fa fa-check"></i><b>4.2</b> Make sure everyone has tidyverse or readr, dplyr, ggplot2</a></li>
+<li class="chapter" data-level="4.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#download-data-and-make-a-new-project"><i class="fa fa-check"></i><b>4.3</b> Download data and make a new project</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#gapminder-data"><i class="fa fa-check"></i><b>4.3.1</b> Gapminder data</a></li>
+<li class="chapter" data-level="4.3.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#dplyr-review"><i class="fa fa-check"></i><b>4.3.2</b> dplyr review</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#ggplot"><i class="fa fa-check"></i><b>4.4</b> About ggplot2</a></li>
+<li class="chapter" data-level="4.5" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-continuous-x"><i class="fa fa-check"></i><b>4.5</b> Plotting bivariate data: continuous Y by continuous X</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#adding-layers"><i class="fa fa-check"></i><b>4.5.1</b> Adding layers</a></li>
+<li class="chapter" data-level="4.5.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#faceting"><i class="fa fa-check"></i><b>4.5.2</b> Faceting</a></li>
+<li class="chapter" data-level="4.5.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#saving-plots"><i class="fa fa-check"></i><b>4.5.3</b> Saving plots</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-categorical-x"><i class="fa fa-check"></i><b>4.6</b> Plotting bivariate data: continuous Y by categorical X</a></li>
+<li class="chapter" data-level="4.7" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-univariate-continuous-data"><i class="fa fa-check"></i><b>4.7</b> Plotting univariate continuous data</a></li>
+<li class="chapter" data-level="4.8" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#publication-ready-plots-themes"><i class="fa fa-check"></i><b>4.8</b> Publication-ready plots &amp; themes</a></li>
 </ul></li>
 </ul>
 
@@ -223,7 +252,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">UVA Health Sciences Library Workshops</h1>
 <p class="author"><em>Data Services @ HSL</em></p>
-<p class="date"><em>last updated 2019-05-29</em></p>
+<p class="date"><em>last updated 2019-06-14</em></p>
 </div>
 <div id="welcome" class="section level1 unnumbered">
 <h1>Welcome</h1>
