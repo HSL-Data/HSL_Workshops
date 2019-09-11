@@ -37,9 +37,12 @@ Great! Now you will see four panes
     - **Help** shows information about functions.
     - Viewer for viewing other kinds of output, like web content.
 
-To change your preferences for the pane layout go to Tools --> Global Options --> Pane Layout. The Global Options menu is also where you can change the font size, background color, and other useful preferences.
+### RStudio Global Options
 
-There is one preference that we recommend you change right now. That is the _soft wrap_ feature that will wrap long lines of code or comments onto several lines so that you do not need to scroll right to see the whole code or sentence. Go to Tools --> Global Options --> Code and click the box next to _Soft Wrap R Source files_
+- There is one set-up preference that I think everyone will prefer. Go to Tools --> Global Options
+
+![In the Code menu check the box for "Soft-wrap R source files"](images/softwrap_code.png){width = 400px}
+This wraps long lines of code on to the next line automatically so that you do not have to scroll left and right to see a long line of code.
 
 # Set up an R Project
 
@@ -65,13 +68,13 @@ Move the dataset to your IntroR directory in a subfolder called **data**.
 
 ![File structure](images/filestructure.png){width=450px}
 
-Now that we have a project directory and the dataset inside that project directory, let's open up a new script and begin coding! Go to File --> New --> New R Script
-
-Code that you type into the console is code that R executes. From here forward we will use the editor window to write a script that we can save to a file and run it again whenever we want to. We usually give it a `.R` extension, but it's just a plain text file so it can be opened by any text editor program. 
+Now that we have a project directory and the dataset inside that project directory, make a new R script by going to File --> New File --> R Script. Now you too have the 4 pane layout.
 
 # R as a calculator
 
-R can be used as a calculator. Make sure you're typing into into the editor, not the console. Use the run button in the top right of the script to run the code.
+R can be used as a calculator. Make sure you're typing into into the editor. Do not code in the console because this work will not be saved. 
+
+Use the Run button on the top of the script pane to run the code.
 
 ```{r calculator}
 2 + 2
@@ -84,7 +87,7 @@ Notice the output in the console that tells us the code we wrote and the answer.
 2 ^3
 ```
 
-Instead of using the Run button to run code, let's try the keyboard shortcut to run code. To send code from the editor to the console, use `CMD`+`Enter` (Mac) or `Ctrl`+`Enter` (Windows). This is **way** faster than using your mouse to hit the Run button each time.
+Instead of using the Run button to run code, let's try the keyboard shortcut to run code. To send code from the editor to the console, place your cursor on a line of code and use `CMD`+`Enter` (Mac) or `Ctrl`+`Enter` (Windows). This is **way** faster than using your mouse to hit the Run button each time.
 
 Go back to your code above and run them using the keyboard. We can also run multiple lines of code at once. Now highlight 2 lines of code and run them together.
 
@@ -101,7 +104,7 @@ R also knows order of operations and scientific notation.
 
 Anything after a `#` sign is a comment, meaning it will not be executed as code. Use them liberally to *comment about what you are doing and why*. 
 
-Today, you can take notes about what you are learning as comments in your script.
+Today, you can take notes about what you are learning as comments.
 
 Comments are a big part of making your work reproducible for others and for your future self when you open this script a few months from now and need to remember what you were doing.
 

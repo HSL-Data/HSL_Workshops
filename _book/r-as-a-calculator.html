@@ -133,7 +133,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>I Core Lessons</b></span></li>
 <li class="chapter" data-level="1" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to R and RStudio</a><ul>
-<li class="chapter" data-level="1.1" data-path="Intro.html"><a href="Intro.html#panes-in-rstudio"><i class="fa fa-check"></i><b>1.1</b> Panes in RStudio</a></li>
+<li class="chapter" data-level="1.1" data-path="Intro.html"><a href="Intro.html#panes-in-rstudio"><i class="fa fa-check"></i><b>1.1</b> Panes in RStudio</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="Intro.html"><a href="Intro.html#rstudio-global-options"><i class="fa fa-check"></i><b>1.1.1</b> RStudio Global Options</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="set-up-an-r-project.html"><a href="set-up-an-r-project.html"><i class="fa fa-check"></i><b>2</b> Set up an R Project</a><ul>
 <li class="chapter" data-level="2.1" data-path="set-up-an-r-project.html"><a href="set-up-an-r-project.html#download-learning-materials"><i class="fa fa-check"></i><b>2.1</b> Download learning materials</a></li>
@@ -257,7 +259,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="r-as-a-calculator" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> R as a calculator</h1>
-<p>R can be used as a calculator. Make sure you’re typing into into the editor, not the console. Use the run button in the top right of the script to run the code.</p>
+<p>R can be used as a calculator. Make sure you’re typing into into the editor. Do not code in the console because this work will not be saved.</p>
+<p>Use the Run button on the top of the script pane to run the code.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span></code></pre>
 <pre><code>## [1] 4</code></pre>
 <p>Notice the output in the console that tells us the code we wrote and the answer. Let’s try some others.</p>
@@ -265,7 +268,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] 20</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span> <span class="op">^</span><span class="dv">3</span></code></pre>
 <pre><code>## [1] 8</code></pre>
-<p>Instead of using the Run button to run code, let’s try the keyboard shortcut to run code. To send code from the editor to the console, use <code>CMD</code>+<code>Enter</code> (Mac) or <code>Ctrl</code>+<code>Enter</code> (Windows). This is <strong>way</strong> faster than using your mouse to hit the Run button each time.</p>
+<p>Instead of using the Run button to run code, let’s try the keyboard shortcut to run code. To send code from the editor to the console, place your cursor on a line of code and use <code>CMD</code>+<code>Enter</code> (Mac) or <code>Ctrl</code>+<code>Enter</code> (Windows). This is <strong>way</strong> faster than using your mouse to hit the Run button each time.</p>
 <p>Go back to your code above and run them using the keyboard. We can also run multiple lines of code at once. Now highlight 2 lines of code and run them together.</p>
 <p>R also knows order of operations and scientific notation.</p>
 <pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span>)<span class="op">^</span><span class="dv">2</span></code></pre>
@@ -277,7 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="comments" class="section level2">
 <h2><span class="header-section-number">3.1</span> Comments</h2>
 <p>Anything after a <code>#</code> sign is a comment, meaning it will not be executed as code. Use them liberally to <em>comment about what you are doing and why</em>.</p>
-<p>Today, you can take notes about what you are learning as comments in your script.</p>
+<p>Today, you can take notes about what you are learning as comments.</p>
 <p>Comments are a big part of making your work reproducible for others and for your future self when you open this script a few months from now and need to remember what you were doing.</p>
 <p>Commenting is also helpful when you’re testing things out during your analysis so that you can ‘turn off’ parts of your script.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Here is a comment</span>

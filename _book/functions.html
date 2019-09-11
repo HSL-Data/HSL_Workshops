@@ -133,7 +133,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>I Core Lessons</b></span></li>
 <li class="chapter" data-level="1" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to R and RStudio</a><ul>
-<li class="chapter" data-level="1.1" data-path="Intro.html"><a href="Intro.html#panes-in-rstudio"><i class="fa fa-check"></i><b>1.1</b> Panes in RStudio</a></li>
+<li class="chapter" data-level="1.1" data-path="Intro.html"><a href="Intro.html#panes-in-rstudio"><i class="fa fa-check"></i><b>1.1</b> Panes in RStudio</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="Intro.html"><a href="Intro.html#rstudio-global-options"><i class="fa fa-check"></i><b>1.1.1</b> RStudio Global Options</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="set-up-an-r-project.html"><a href="set-up-an-r-project.html"><i class="fa fa-check"></i><b>2</b> Set up an R Project</a><ul>
 <li class="chapter" data-level="2.1" data-path="set-up-an-r-project.html"><a href="set-up-an-r-project.html#download-learning-materials"><i class="fa fa-check"></i><b>2.1</b> Download learning materials</a></li>
@@ -271,24 +273,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><code>rnorm()</code> generates random values from the normal distribution. We must supply the n argument since there is no default value, but there is a default value set for the mean and sd arguments.</p>
 <p>First we’ll allow the default mean and sd.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">10</span>)</code></pre>
-<pre><code>##  [1]  1.80689156 -1.20878810  0.94525065 -0.74679769  1.34808356
-##  [6] -0.04047414  1.00950892 -0.75103183 -1.31796644 -0.78259183</code></pre>
+<pre><code>##  [1] -1.1019347  1.5083651  0.6026967  1.7705683  0.2636808  1.3759632
+##  [7] -0.1818788  0.5114971  1.1734069 -0.8424678</code></pre>
 <p>The above code drew 10 random draws from a normal distribution with a mean = 0 and an sd = 1</p>
 <p>Now let’s set the n = 10, mean = 50, and the sd = 5 to see 10 random draws from a normal distribution with a mean = 50 and an sd = 5</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">10</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">5</span>)</code></pre>
-<pre><code>##  [1] 47.50608 51.95545 42.24186 49.26525 52.18597 50.21288 51.56403
-##  [8] 42.36591 46.22878 44.76348</code></pre>
+<pre><code>##  [1] 47.75620 46.93819 43.06416 55.88560 51.46370 50.28837 42.25489
+##  [8] 56.33263 39.44121 44.13649</code></pre>
 <p>What happens if we do not specify n? Uncomment the code below (remove the #) to see what happens</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># rnorm(mean = 50, sd = 5)</span></code></pre>
 <p>In the above examples, we have labeled our arguments according to their names in the help menu. If you do not label the arguments, they will be called into the function in the order given in the help menu.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># must be in order given by help menu to work as intended</span>
 <span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">50</span>, <span class="dv">5</span>)</code></pre>
-<pre><code>##  [1] 54.03380 54.80480 44.92825 45.01574 57.53483 43.54141 43.56855
-##  [8] 55.25117 59.37521 49.18938</code></pre>
+<pre><code>##  [1] 60.71525 45.59140 49.21225 59.00654 50.72007 50.34766 48.86142
+##  [8] 46.96959 55.32773 52.55015</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#out of order, but works bc the arguments are labeled</span>
 <span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">5</span>, <span class="dt">mean =</span> <span class="dv">50</span>)</code></pre>
-<pre><code>##  [1] 49.08662 52.42901 53.08194 54.80348 52.25205 59.18944 53.33668
-##  [8] 53.66822 43.55938 45.83531</code></pre>
+<pre><code>##  [1] 38.95088 49.96575 48.85896 48.17499 50.70473 51.35249 45.74921
+##  [8] 57.33058 52.85509 44.97675</code></pre>
 <p>To improve readability (and accuracy) of your code, we would recommend labeling your arguments.</p>
 <div id="exercise-1.2" class="section level2">
 <h2><span class="header-section-number">4.1</span> EXERCISE 1.2</h2>
@@ -297,21 +299,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><summary>SHOW ANSWER A</summary></p>
 <pre class="sourceCode r"><code class="sourceCode r">object2 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">500</span>, <span class="dt">sd =</span> <span class="dv">100</span>)
 object2</code></pre>
-<pre><code>##   [1] 721.0569 548.7102 645.9001 425.5964 313.4397 566.9807 335.4301
-##   [8] 616.4563 539.7760 362.7848 532.2488 536.8846 460.0913 363.3268
-##  [15] 617.8032 459.0271 646.8791 519.0970 522.3046 260.9575 363.9171
-##  [22] 404.7395 363.6006 599.5324 357.6666 410.8979 546.2907 425.5127
-##  [29] 447.5486 454.1409 606.0926 444.8256 688.3315 593.7913 625.4745
-##  [36] 500.3224 515.4030 638.7853 569.7683 568.5378 555.5969 483.0836
-##  [43] 358.4098 621.1804 713.0971 453.1833 437.9464 552.3270 444.9826
-##  [50] 427.7332 477.0173 426.2059 609.9976 624.8568 526.6667 592.8202
-##  [57] 420.1135 429.6814 643.5315 490.8097 416.3517 620.1149 542.3416
-##  [64] 427.4146 400.5146 449.7942 461.7313 398.5520 538.6983 626.4527
-##  [71] 668.3099 525.8779 480.8667 483.4736 400.6631 592.6091 516.0319
-##  [78] 534.8286 299.4559 722.2990 350.9921 452.2466 400.2432 575.4550
-##  [85] 487.3226 568.8619 539.1984 331.5878 454.1787 440.6755 407.8297
-##  [92] 576.5782 351.1078 511.9216 373.9004 663.3439 544.2005 451.4592
-##  [99] 453.9976 420.1968</code></pre>
+<pre><code>##   [1] 487.3341 436.7753 496.1692 480.4509 591.2594 471.9330 507.5948
+##   [8] 690.5212 802.2308 544.3424 325.0499 429.2252 567.6059 521.5494
+##  [15] 458.7580 675.7245 422.9647 499.0978 604.2449 378.3480 527.7698
+##  [22] 497.1339 368.9970 549.7994 620.8479 483.4928 419.0279 466.1216
+##  [29] 300.7496 716.7238 340.6473 698.3077 544.5966 369.7362 377.2570
+##  [36] 305.0857 521.4332 521.6384 541.4597 518.2610 451.8223 438.4004
+##  [43] 512.9385 507.0714 341.7462 572.1063 554.2602 377.4713 572.6407
+##  [50] 404.8291 490.1442 584.3377 434.4625 519.9813 298.7604 505.3211
+##  [57] 423.3304 373.1699 387.0004 540.8580 506.8235 445.3193 498.5322
+##  [64] 661.7971 563.6378 466.8516 511.8822 512.7481 716.2833 436.4540
+##  [71] 483.0014 512.3631 497.8698 640.3359 289.6629 259.1567 394.0671
+##  [78] 521.8603 452.9092 542.5643 462.6475 576.5411 516.6631 636.9124
+##  [85] 557.0978 581.5022 643.4351 525.9568 613.8003 530.3129 351.4208
+##  [92] 448.1110 584.5196 525.1886 491.9120 498.8125 625.4592 400.5805
+##  [99] 470.6656 540.5932</code></pre>
 </details>
 <p>B. Call <code>hist(object2)</code> to create a histogram of your normal distribution</p>
 <details>
