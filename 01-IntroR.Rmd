@@ -2,7 +2,7 @@
 
 # Introduction to R and RStudio {#Intro}
 
-R is the underlying statistical computing environment. You can think of this like the engine of a car. That makes RStudio like the dashboard.
+R is the underlying statistical computing environment. You can think of this like the engine of a car. That makes RStudio like the dashboard^[Credit to [Modern Dive](https://moderndive.com/) for the R and RStudio analogies].
 
 ![R is the engine](images/engine.jpg){width=250px} ![RStudio is the dashboard](images/dashboard.jpg){width=250px}
 
@@ -22,7 +22,7 @@ Great! Now you will see four panes
     - Environment/history on the top right
     - Plots/help on the bottom right
     
-![Four pane layout in RStudio](images/RStudioPanes.png){width=600px}
+![Four pane layout in RStudio](images/RStudioPanes_labeled.png){width=400px}
     
 - On the top left is the script or editor window. This is where we are going to write all of our code.
 
