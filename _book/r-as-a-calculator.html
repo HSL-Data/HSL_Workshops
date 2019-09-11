@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 R as a calculator | UVA Health Sciences Library Workshops</title>
+  <meta name="description" content="This site hosts workshop tutorial materials for researchers in the life sciences at the University of Virginia to learn R skills." />
+  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 R as a calculator | UVA Health Sciences Library Workshops" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://hsl-workshops.netlify.com/" />
+  <meta property="og:image" content="https://hsl-workshops.netlify.com/images/UVA_HSL.png" />
+  <meta property="og:description" content="This site hosts workshop tutorial materials for researchers in the life sciences at the University of Virginia to learn R skills." />
+  <meta name="github-repo" content="HSL-Data/HSL_Workshops" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 R as a calculator | UVA Health Sciences Library Workshops" />
+  
+  <meta name="twitter:description" content="This site hosts workshop tutorial materials for researchers in the life sciences at the University of Virginia to learn R skills." />
+  <meta name="twitter:image" content="https://hsl-workshops.netlify.com/images/UVA_HSL.png" />
+
+<meta name="author" content="Data Services @ HSL" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/UVA_HSL.png" />
+  <link rel="shortcut icon" href="images/UVA_HSL.png" type="image/x-icon" />
+<link rel="prev" href="set-up-an-r-project.html">
+<link rel="next" href="functions.html">
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-instructors"><i class="fa fa-check"></i>About the Instructors</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#david-n-martin-ms"><i class="fa fa-check"></i>David N Martin, MS</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#marieke-k-jones-phd"><i class="fa fa-check"></i>Marieke K Jones, PhD</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Core Lessons</b></span></li>
+<li class="chapter" data-level="1" data-path="Intro.html"><a href="Intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to R and RStudio</a><ul>
+<li class="chapter" data-level="1.1" data-path="Intro.html"><a href="Intro.html#panes-in-rstudio"><i class="fa fa-check"></i><b>1.1</b> Panes in RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="set-up-an-r-project.html"><a href="set-up-an-r-project.html"><i class="fa fa-check"></i><b>2</b> Set up an R Project</a><ul>
+<li class="chapter" data-level="2.1" data-path="set-up-an-r-project.html"><a href="set-up-an-r-project.html#download-learning-materials"><i class="fa fa-check"></i><b>2.1</b> Download learning materials</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-as-a-calculator.html"><a href="r-as-a-calculator.html"><i class="fa fa-check"></i><b>3</b> R as a calculator</a><ul>
+<li class="chapter" data-level="3.1" data-path="r-as-a-calculator.html"><a href="r-as-a-calculator.html#comments"><i class="fa fa-check"></i><b>3.1</b> Comments</a></li>
+<li class="chapter" data-level="3.2" data-path="r-as-a-calculator.html"><a href="r-as-a-calculator.html#creating-r-objects"><i class="fa fa-check"></i><b>3.2</b> Creating R objects</a></li>
+<li class="chapter" data-level="3.3" data-path="r-as-a-calculator.html"><a href="r-as-a-calculator.html#exercise-1.1"><i class="fa fa-check"></i><b>3.3</b> EXERCISE 1.1</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>4</b> Functions</a><ul>
+<li class="chapter" data-level="4.1" data-path="functions.html"><a href="functions.html#exercise-1.2"><i class="fa fa-check"></i><b>4.1</b> EXERCISE 1.2</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="more-functions.html"><a href="more-functions.html"><i class="fa fa-check"></i><b>5</b> More Functions</a><ul>
+<li class="chapter" data-level="5.1" data-path="more-functions.html"><a href="more-functions.html#exercise-1.3"><i class="fa fa-check"></i><b>5.1</b> EXERCISE 1.3</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="dataframes.html"><a href="dataframes.html"><i class="fa fa-check"></i><b>6</b> DataFrames</a></li>
+<li class="chapter" data-level="7" data-path="r-packages.html"><a href="r-packages.html"><i class="fa fa-check"></i><b>7</b> R Packages</a></li>
+<li class="chapter" data-level="8" data-path="inspecting-dataframes.html"><a href="inspecting-dataframes.html"><i class="fa fa-check"></i><b>8</b> Inspecting Dataframes</a></li>
+<li class="chapter" data-level="9" data-path="accessing-variables.html"><a href="accessing-variables.html"><i class="fa fa-check"></i><b>9</b> Accessing variables</a><ul>
+<li class="chapter" data-level="9.1" data-path="accessing-variables.html"><a href="accessing-variables.html#exercise-1.4"><i class="fa fa-check"></i><b>9.1</b> EXERCISE 1.4</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="subset-a-dataframe-using-filter.html"><a href="subset-a-dataframe-using-filter.html"><i class="fa fa-check"></i><b>10</b> Subset a dataframe using filter()</a><ul>
+<li class="chapter" data-level="10.1" data-path="subset-a-dataframe-using-filter.html"><a href="subset-a-dataframe-using-filter.html#exercise-1.5"><i class="fa fa-check"></i><b>10.1</b> EXERCISE 1.5</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="plots-in-base-r.html"><a href="plots-in-base-r.html"><i class="fa fa-check"></i><b>11</b> Plots in base R</a><ul>
+<li class="chapter" data-level="11.1" data-path="plots-in-base-r.html"><a href="plots-in-base-r.html#exercise-1.5-1"><i class="fa fa-check"></i><b>11.1</b> EXERCISE 1.5</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="write-csv-file.html"><a href="write-csv-file.html"><i class="fa fa-check"></i><b>12</b> Write csv file</a></li>
+<li class="chapter" data-level="13" data-path="saving-your-work-and-quitting-r.html"><a href="saving-your-work-and-quitting-r.html"><i class="fa fa-check"></i><b>13</b> Saving your work and quitting R</a></li>
+<li class="chapter" data-level="14" data-path="manipulating-data.html"><a href="manipulating-data.html"><i class="fa fa-check"></i><b>14</b> Manipulating Data</a><ul>
+<li class="chapter" data-level="14.1" data-path="manipulating-data.html"><a href="manipulating-data.html#r-packages-1"><i class="fa fa-check"></i><b>14.1</b> R Packages</a></li>
+<li class="chapter" data-level="14.2" data-path="manipulating-data.html"><a href="manipulating-data.html#read-in-data"><i class="fa fa-check"></i><b>14.2</b> Read in data</a></li>
+<li class="chapter" data-level="14.3" data-path="manipulating-data.html"><a href="manipulating-data.html#review"><i class="fa fa-check"></i><b>14.3</b> Review</a><ul>
+<li class="chapter" data-level="14.3.1" data-path="manipulating-data.html"><a href="manipulating-data.html#our-data"><i class="fa fa-check"></i><b>14.3.1</b> Our data</a></li>
+<li class="chapter" data-level="14.3.2" data-path="manipulating-data.html"><a href="manipulating-data.html#reading-in-data"><i class="fa fa-check"></i><b>14.3.2</b> Reading in data</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="manipulating-data.html"><a href="manipulating-data.html#the-dplyr-package"><i class="fa fa-check"></i><b>14.4</b> The dplyr package</a></li>
+<li class="chapter" data-level="14.5" data-path="manipulating-data.html"><a href="manipulating-data.html#dplyr-verbs"><i class="fa fa-check"></i><b>14.5</b> dplyr verbs</a><ul>
+<li class="chapter" data-level="14.5.1" data-path="manipulating-data.html"><a href="manipulating-data.html#filter"><i class="fa fa-check"></i><b>14.5.1</b> filter()</a></li>
+<li class="chapter" data-level="14.5.2" data-path="manipulating-data.html"><a href="manipulating-data.html#select"><i class="fa fa-check"></i><b>14.5.2</b> select()</a></li>
+<li class="chapter" data-level="14.5.3" data-path="manipulating-data.html"><a href="manipulating-data.html#mutate"><i class="fa fa-check"></i><b>14.5.3</b> mutate()</a></li>
+<li class="chapter" data-level="14.5.4" data-path="manipulating-data.html"><a href="manipulating-data.html#arrange"><i class="fa fa-check"></i><b>14.5.4</b> arrange()</a></li>
+<li class="chapter" data-level="14.5.5" data-path="manipulating-data.html"><a href="manipulating-data.html#summarize"><i class="fa fa-check"></i><b>14.5.5</b> summarize()</a></li>
+<li class="chapter" data-level="14.5.6" data-path="manipulating-data.html"><a href="manipulating-data.html#group_by"><i class="fa fa-check"></i><b>14.5.6</b> group_by()</a></li>
+</ul></li>
+<li class="chapter" data-level="14.6" data-path="manipulating-data.html"><a href="manipulating-data.html#the-pipe"><i class="fa fa-check"></i><b>14.6</b> The pipe: <strong>%&gt;%</strong></a><ul>
+<li class="chapter" data-level="14.6.1" data-path="manipulating-data.html"><a href="manipulating-data.html#how-works"><i class="fa fa-check"></i><b>14.6.1</b> How %&gt;% works</a></li>
+<li class="chapter" data-level="14.6.2" data-path="manipulating-data.html"><a href="manipulating-data.html#nesting-versus"><i class="fa fa-check"></i><b>14.6.2</b> Nesting versus %&gt;%</a></li>
+<li class="chapter" data-level="14.6.3" data-path="manipulating-data.html"><a href="manipulating-data.html#piping-exercises"><i class="fa fa-check"></i><b>14.6.3</b> Piping exercises</a></li>
+<li class="chapter" data-level="14.6.4" data-path="manipulating-data.html"><a href="manipulating-data.html#piping-into-plots"><i class="fa fa-check"></i><b>14.6.4</b> Piping into plots</a></li>
+<li class="chapter" data-level="14.6.5" data-path="manipulating-data.html"><a href="manipulating-data.html#about-ggplot2"><i class="fa fa-check"></i><b>14.6.5</b> About ggplot2</a></li>
+<li class="chapter" data-level="14.6.6" data-path="manipulating-data.html"><a href="manipulating-data.html#continuous-x-by-continuous-y"><i class="fa fa-check"></i><b>14.6.6</b> Continuous X by Continuous Y</a></li>
+<li class="chapter" data-level="14.6.7" data-path="manipulating-data.html"><a href="manipulating-data.html#add-color-by-factorage"><i class="fa fa-check"></i><b>14.6.7</b> Add color by factor(Age)</a></li>
+<li class="chapter" data-level="14.6.8" data-path="manipulating-data.html"><a href="manipulating-data.html#categorical-x-continuous-y-boxplot"><i class="fa fa-check"></i><b>14.6.8</b> Categorical X, Continuous Y –&gt; Boxplot</a></li>
+<li class="chapter" data-level="14.6.9" data-path="manipulating-data.html"><a href="manipulating-data.html#line-plot"><i class="fa fa-check"></i><b>14.6.9</b> Line plot</a></li>
+</ul></li>
+<li class="chapter" data-level="14.7" data-path="manipulating-data.html"><a href="manipulating-data.html#resources"><i class="fa fa-check"></i><b>14.7</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="taming-wild-data.html"><a href="taming-wild-data.html"><i class="fa fa-check"></i><b>15</b> Taming Wild Data</a><ul>
+<li class="chapter" data-level="15.0.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#our-data-1"><i class="fa fa-check"></i><b>15.0.1</b> Our data</a></li>
+<li class="chapter" data-level="15.0.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#set-up-project-download-data"><i class="fa fa-check"></i><b>15.0.2</b> Set up project &amp; Download data</a></li>
+<li class="chapter" data-level="15.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#tibble"><i class="fa fa-check"></i><b>15.1</b> Tibbles v. dataframe</a></li>
+<li class="chapter" data-level="15.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#pipe"><i class="fa fa-check"></i><b>15.2</b> The pipe: <strong>%&gt;%</strong></a></li>
+<li class="chapter" data-level="15.3" data-path="taming-wild-data.html"><a href="taming-wild-data.html#the-dplyr-package-1"><i class="fa fa-check"></i><b>15.3</b> The dplyr package</a><ul>
+<li class="chapter" data-level="15.3.1" data-path="manipulating-data.html"><a href="manipulating-data.html#filter"><i class="fa fa-check"></i><b>15.3.1</b> filter()</a></li>
+<li class="chapter" data-level="15.3.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#select-1"><i class="fa fa-check"></i><b>15.3.2</b> select()</a></li>
+<li class="chapter" data-level="15.3.3" data-path="taming-wild-data.html"><a href="taming-wild-data.html#dplyr-in-action"><i class="fa fa-check"></i><b>15.3.3</b> dplyr in action</a></li>
+</ul></li>
+<li class="chapter" data-level="15.4" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-1"><i class="fa fa-check"></i><b>15.4</b> EXERCISE 1</a></li>
+<li class="chapter" data-level="15.5" data-path="taming-wild-data.html"><a href="taming-wild-data.html#separate"><i class="fa fa-check"></i><b>15.5</b> Separate</a></li>
+<li class="chapter" data-level="15.6" data-path="taming-wild-data.html"><a href="taming-wild-data.html#resources-for-regular-expressions"><i class="fa fa-check"></i><b>15.6</b> Resources for Regular Expressions</a></li>
+<li class="chapter" data-level="15.7" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-2"><i class="fa fa-check"></i><b>15.7</b> EXERCISE 2</a><ul>
+<li class="chapter" data-level="15.7.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#merge-gene-ontologies"><i class="fa fa-check"></i><b>15.7.1</b> Merge Gene Ontologies</a></li>
+<li class="chapter" data-level="15.7.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#fix-nutrient-names"><i class="fa fa-check"></i><b>15.7.2</b> Fix Nutrient names</a></li>
+</ul></li>
+<li class="chapter" data-level="15.8" data-path="taming-wild-data.html"><a href="taming-wild-data.html#break"><i class="fa fa-check"></i><b>15.8</b> Break</a></li>
+<li class="chapter" data-level="15.9" data-path="taming-wild-data.html"><a href="taming-wild-data.html#more-fun-with-dplyr"><i class="fa fa-check"></i><b>15.9</b> More fun with dplyr</a></li>
+<li class="chapter" data-level="15.10" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-3"><i class="fa fa-check"></i><b>15.10</b> EXERCISE 3</a><ul>
+<li class="chapter" data-level="15.10.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#arrange-1"><i class="fa fa-check"></i><b>15.10.1</b> arrange()</a></li>
+</ul></li>
+<li class="chapter" data-level="15.11" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-4"><i class="fa fa-check"></i><b>15.11</b> EXERCISE 4</a><ul>
+<li class="chapter" data-level="15.11.1" data-path="taming-wild-data.html"><a href="taming-wild-data.html#summarize-1"><i class="fa fa-check"></i><b>15.11.1</b> summarize()</a></li>
+<li class="chapter" data-level="15.11.2" data-path="taming-wild-data.html"><a href="taming-wild-data.html#group_by-1"><i class="fa fa-check"></i><b>15.11.2</b> group_by()</a></li>
+</ul></li>
+<li class="chapter" data-level="15.12" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-5"><i class="fa fa-check"></i><b>15.12</b> EXERCISE 5</a></li>
+<li class="chapter" data-level="15.13" data-path="taming-wild-data.html"><a href="taming-wild-data.html#exercise-6"><i class="fa fa-check"></i><b>15.13</b> EXERCISE 6</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html"><i class="fa fa-check"></i><b>16</b> Data Visualization with ggplot2</a><ul>
+<li class="chapter" data-level="16.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#resources-to-learn-ggplot2"><i class="fa fa-check"></i><b>16.1</b> Resources to learn ggplot2</a></li>
+<li class="chapter" data-level="16.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#make-sure-everyone-has-tidyverse-or-readr-dplyr-ggplot2"><i class="fa fa-check"></i><b>16.2</b> Make sure everyone has tidyverse or readr, dplyr, ggplot2</a></li>
+<li class="chapter" data-level="16.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#download-data-and-make-a-new-project"><i class="fa fa-check"></i><b>16.3</b> Download data and make a new project</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#gapminder-data"><i class="fa fa-check"></i><b>16.3.1</b> Gapminder data</a></li>
+<li class="chapter" data-level="16.3.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#dplyr-review"><i class="fa fa-check"></i><b>16.3.2</b> dplyr review</a></li>
+</ul></li>
+<li class="chapter" data-level="16.4" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#ggplot"><i class="fa fa-check"></i><b>16.4</b> About ggplot2</a></li>
+<li class="chapter" data-level="16.5" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-continuous-x"><i class="fa fa-check"></i><b>16.5</b> Plotting bivariate data: continuous Y by continuous X</a><ul>
+<li class="chapter" data-level="16.5.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#adding-layers"><i class="fa fa-check"></i><b>16.5.1</b> Adding layers</a></li>
+<li class="chapter" data-level="16.5.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#faceting"><i class="fa fa-check"></i><b>16.5.2</b> Faceting</a></li>
+<li class="chapter" data-level="16.5.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#saving-plots"><i class="fa fa-check"></i><b>16.5.3</b> Saving plots</a></li>
+</ul></li>
+<li class="chapter" data-level="16.6" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-categorical-x"><i class="fa fa-check"></i><b>16.6</b> Plotting bivariate data: continuous Y by categorical X</a></li>
+<li class="chapter" data-level="16.7" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-univariate-continuous-data"><i class="fa fa-check"></i><b>16.7</b> Plotting univariate continuous data</a></li>
+<li class="chapter" data-level="16.8" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#publication-ready-plots-themes"><i class="fa fa-check"></i><b>16.8</b> Publication-ready plots &amp; themes</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">UVA Health Sciences Library Workshops</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-as-a-calculator" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> R as a calculator</h1>
+<p>R can be used as a calculator. Make sure you’re typing into into the editor, not the console. Use the run button in the top right of the script to run the code.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span></code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>Notice the output in the console that tells us the code we wrote and the answer. Let’s try some others.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="dv">4</span></code></pre>
+<pre><code>## [1] 20</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span> <span class="op">^</span><span class="dv">3</span></code></pre>
+<pre><code>## [1] 8</code></pre>
+<p>Instead of using the Run button to run code, let’s try the keyboard shortcut to run code. To send code from the editor to the console, use <code>CMD</code>+<code>Enter</code> (Mac) or <code>Ctrl</code>+<code>Enter</code> (Windows). This is <strong>way</strong> faster than using your mouse to hit the Run button each time.</p>
+<p>Go back to your code above and run them using the keyboard. We can also run multiple lines of code at once. Now highlight 2 lines of code and run them together.</p>
+<p>R also knows order of operations and scientific notation.</p>
+<pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span>)<span class="op">^</span><span class="dv">2</span></code></pre>
+<pre><code>## [1] 64</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span><span class="op">^</span><span class="dv">2</span></code></pre>
+<pre><code>## [1] 14</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="fl">5e4</span></code></pre>
+<pre><code>## [1] 50000</code></pre>
+<div id="comments" class="section level2">
+<h2><span class="header-section-number">3.1</span> Comments</h2>
+<p>Anything after a <code>#</code> sign is a comment, meaning it will not be executed as code. Use them liberally to <em>comment about what you are doing and why</em>.</p>
+<p>Today, you can take notes about what you are learning as comments in your script.</p>
+<p>Comments are a big part of making your work reproducible for others and for your future self when you open this script a few months from now and need to remember what you were doing.</p>
+<p>Commenting is also helpful when you’re testing things out during your analysis so that you can ‘turn off’ parts of your script.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Here is a comment</span>
+<span class="co"># Note that anything after the # is considered a comment</span></code></pre>
+<p>Let’s save our script before we get any further.</p>
+<p>Go up to File –&gt; Save As and let’s go with “intro.R”</p>
+</div>
+<div id="creating-r-objects" class="section level2">
+<h2><span class="header-section-number">3.2</span> Creating R objects</h2>
+<p>Let’s learn to create R objects next. We assign <em>values</em> to <em>objects</em> using the assignment operator “&lt;-”. This arrow is typed with a less than sign followed by a dash. We first name the object on the left and then provide the assignment operator <code>&lt;-</code>, and then the value.</p>
+<p>Let’s create an object called thing1 that takes the value 55.</p>
+<pre class="sourceCode r"><code class="sourceCode r">thing1 &lt;-<span class="st"> </span><span class="dv">55</span></code></pre>
+<p>Look in the Environment pane (top right) to see your new R object!</p>
+<p><code>&lt;-</code> is the assignment operator in R. It assigns values on the right to object names on the left. Think of it like an arrow that points from the value to the object. The <code>&lt;-</code> is mostly similar to <code>=</code> but not always. Learn to use <code>&lt;-</code> as it is good R programming practice. Using <code>=</code> in place of <code>&lt;-</code> can lead to issues down the line. The keyboard shortcut for inserting the <code>&lt;-</code> operator is <code>option + dash</code>(Mac) and <code>Alt + dash</code> (Windows).</p>
+<ul>
+<li>Objects can be given any name such as <code>x</code>, <code>current_temperature</code>, or <code>subject_id</code>, but they may not have a space in the name. You want your object names to be explicit and not too long. They also cannot start with a number (<code>2x</code> is not valid but <code>x2</code> is). R is case sensitive (e.g., <code>thing1</code> is different from <code>Thing1</code>).</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">Thing1 &lt;-<span class="st"> </span><span class="dv">60</span></code></pre>
+<p>Look in the Environment pane to see that there are now 2 different thing1 objects since we used different casing in the spelling of the object names.</p>
+<p>There are some words that should not be used as object names because they represent the names of functions in R. It is best to not use function names as object names since it will be confusing to tell the difference between the object and the function (e.g., <code>c</code>, <code>T</code>, <code>mean</code>, <code>data</code>, <code>df</code>, <code>weights</code>).</p>
+<p>If in doubt, start typing the name and if RStudio suggests something it already knows, then that name is already in use.</p>
+<p>For example, it is perfectly reasonable to think that data is a great name for your dataset but as you start to type it, the autocomplete function in RStudio tells you that <code>data</code> already exists.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>()</code></pre>
+<p>Try to use nouns for object names, and verbs for function names to help yourself remember what each item is.</p>
+<p>When assigning a value to an object, R does not print anything. You can ask to print the value by typing the object name:</p>
+<pre class="sourceCode r"><code class="sourceCode r">thing1</code></pre>
+<pre><code>## [1] 55</code></pre>
+<p>We can overwrite the value of thing1 by re-assigning it</p>
+<pre class="sourceCode r"><code class="sourceCode r">thing1 &lt;-<span class="st"> </span><span class="dv">70</span>
+
+<span class="co">#then call its name to see the object</span>
+thing1</code></pre>
+<pre><code>## [1] 70</code></pre>
+<hr />
+</div>
+<div id="exercise-1.1" class="section level2">
+<h2><span class="header-section-number">3.3</span> EXERCISE 1.1</h2>
+<p>Try these on your own</p>
+<p>A. You have a patient with a height (inches) of 73 and a weight (lbs) of 203. Create r objects labeled ‘height’ and ‘weight’.</p>
+<details>
+<p><summary>SHOW ANSWER A</summary></p>
+<pre class="sourceCode r"><code class="sourceCode r">height &lt;-<span class="st"> </span><span class="dv">73</span>
+weight &lt;-<span class="st"> </span><span class="dv">203</span>
+
+height</code></pre>
+<pre><code>## [1] 73</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">weight</code></pre>
+<pre><code>## [1] 203</code></pre>
+</details>
+<p>B. Convert ‘weight’ to ‘weight_kg’ by dividing by 2.2. Convert ‘height’ to ‘height_m’ by dividing by 39.37</p>
+<details>
+<p><summary>SHOW ANSWER B</summary></p>
+<pre class="sourceCode r"><code class="sourceCode r">weight_kg &lt;-<span class="st"> </span>weight <span class="op">/</span><span class="st"> </span><span class="fl">2.2</span>
+height_m &lt;-<span class="st"> </span>height <span class="op">/</span><span class="st"> </span><span class="fl">39.37</span>
+
+weight_kg</code></pre>
+<pre><code>## [1] 92.27273</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">height_m</code></pre>
+<pre><code>## [1] 1.854204</code></pre>
+</details>
+<p>C. Calculate a new object ‘bmi’ where BMI = weight_kg / (height_m*height_m)</p>
+<details>
+<p><summary>SHOW ANSWER C</summary></p>
+<pre class="sourceCode r"><code class="sourceCode r">bmi &lt;-<span class="st"> </span>weight_kg <span class="op">/</span><span class="st"> </span>(height_m <span class="op">*</span><span class="st"> </span>height_m)
+bmi</code></pre>
+<pre><code>## [1] 26.83851</code></pre>
+</details>
+<hr />
+<p>You can remove objects from the environment using the <code>rm()</code> function. You can do this one at a time or remove several objects at once by separating their names with <code>,</code>. The broom button in the Environment pane will remove all objects from your environment.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(weight, Thing1)
+<span class="co"># Now ask R for weight (uncomment the following line and run it)</span>
+<span class="co"># weight</span>
+<span class="co"># oops! you should get an error because weight no longer exists!</span></code></pre>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="set-up-an-r-project.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

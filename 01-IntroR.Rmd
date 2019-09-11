@@ -652,7 +652,7 @@ filter(gm, country == 'United States')
 
 Now let's return the data that meets multiple criteria at once. We'll use the `&` to combine the year == 1982 and country == "United States" criteria
 
-```{r filter}
+```{r}
 filter(gm, year == 1982 & country == 'United States')
 ```
 
@@ -768,12 +768,12 @@ There are hundreds of plotting parameters you can use to customize your plot's a
 
 ## EXERCISE 1.5
 
-Create a plot to show the relationship between continent and life expectancy. Optional: Add color, axis labels, and a title
+Create a histogram to show the distribution of the gdpPercap variable with 100 breaks. Optional: Add color, axis labels, and a title
 
 <details><summary>SHOW ANSWER</summary>
 
 ```{r}
-plot(gm$continent, gm$lifeExp, pch = 16)
+hist(gm$gdpPercap, breaks = 100)
 ```
 
 </details>
