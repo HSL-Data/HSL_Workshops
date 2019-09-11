@@ -187,7 +187,8 @@ weight
 ```
 
 </details>
-
+<br>
+</br>
 B. Convert 'weight' to 'weight_kg' by dividing by 2.2. Convert 'height' to 'height_m' by dividing by 39.37
 
 <details><summary>SHOW ANSWER B</summary>
@@ -200,8 +201,10 @@ weight_kg
 height_m
 ```
 
-</details>
-
+</details>  
+<br>
+</br>
+  
 C. Calculate a new object 'bmi' where BMI = weight_kg / (height_m*height_m)
 
 <details><summary>SHOW ANSWER C</summary>
@@ -211,7 +214,7 @@ bmi <- weight_kg / (height_m * height_m)
 bmi
 ```
 
-</details>
+</details>  
 
 ----
 
@@ -296,6 +299,8 @@ object2
 ```
 
 </details>
+<br>
+</br>
 
 B. Call `hist(object2)` to create a histogram of your normal distribution
 
@@ -680,6 +685,8 @@ filter(gm, lifeExp > 80)
 ```
 
 </details>
+<br>
+</br>
 
 B. Which countries had a low GDP per capita (< 500) in 2007?
 
@@ -692,6 +699,8 @@ filter(gm, year == 2007 & gdpPercap < 500)
 ```
 
 </details>
+<br>
+</br>
 
 C. Which rows have extremely low GDP per capita (< 300) OR extremely low life expectancy (< 30)?
 
