@@ -8,7 +8,7 @@ R is the underlying statistical computing environment. You can think of this lik
 
 RStudio is an integrated development environment (IDE) that allows us to interact with R. RStudio sits on top of R and makes writing and executing R code a lot easier. We'll be benefiting from many of the added features that come with RStudio and we will point them out as we go.
 
-## Panes in RStudio
+### Panes in RStudio
 
 When you open RStudio, you will have access to R (there is no need to open R directly). 
 
@@ -41,10 +41,10 @@ Great! Now you will see four panes
 
 - There is one set-up preference that I think everyone will prefer. Go to Tools --> Global Options
 
-![In the Code menu check the box for "Soft-wrap R source files"](images/softwrap_code.png){width = 400px}
+![In the Code menu check the box for "Soft-wrap R source files"](images/softwrap_code.png){width=200px}
 This wraps long lines of code on to the next line automatically so that you do not have to scroll left and right to see a long line of code.
 
-# Set up an R Project
+## Set up an R Project
 
 I mentioned previously that RStudio has a lot of pretty handy features. One of those is the project structure
 
@@ -58,7 +58,7 @@ When we start reading in data it will be important that the _code and the data a
 
 Once you have a project set up, when you want to read in dataset _whatever.txt_, you will be able to easily specify the path pointing to _whatever.txt_ rather than having to specify a full path. This is critical for reproducibility, and we'll talk about that more later.
 
-## Download learning materials
+### Download learning materials
 
 To get things arranged for later, please download the dataset we are going to use. Right click --> Save link as to download the file to your computer.
 
@@ -70,7 +70,7 @@ Move the dataset to your IntroR directory in a subfolder called **data**.
 
 Now that we have a project directory and the dataset inside that project directory, make a new R script by going to File --> New File --> R Script. Now you too have the 4 pane layout.
 
-# R as a calculator
+## R as a calculator
 
 R can be used as a calculator. Make sure you're typing into into the editor. Do not code in the console because this work will not be saved. 
 
@@ -100,7 +100,7 @@ R also knows order of operations and scientific notation.
 5e4
 ```
 
-## Comments
+### Comments
 
 Anything after a `#` sign is a comment, meaning it will not be executed as code. Use them liberally to *comment about what you are doing and why*. 
 
@@ -119,7 +119,7 @@ Let's save our script before we get any further.
 
 Go up to File --> Save As and let's go with "intro.R"
 
-## Creating R objects
+### Creating R objects
 
 Let's learn to create R objects next. We assign _values_ to _objects_ using the assignment operator "<-". This arrow is typed with a less than sign followed by a dash. We first name the object on the left and then provide the assignment operator `<-`, and then the value.
 
@@ -170,7 +170,7 @@ thing1
 
 ----
 
-## EXERCISE 1.1
+### EXERCISE 1.1
 
 Try these on your own
 
@@ -224,7 +224,7 @@ rm(weight, Thing1)
 # oops! you should get an error because weight no longer exists!
 ```
 
-# Functions
+## Functions
 
 A function is a verb; it tells R to do something. To call an R function, we call the name of the function followed directly by `()`. The items passed to the function inside the () are called *arguments*. Arguments change the way a function behaves
 
@@ -284,7 +284,7 @@ rnorm(n = 10, sd = 5, mean = 50)
 
 To improve readability (and accuracy) of your code, we would recommend labeling your arguments.
 
-## EXERCISE 1.2
+### EXERCISE 1.2
 
 A. Use the arrow operator to create an object called object2 that stores 100 draws from a normal distribution with mean = 500 and sd = 100.
 
@@ -329,7 +329,7 @@ object4 <- c("Jack", "Leila", "Rohit")
 
 Check out the environment now. Notice that it specifies that object4 is a character (chr) vector
 
-# More Functions
+## More Functions
 
 Let's `sum()` everything in object3
 
@@ -357,7 +357,7 @@ sqrt(object3)
 
 It worked! Most functions in R are **vectorized** meaning that they will work on a vector as well as a single value. This means that in R, we usually do not need to write loops like we would in other languages.
 
-## EXERCISE 1.3
+### EXERCISE 1.3
 
 Try the following functions on object3 and on object4. What do each of the below functions do? Optionally, call up the help menu for these functions to learn more.
 
@@ -397,13 +397,13 @@ str(object4)
 
 </details>
 
-# DataFrames
+## DataFrames
 
 Let's move on to learning about dataframes. There are _lots_ of different basic data structures in R. Besides the dataframe, there are also arrays, lists, matrices, etc. We are going to skip those in favor of spending time learning the data structure you'll probably use most -- the **dataframe**. 
 
 We use dataframes to store _heterogeneous tabular_ data in R: _tabular_, meaning that individuals or observations are typically represented in rows, while variables or features are represented in columns; _heterogeneous_, meaning that columns/features/variables can be different classes (a variable like age, can be numeric, while another, like cause of death, can be a character string). 
 
-# R Packages
+## R Packages
 
 We have the gapminder.csv file into our project directory, but we don't know anything about it yet. Our goal will be to read it into R so we can start exploring it.
 
@@ -469,7 +469,7 @@ The third way to look at a dataframe or tibble is to click on the blue arrow nex
 
 This view enables you to see the variable names and classes while you type code, so this is often what my environment looks like.
 
-# Inspecting Dataframes
+## Inspecting Dataframes
 
 There are several functions that are useful for investigating dataframes. We already saw some of them in the section on Functions above.
 
@@ -523,7 +523,7 @@ str(gm)
 
 The structure tells us that gm is a dataframe and tibble object and it specifies the dimensions. Below that, it also gives us each of the column names with the type of data it contains and the first 4 or 5 values for each column. 
 
-# Accessing variables
+## Accessing variables
 
 Notice in the `str()` output that there is a `$` in front of each of the variable names. That symbol is how we access invidual variables / columns / vectors from a dataframe object
 
@@ -578,7 +578,7 @@ range(gm$lifeExp)
 
 ----
 
-## EXERCISE 1.4
+### EXERCISE 1.4
 
 A. What's the standard deviation of the population variable (hint: get help on the `sd` function with `?sd`)
 B. What's the mean gdpPercap? 
@@ -613,7 +613,7 @@ mean(gm$pop)
 mean(gm$pop, na.rm = TRUE)
 ```
 
-# Subset a dataframe using filter()
+## Subset a dataframe using filter()
 
 Often we want to look at just a subset of the data that meet certain criteria. One really nice way to do this is the `filter()` function from the dplyr package. The dplyr package is one that we loaded when we loaded the tidyverse.
 
@@ -667,7 +667,7 @@ filter(gm, pop > 1e9)
 
 ---
 
-## EXERCISE 1.5
+### EXERCISE 1.5
 
 Use the `filter()` function to return rows matching the given criteria.
 
@@ -705,7 +705,7 @@ filter(gm, gdpPercap < 300 | lifeExp < 30)
 
 ----
 
-# Plots in base R
+## Plots in base R
 
 Plots are a great way to help us explore our dataset to see relationships, investigate interactions, diagnose problems, etc.
 
@@ -769,7 +769,7 @@ There are hundreds of plotting parameters you can use to customize your plot's a
 
 ----
 
-## EXERCISE 1.5
+### EXERCISE 1.5
 
 Create a histogram to show the distribution of the gdpPercap variable with 100 breaks. Optional: Add color, axis labels, and a title
 
@@ -785,7 +785,7 @@ hist(gm$gdpPercap, breaks = 100)
 
 Visualizations are a large part of R's appeal and in our opinion, learning to plot using ggplot2 will serve you well. Therefore, we only cover the very basics of plotting using base R here, and devote more time to a more comprehensive dive into ggplot2 in Chapter 2 /@ref(ggplot2)
 
-# Write csv file
+## Write csv file
 
 We've already seen how to read in data using read_csv(). Now we'll do the opposite. There are going to be some cases when you need to save the data you're working on to open up outside of R.
 
@@ -805,7 +805,7 @@ write_csv(gm97, "gm97.csv")
 
 Where did it go? Let's have a look at the Files pane (bottom right) and there it is. It went into our working directory (project directory) automatically. We don't need to worry about our working directory here because we're using an R project.
 
-# Saving your work and quitting R
+## Saving your work and quitting R
 
 We'll close this chapter with how to save your work. 
 
