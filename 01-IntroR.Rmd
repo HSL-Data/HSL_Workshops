@@ -42,6 +42,8 @@ Great! Now you will see four panes
 - There is one set-up preference that I think everyone will prefer. Go to Tools --> Global Options
 
 ![In the Code menu check the box for "Soft-wrap R source files"](images/softwrap_code.png){width=400px}
+
+
 This wraps long lines of code on to the next line automatically so that you do not have to scroll left and right to see a long line of code.
 
 ## Set up an R Project
