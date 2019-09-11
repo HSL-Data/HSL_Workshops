@@ -41,7 +41,7 @@ Great! Now you will see four panes
 
 - There is one set-up preference that I think everyone will prefer. Go to Tools --> Global Options
 
-![In the Code menu check the box for "Soft-wrap R source files"](images/softwrap_code.png){width=200px}
+![In the Code menu check the box for "Soft-wrap R source files"](images/softwrap_code.png){width=400px}
 This wraps long lines of code on to the next line automatically so that you do not have to scroll left and right to see a long line of code.
 
 ## Set up an R Project
@@ -170,7 +170,7 @@ thing1
 
 ----
 
-### EXERCISE 1.1
+### EXERCISE 1
 
 Try these on your own
 
@@ -287,7 +287,7 @@ rnorm(n = 10, sd = 5, mean = 50)
 
 To improve readability (and accuracy) of your code, we would recommend labeling your arguments.
 
-### EXERCISE 1.2
+### EXERCISE 2
 
 A. Use the arrow operator to create an object called object2 that stores 100 draws from a normal distribution with mean = 500 and sd = 100.
 
@@ -362,7 +362,7 @@ sqrt(object3)
 
 It worked! Most functions in R are **vectorized** meaning that they will work on a vector as well as a single value. This means that in R, we usually do not need to write loops like we would in other languages.
 
-### EXERCISE 1.3
+### EXERCISE 3
 
 Try the following functions on object3 and on object4. What do each of the below functions do? Optionally, call up the help menu for these functions to learn more.
 
@@ -583,7 +583,7 @@ range(gm$lifeExp)
 
 ----
 
-### EXERCISE 1.4
+### EXERCISE 4
 
 A. What's the standard deviation of the population variable (hint: get help on the `sd` function with `?sd`)
 B. What's the mean gdpPercap? 
@@ -778,7 +778,7 @@ There are hundreds of plotting parameters you can use to customize your plot's a
 
 ----
 
-### EXERCISE 1.5
+### EXERCISE 5
 
 Create a histogram to show the distribution of the gdpPercap variable with 100 breaks. Optional: Add color, axis labels, and a title
 
