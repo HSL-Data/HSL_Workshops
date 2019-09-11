@@ -240,8 +240,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>There is one set-up preference that I think everyone will prefer. Go to Tools –&gt; Global Options</li>
 </ul>
-<p><img src="images/softwrap_code.png" alt="In the Code menu check the box for “Soft-wrap R source files”" width="400" />
-This wraps long lines of code on to the next line automatically so that you do not have to scroll left and right to see a long line of code.</p>
+<div class="figure">
+<img src="images/softwrap_code.png" alt="In the Code menu check the box for “Soft-wrap R source files”" width="400" />
+<p class="caption">In the Code menu check the box for “Soft-wrap R source files”</p>
+</div>
+<p>This wraps long lines of code on to the next line automatically so that you do not have to scroll left and right to see a long line of code.</p>
 </div>
 <div id="set-up-an-r-project" class="section level2">
 <h2><span class="header-section-number">1.1</span> Set up an R Project</h2>
@@ -385,24 +388,24 @@ bmi</code></pre>
 <p><code>rnorm()</code> generates random values from the normal distribution. We must supply the n argument since there is no default value, but there is a default value set for the mean and sd arguments.</p>
 <p>First we’ll allow the default mean and sd.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">10</span>)</code></pre>
-<pre><code>##  [1] -1.3090343 -1.6326215 -0.2280516  1.2211626  0.5909781  1.4393893
-##  [7] -1.1342667  1.6077852  0.3069296  0.8294870</code></pre>
+<pre><code>##  [1] -1.46301089  1.69627369 -0.42663047 -0.96478785 -1.73210534
+##  [6] -0.35187579 -1.37916099  0.03244959 -0.50626181  0.84396980</code></pre>
 <p>The above code drew 10 random draws from a normal distribution with a mean = 0 and an sd = 1</p>
 <p>Now let’s set the n = 10, mean = 50, and the sd = 5 to see 10 random draws from a normal distribution with a mean = 50 and an sd = 5</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">10</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">5</span>)</code></pre>
-<pre><code>##  [1] 45.28830 44.17070 50.86072 43.58287 48.14721 47.79184 44.54560
-##  [8] 49.40777 50.06373 47.83816</code></pre>
+<pre><code>##  [1] 56.67012 54.10484 37.05729 49.65553 45.12735 53.59119 48.70227
+##  [8] 48.75931 54.26585 49.82072</code></pre>
 <p>What happens if we do not specify n? Uncomment the code below (remove the #) to see what happens</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># rnorm(mean = 50, sd = 5)</span></code></pre>
 <p>In the above examples, we have labeled our arguments according to their names in the help menu. If you do not label the arguments, they will be called into the function in the order given in the help menu.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># must be in order given by help menu to work as intended</span>
 <span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">50</span>, <span class="dv">5</span>)</code></pre>
-<pre><code>##  [1] 53.43296 56.13919 44.15177 48.47823 52.33586 55.72579 49.12621
-##  [8] 45.76328 44.00105 41.85812</code></pre>
+<pre><code>##  [1] 47.87710 52.00571 52.74898 56.00776 49.13443 52.17471 51.54882
+##  [8] 64.21880 46.91619 53.37984</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#out of order, but works bc the arguments are labeled</span>
 <span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">5</span>, <span class="dt">mean =</span> <span class="dv">50</span>)</code></pre>
-<pre><code>##  [1] 54.62725 53.27533 50.50110 43.74475 52.20894 50.10480 46.86524
-##  [8] 48.82162 54.18838 48.64528</code></pre>
+<pre><code>##  [1] 56.63432 55.99506 51.20510 45.32170 45.63728 49.84423 44.38412
+##  [8] 46.71555 55.93258 42.01574</code></pre>
 <p>To improve readability (and accuracy) of your code, we would recommend labeling your arguments.</p>
 <div id="exercise-2" class="section level3">
 <h3><span class="header-section-number">1.3.1</span> EXERCISE 2</h3>
@@ -411,21 +414,21 @@ bmi</code></pre>
 <p><summary>SHOW ANSWER A</summary></p>
 <pre class="sourceCode r"><code class="sourceCode r">object2 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">500</span>, <span class="dt">sd =</span> <span class="dv">100</span>)
 object2</code></pre>
-<pre><code>##   [1] 380.6650 468.6898 338.1565 431.2029 478.4040 343.9443 567.5280
-##   [8] 331.8188 439.1542 470.9660 518.0962 437.2185 482.8895 458.4672
-##  [15] 572.3832 394.8139 432.4172 621.5787 390.5640 546.8838 486.3190
-##  [22] 311.2368 541.7225 566.2155 781.1090 638.2452 469.7396 527.3384
-##  [29] 574.3147 455.7075 566.0264 618.3276 461.7657 585.3641 596.3315
-##  [36] 661.1062 689.9269 504.7466 532.5932 465.9751 421.6967 799.8182
-##  [43] 472.2955 516.4576 448.5830 685.5733 578.8136 475.3182 343.3749
-##  [50] 448.0221 521.4557 421.1669 332.0241 412.8816 451.1657 470.4274
-##  [57] 562.3054 475.5342 303.2014 573.5649 737.1477 557.0183 279.7531
-##  [64] 538.8089 478.0425 498.2814 463.6054 494.0398 642.8422 417.3124
-##  [71] 448.8654 524.3990 340.5277 411.6638 443.0320 526.4757 498.4000
-##  [78] 512.8306 627.3920 598.5247 516.5243 522.0931 287.1633 398.9468
-##  [85] 306.3976 384.9857 526.0013 351.8215 397.7918 527.3443 541.1173
-##  [92] 545.8968 580.9618 600.4870 346.5521 547.5958 605.4174 407.7034
-##  [99] 327.2423 556.7784</code></pre>
+<pre><code>##   [1] 492.4478 446.4851 504.1019 442.4561 424.4263 467.9074 374.5892
+##   [8] 315.5951 476.1336 551.6410 604.9400 503.6487 471.7890 648.4251
+##  [15] 515.5091 479.0175 496.9319 634.6657 542.1605 511.9253 599.9905
+##  [22] 640.5030 455.3552 517.5519 252.5527 423.9946 545.4930 501.1837
+##  [29] 298.7872 438.0874 278.4709 480.4669 506.1366 676.6876 466.8874
+##  [36] 493.5519 509.7616 526.4062 402.9924 584.9117 462.8711 562.8592
+##  [43] 444.8662 654.7531 331.3296 517.3705 317.1185 523.5117 524.8021
+##  [50] 387.6405 574.9920 266.3833 579.4772 363.5422 664.6194 464.3207
+##  [57] 574.2931 392.9838 547.1084 578.8906 539.7863 563.7042 537.5788
+##  [64] 482.7515 422.3333 369.1405 617.4430 561.8223 613.5657 495.6875
+##  [71] 561.2924 614.0253 443.5391 716.1883 563.4372 457.8576 705.7320
+##  [78] 551.9105 521.5673 514.1611 481.2698 519.2805 650.9915 342.6809
+##  [85] 575.8271 402.2799 536.6852 646.1728 270.8476 409.0363 406.2993
+##  [92] 545.4601 558.2834 493.0857 525.7903 562.3269 489.5516 353.6746
+##  [99] 522.2331 379.8273</code></pre>
 </details>
 <p><br>
 </br></p>
