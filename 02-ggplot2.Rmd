@@ -1,100 +1,72 @@
 # Data Visualization with ggplot2 {#ggplot}
 
-```{r init, include=F}
-library(knitr)
-opts_chunk$set(message=FALSE, warning=FALSE, eval=FALSE, echo=TRUE, fig.keep="none", cache=TRUE)
-options(digits=3)
-options(max.print=200)
-.ex <- 1 # Track ex numbers w/ hidden var. Increment each ex: `r .ex``r .ex=.ex+1`
-
-library(ggplot2)
-theme_set(theme_bw(base_size=16) + theme(strip.background = element_blank()))
-```
-
 This section will cover fundamental concepts for creating effective data visualization and will introduce tools and techniques for visualizing large, high-dimensional data using R. We will review fundamental concepts for visually displaying quantitative information, such as using series of small multiples, avoiding "chart-junk," and maximizing the data-ink ratio. We will cover the grammar of graphics (geoms, aesthetics, stats, and faceting), and using the ggplot2 package to create plots layer-by-layer. 
 
-## Resources to learn ggplot2
-*Chapter 3 in [R 4 Data Science](http://r4ds.had.co.nz/)
-*[R Graphics Cookbook](http://www.cookbook-r.com/Graphs/)
-*Show the Help menu cheat sheet
+## Set up
 
-This lesson assumes a [basic familiarity with R](IntroR.html) and [manipulating data with dplyr and `%>%`](TamingWildData.html).
-
-## Make sure everyone has tidyverse or readr, dplyr, ggplot2
-## Download data and make a new project
-
-### Gapminder data
-
-We're going to work with a [cleaned-up excerpt](https://github.com/jennybc/gapminder) from the [Gapminder data](http://www.gapminder.org/data/). Download the [**gapminder.csv** data by clicking here](data/gapminder.csv) or using the link above.
-
-Let's read in the data to an object called `gm` and take a look with `View`. Remember, we need to load both the dplyr and readr packages for efficiently reading in and displaying this data. 
-
-```{r readGapminder, eval=TRUE}
-# Load packages
-library(readr)
-library(dplyr)
-
-# Read in downloaded usind readr package
-gm <- read_csv(file="data/gapminder.csv")
-
-# Show the first few lines of the data
-gm
-
-
-# Optionally bring up data in a viewer window.
-# View(gm)
+```{r, echo=FALSE}
+knitr::opts_chunk$set(fig.width=5, fig.height=3)
 ```
 
-This particular excerpt has 1704 observations on six variables:
 
-* `country` a categorical variable 142 levels
-* `continent`, a categorical variable with 5 levels
-* `year`: going from 1952 to 2007 in increments of 5 years
-* `pop`: population
-* `gdpPercap`: GDP per capita
-* `lifeExp`: life expectancy
+1. Start by downloading a dataset about tuberculosis to your local computer so you can play along. Right click the file link below to download
 
-### dplyr review
+[tb dat set](data/tb.csv)
 
-The dplyr package gives you a handful of useful **verbs** for managing data. On their own they don't do anything that base R can't do. Here are some of the _single-table_ verbs we'll be working with in this lesson (single-table meaning that they only work on a single table -- contrast that to _two-table_ verbs used for joining data together). They all take a `data.frame` or `tbl` as their input for the first argument, and they all return a `data.frame` or `tbl` as output.
+2. Move the tb file into a directory (folder) called data inside a directory called ggplot. Make sure you know where the ggplot folder is on your computer
 
-1. `filter()`: filters _rows_ of the data where some condition is true
-1. `select()`: selects out particular _columns_ of interest
-1. `mutate()`: adds new columns or changes values of existing columns
-1. `arrange()`: arranges a data frame by the value of a column
-1. `summarize()`: summarizes multiple values to a single value, most useful when combined with...
-1. `group_by()`: groups a data frame by one or more variable. Most data operations are useful done on groups defined by variables in the the dataset. The `group_by` function takes an existing data frame and converts it into a grouped data frame where `summarize()` operations are performed _by group_.
+3. Create a new R project in the ggplot directory you made in #2 (File --> New Project --> Existing Directory)
 
-Additionally, the **`%>%`** operator allows you to "chain" operations together. Rather than nesting functions inside out, the `%>%` operator allows you to write operations left-to-right, top-to-bottom. 
+4. Start new script or Rmd file to play along
 
+For today's lesson we will need packages in the tidyverse. You will need to have them installed and loaded
 
-Let's say we wanted to get the average life expectancy and GDP (not GDP per capita) for Asian countries for each year.
+```{r}
+# load the tidyverse package
+library(tidyverse)
 
-The `%>%` would allow us to do this:
-
-```{r pipe, eval=TRUE}
-gm %>%
-  mutate(gdp=gdpPercap*pop) %>%
-  filter(continent=="Asia") %>%
-  group_by(year) %>%
-  summarize(mean(lifeExp), mean(gdp))
+# if the library line errored out, uncomment the install line below and run it
+# install.packages("tidyverse")
 ```
 
-Instead of this:
+## Read in data
 
-```{r nopipemess, eval=TRUE, results='hide'}
-summarize(
-  group_by(
-    filter(
-      mutate(gm, gdp=gdpPercap*pop), 
-    continent=="Asia"), 
-  year), 
-mean(lifeExp), mean(gdp))
+We are going to use the `tb` dataset today in class. This is a cleaned up version of data on Tuberculosis hosted by the [World Health Organization](https://www.who.int/tb/country/data/download/en/).
+
+The below code will work if you have an R project set up and the tb.csv data file is inside a folder called data inside your project directory called ggplot. For more help setting up a project, go back to the Introductory Lesson /@ref(Intro)
+
+```{r}
+tb <- read_csv("data/tb.csv")
 ```
 
-![](img/nest_vs_pipe.png)
+Let's take a brief look with `glimpse()`
 
-## About ggplot2 {#ggplot}
+```{r}
+glimpse(tb)
+```
+
+## Data Pre-Processing
+
+We are going to be plotting 3 of the numeric variables today, incidence_100k, hiv_incidence_100k, and mort_100k. 
+
+Today's lesson is about plotting using ggplot, so to make things a little cleaner, let's filter the tb dataset for where those variables >0. 
+
+In real life, we would certainly be interested in incidence = 0, so this clean up step will remove some important data. After you have familiarized yourself with plotting using ggplot2, I would encourage you to re-run the script with the full dataset. But let's keep things simpler for now.
+
+We'll use a function `filter()` from the dplyr package (loaded as part of the tidyverse) that we saw in the Introductory lesson. The `filter()` function subsets a dataset for rows matching given logical criteria. 
+
+Let's filter tb for where incidence_100k > 0 and hiv_incidence_100k > 0 and mort_100k > 0
+
+We'll save the result onto tb to overwrite our original dataset with the cleaned up version we'll use to plot.
+
+```{r}
+tb <- tb %>%
+  filter(incidence_100k > 0 & hiv_incidence_100k > 0 & mort_100k > 0)
+```
+
+We'll use some more dplyr verbs to manipulate data throughout the lesson, but for now on to ggplot2
+
+## Basics of ggplot2
 
 **ggplot2** is a widely used R package that extends R's visualization capabilities. It takes the hassle out of things like creating legends, mapping other variables to scales like color, or faceting plots into small multiples. We'll learn about what all these things mean shortly. 
 
@@ -102,273 +74,372 @@ _Where does the "gg" in ggplot2 come from?_ The **ggplot2** package provides an 
 
 Specifically, **ggplot2** allows you to build a plot layer-by-layer by specifying:
 
-- a **geom**, which specifies how the data are represented on the plot (points, lines, bars, etc.),
+- a **geom** which specifies how the data are represented on the plot (points, lines, bars, etc.),
 - **aesthetics** that map variables in the data to axes on the plot or to plotting size, shape, color, etc.,
-- a **stat**, a statistical transformation or summary of the data applied prior to plotting,
-- **facets**, which we've already seen above, that allow the data to be divided into chunks on the basis of other categorical or continuous variables and the same plot drawn for each chunk.
+- a **stat** a statistical transformation or summary of the data applied prior to plotting,
+- **facets** that allow the data to be divided into chunks on the basis of other categorical or continuous variables and the same plot drawn for each chunk.
 
-_First, a note about `qplot()`._ The `qplot()` function is a quick and dirty way of making ggplot2 plots. You might see it if you look for help with ggplot2, and it's even covered extensively in the ggplot2 book. And if you're used to making plots with built-in base graphics, the `qplot()` function will probably feel more familiar. But the sooner you abandon the `qplot()` syntax the sooner you'll start to really understand ggplot2's approach to building up plots layer by layer. So we're not going to use it at all in this class.
+_First, a note about `qplot()`._ The `qplot()` function is a quick way of making ggplot2 plots. You might see it if you look for help with ggplot2. It is a halfway step between plotting in base R and plotting in ggplot2, so if you're used to making plots with built-in base graphics, the `qplot()` function will probably feel more familiar. 
 
-See [R Graphics Cookbook](http://www.cookbook-r.com/Graphs/) for more help with ggplot2.
+However, the sooner you abandon the `qplot()` syntax the sooner you'll start to really understand ggplot2's approach to building up plots layer by layer. This lesson should leave you feeling confident about your ability to plot in ggplot2, so let's leave `qplot()` behind.
 
-## Plotting bivariate data: continuous Y by continuous X
+## Plotting bivariate data: continuous X and continuous Y
 
 The `ggplot` function has two required arguments: the *data* used for creating the plot, and an *aesthetic* mapping to describe how variables in said data are mapped to things we can see on the plot.
 
-First let's load the package:
-
-```{r loadggplot2, eval=TRUE}
-library(ggplot2)
-```
-
-Now, let's lay out the plot. If we want to plot a continuous Y variable by a continuous X variable we're probably most interested in a scatter plot. Here, we're telling ggplot that we want to use the `gm` dataset, and the aesthetic mapping will map `gdpPercap` onto the x-axis and `lifeExp` onto the y-axis. Remember that the variable names are case sensitive! 
-
-```{r noLayers}
-ggplot(gm, aes(x = gdpPercap, y = lifeExp))
-```
-
-When we do that we get a blank canvas with no data showing (you might get an error if you're using an old version of ggplot2). That's because all we've done is laid out a two-dimensional plot specifying what goes on the x and y axes, but we haven't told it what kind of geometric object to plot. The obvious choice here is a point. Check out [docs.ggplot2.org](http://docs.ggplot2.org/) to see what kind of geoms are available.
+First, let's lay out the plot. If we want to plot a continuous Y variable by a continuous X variable we're probably most interested in a scatter plot. Here, we're telling ggplot that we want to use the `tb` dataset, and the aesthetic mapping will map `incidence_100k` onto the x-axis and `hiv_incidence_100k` onto the y-axis. Remember that the variable names are case sensitive! 
 
 ```{r}
-ggplot(gm, aes(x = gdpPercap, y = lifeExp)) + geom_point()
+ggplot(tb, aes(x = incidence_100k, y = hiv_incidence_100k))
 ```
 
-Here, we've built our plot in layers. First, we create a canvas for plotting layers to come using the `ggplot` function, specifying which **data** to use (here, the **gm** data frame), and an **aesthetic mapping** of `gdpPercap` to the x-axis and `lifeExp` to the y-axis. We next add a layer to the plot, specifying a **geom**, or a way of visually representing the aesthetic mapping. 
+When we do that we get a blank canvas with no data showing. That's because all we've done is laid out a two-dimensional plot specifying what goes on the x and y axes, but we haven't told it what kind of geometric object to plot. The obvious choice here is a point. Check out [docs.ggplot2.org](http://docs.ggplot2.org/) to see what kind of geoms are available.
 
-Now, the typical workflow for building up a ggplot2 plot is to first construct the figure and save that to a variable (for example, `p`), and as you're experimenting, you can continue to re-define the `p` object as you develop "keeper commands".
+Add `geom_point()` using a `+` after the canvas layer. It is important to notice that the parentheses around the canvas layer formed with the `ggplot()` function are fully closed, then each subquent layer is it's own function added to the canvas with `+`
 
-First, let's construct the graphic. Notice that we don't have to specify `x=` and `y=` if we specify the arguments in the correct order (x is first, y is second).
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = hiv_incidence_100k)) +
+  geom_point()
+```
 
-```{r, eval=TRUE}
-p <- ggplot(gm, aes(gdpPercap, lifeExp))
+Interesting pattern...
+
+Let's add some color by changing all the points to be blue
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = hiv_incidence_100k)) +
+  geom_point(color = "blue")
+```
+
+We put the `color = "blue"` argument in the `geom_point()` function because we would like to change the color of the points.
+
+Now let's change the shape of the points. `shape = 8` is an *
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = hiv_incidence_100k)) +
+  geom_point(color = "blue", shape = 8)
+```
+
+Instead of coloring by a static value, let's color by the who_region. This time, we will have to call **aethetics**. _Any time_ you want to map a variable from the dataset onto the plot, it must be in a call to `aes()`
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = hiv_incidence_100k)) +
+  geom_point(aes(color = who_region))
+```
+
+Let's add another layer showing one smoothed trend line
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = hiv_incidence_100k)) +
+  geom_point(aes(color = who_region)) +
+  geom_smooth()
+```
+
+Notice in the console output that `geom_smooth()` is fitting the trend line using a Generalized Additive Model (gam). We can read more about that by calling the help menu for geom_smooth
+
+```{r}
+# ?geom_smooth
+```
+
+Look at the Arguments section and read the bit about the method argument. We can specify a method, but if we allow the `method = "auto"` then it will fit loess for < 1000 data points and gam for >= 1000
+
+Let's change the method to be "lm" to fit a straight line
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = hiv_incidence_100k)) +
+  geom_point(aes(color = who_region)) +
+  geom_smooth(method = "lm")
+```
+
+Clearly the lm is a poor fit for these raw data. Let's fit a smoothed line (allowing the default `method = "auto"`) separately for each region. Because we want to map `who_region` onto the plot, we'll put it in a call to `aes()`
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = hiv_incidence_100k)) +
+  geom_point(aes(color = who_region)) +
+  geom_smooth(aes(color = who_region))
+```
+
+Now each region is fit with method = "loess"
+
+In the above code we now have three calls to `aes()`. One in the canvas layer, one in the `geom_point()` layer, and one in the `geom_smooth()` layer. 
+
+If we want ALL the layers to be colored by who_region, we can just specify color = who_region in `aes()` call in the top canvas layer and all the subsequent layers will inherit that aesthetic mapping just like they inherit the x and y from the canvas layer.
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, 
+               y = hiv_incidence_100k, 
+               color = who_region)) +
+  geom_point() +
+  geom_smooth()
+```
+
+### EXERCISE 1
+
+A. Create a new plot showing incidence_100k on the x axis and mort_100k on the y. Use `geom_point()`
+
+<details><summary>SHOW ANSWER A</summary>
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = mort_100k)) +
+  geom_point()
+```
+
+</details>
+<br>
+</br>
+
+B. Color the plot in #1 with points that are dark orange triangles (use shape = 17 and color = "darkorange")
+
+<details><summary>SHOW ANSWER B</summary>
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = mort_100k)) +
+  geom_point(shape = 17, color = "darkorange")
+```
+
+</details>
+<br>
+</br>
+
+C. Color the plot from #1 by the who_region
+
+<details><summary>SHOW ANSWER C</summary>
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = mort_100k)) +
+  geom_point(aes(color = who_region))
+```
+
+</details>
+<br>
+</br>
+
+D. Starting with your plot from #3, add the argument `alpha = .3` to the `geom_point()` function, outside the `aes()` function. What does alpha do?
+
+<details><summary>SHOW ANSWER D</summary>
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = mort_100k)) +
+  geom_point(aes(color = who_region), alpha = .3)
+```
+
+Alpha adds transparency. Specifically an alpha of 1/2 will take 2 points overlapping to make it appear fully opaque. An alpha of 1/3 will take 3 points overlapping to make it appear fully opaque.
+
+</details>
+<br>
+</br>
+
+## Tranformations
+
+In the plots we have created so far, it looks to me like we should show our incidence rates on a log axis. 
+
+We have a few options to accomplish this:
+1. use dplyr's `mutate()` function to create new, log-transformed variables
+2. use the `log10()` directly in the `x =` and `y =` arguments of the plot
+3. add log scales to the plot
+
+Because today's lesson is about the ggplot2 package, we will use the third option
+
+Let's start with the plot you created made in Exercise 1 problem D showing the tb incidence rate against the mortality rate colored by who_region.
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = mort_100k)) +
+  geom_point(aes(color = who_region), alpha = .3)
+```
+
+Let's add a log10 scale to both the x and y axes
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = mort_100k)) +
+  geom_point(aes(color = who_region), alpha = .3) +
+  scale_x_log10() +
+  scale_y_log10()
+```
+
+Substitute smoothed lines colored by who_region instead of the geom_point()
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = mort_100k)) +
+  geom_smooth(aes(color = who_region)) +
+  scale_x_log10() +
+  scale_y_log10()
+```
+
+### EXERCISE 2
+
+A. Create a plot showing the log-transformed incidence_100k on x and log-transformed hiv_incidence_100k on y with smoothed lines colored for each who_region.
+
+<details><summary>SHOW ANSWER A</summary>
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = hiv_incidence_100k)) +
+  geom_smooth(aes(color = who_region)) +
+  scale_x_log10() +
+  scale_y_log10()
+```
+
+</details>
+<br>
+</br>
+
+B. Turn off the gray standard error bands by including the argument `se = FALSE` to the `geom_smooth()` function, outside of the `aes()` function
+
+<details><summary>SHOW ANSWER B</summary>
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = hiv_incidence_100k)) +
+  geom_smooth(aes(color = who_region), se = FALSE) +
+  scale_x_log10() +
+  scale_y_log10()
+```
+
+</details>
+<br>
+</br>
+
+C. Starting with your plot from B, add another layer to the plot that shows the data as geom_point() and set the transparency to 0.1. 
+
+<details><summary>SHOW ANSWER C</summary>
+
+```{r}
+ggplot(tb, aes(x = incidence_100k, y = hiv_incidence_100k)) +
+  geom_smooth(aes(color = who_region), se = FALSE) +
+  scale_x_log10() +
+  scale_y_log10() +
+  geom_point(alpha = .1)
+
+# darkgray points under smooth
+ggplot(tb, aes(x = incidence_100k, y = hiv_incidence_100k)) +
+  geom_point(alpha = .1, color = "darkgrey") +
+  geom_smooth(aes(color = who_region), se = FALSE) +
+  scale_x_log10() +
+  scale_y_log10()
+
+```
+
+</details>
+<br>
+</br>
+
+## Facets
+
+Facets display subsets of the data in different panels. There are a couple ways to do this, but `facet_wrap()` tries to sensibly wrap a series of facets into a 2-dimensional grid of small multiples. 
+
+The facet functions take a formula specifying which variables to facet by. If you have a look at the help for `?facet_wrap()` you'll see that we can control how the wrapping is laid out.
+
+Along the way to teaching you about faceting, I'll show a strategy to build up a plot by saving layers you like to an object. This way, we can avoid having to copy-paste long lines of code.
+
+Let's start with a simple plot of incidence_100k on x and hiv_incidence_100k on y. 
+
+We'll add the log-transformed axes, and then save that to an object called `p`.
+
+```{r}
+p <- ggplot(tb, aes(x = incidence_100k, y = hiv_incidence_100k)) +
+  scale_x_log10() +
+  scale_y_log10()
+
 p
 ```
 
-The `p` object now contains the canvas, but nothing else. Try displaying it by just running `p`. Let's experiment with adding points and a different scale to the x-axis.
+Add `geom_point()` colored darkgray and semi-transparent
 
 ```{r}
-# Experiment with adding points
-p + geom_point()
-
-# Experiment with a different scale
-p + geom_point() + scale_x_log10()
+p + geom_point(color = "darkgray", alpha = .2)
 ```
 
-I like the look of using a log scale for the x-axis. Let's make that stick.
-
-```{r, eval=TRUE}
-p <- p + scale_x_log10()
-p
-```
-
-Now, if we re-ran `p` still nothing would show up because the `p` object just contains a blank canvas. Now, re-plot again with a layer of points:
+Now we'll facet by who_region to show each region in its own plot. As mentioned above, `facet_wrap()` takes a formula specifying which variable(s) to facet on, so that means we will provide a tilde and then the variable. This syntax sort of breaks our rule of mapping variables using `aes()` but I think the rationale is that faceting by definition must call a variable from the dataset so that is why we do not need `aes()`
 
 ```{r}
-p + geom_point()
+p + 
+  geom_point(color = "darkgray", alpha = .2) +
+  facet_wrap(~who_region)
 ```
 
-Now notice what I've saved to `p` at this point: only the basic plot layout and the log10 mapping on the x-axis. I didn't save any layers yet because I want to fiddle around with the points for a bit first.
-
-Above we implied the aesthetic mappings for the x- and y- axis should be `gdpPercap` and `lifeExp`, but we can also add aesthetic mappings to the geoms themselves. For instance, what if we wanted to color the points by the value of another variable in the dataset, say, continent?
+Add transparency to `geom_point()`, add `geom_smooth()` layer colored by who_region with `se = FALSE`
 
 ```{r}
-p + geom_point(aes(color=continent))
+p + 
+  geom_point(color = "darkgray", alpha = .2) +
+  geom_smooth(aes(color = who_region), se = FALSE) +
+  facet_wrap(~who_region)
 ```
 
-Notice the difference here. If I wanted the colors to be some static value, I wouldn't wrap that in a call to `aes()`. I would just specify it outright. Same thing with other features of the points. For example, lets make all the points huge (`size=8`) blue (`color="blue"`) semitransparent (`alpha=(1/4)`) triangles (`pch=17`):
+In these plots, the facet and color are redundant mappings of who_region. We typically avoid redundant mappings, but there are reasons to do it (ie readability for color-blind) and in this case, I like the added color.
 
-```{r}
-p + geom_point(color="blue", pch=17, size=8, alpha=1/4)
-```
+## Plotting bivariate data: categorical X and continuous Y
 
-Now, this time, let's map the aesthetics of the point character to certain features of the data. For instance, let's give the points different colors and character shapes according to the continent, and map the size of the point onto the life Expectancy:
+With the previous example we examined the relationship between a continuous X variable against a continuous Y variable. A scatter plot was the obvious type of data visualization. 
 
-```{r}
-p + geom_point(aes(col=continent, shape=continent, size=lifeExp))
-```
-
-Now, this isn't a great plot because there are several aesthetic mappings that are redundant. Life expectancy is mapped to both the y-axis and the size of the points -- the size mapping is superfluous. Similarly, continent is mapped to both the color and the point character (the shape is superfluous). Let's get rid of that, but let's make the points a little bigger outside of an aesthetic mapping.
-
-```{r scatter_colContinent_size4, eval=TRUE, fig.keep="last"}
-p + geom_point(aes(col=continent), size=1.5)
-```
-
-
-----
-
-**EXERCISE `r .ex``r .ex=.ex+1`**
-
-Re-create this same plot from scratch without saving anything to a variable. That is, start from the `ggplot` call. 
-
-* Start with the `ggplot()` function.
-* Use the gm data.
-* Map `gdpPercap` to the x-axis and `lifeExp` to the y-axis.
-* Add points to the plot
-  * Make the points size 3
-  * Map continent onto the aesthetics of the point
-* Use a log<sub>10</sub> scale for the x-axis.
-
-
-```{r, echo=FALSE}
-ggplot(gm, aes(gdpPercap, lifeExp)) + 
-  geom_point(aes(col=continent), size=3) + 
-  scale_x_log10()
-```
-
-
-----
-
-
-### Adding layers
-
-Let's add a fitted curve to the points. Recreate the plot in the `p` object if you need to.
-
-```{r scatter_addsmoothlayer, eval=TRUE, fig.keep="last"}
-p <- ggplot(gm, aes(gdpPercap, lifeExp)) + scale_x_log10()
-p + geom_point() + geom_smooth()
-```
-
-By default `geom_smooth()` will try to lowess (Locally Weighted Scatterplot Smoothing) for data with n<1000 or GAM (Generalized Additive models) for data with n>1000. (In the geom_smooth help menu you can read all about these)
-
-`geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'. The s = smoothing function. bs = basis of smoothing and cs = cubic regression spines with shrinkage
-
-We can change the geom_smooth() behavior by tweaking the parameters to use a linear model instead of GAM 
-```{r}
-p + geom_point() + geom_smooth(method="lm")
-```
-
-Now tweak the parameters of the line to show a thick red line with no standard error stripes
-
-```{r}
-p + geom_point() + geom_smooth(lwd=2, se=FALSE, method="lm", col="red")
-```
-
-But let's add back in our aesthetic mapping to the continents. Notice what happens here. We're mapping continent as an aesthetic mapping _to the color of the points only_ -- so `geom_smooth()` still works only on the entire data. 
-
-```{r}
-p + geom_point(aes(color = continent)) + geom_smooth()
-```
-
-But notice what happens next: if we make the call to `aes()` *outside* of the `geom_point()` and `geom_smooth` calls, then the continent variable gets mapped as an aesthetic to all the following geoms. So here, we get separate smoothing lines for each continent.
-
-```{r scatter_final, eval=TRUE, fig.keep="last"}
-p + aes(color = continent) + geom_point() + geom_smooth()
-```
-
-Let's do it again but remove the standard error stripes and make the lines a bit thicker.
-```{r}
-p + aes(color = continent) + geom_point() + geom_smooth(se=F, lwd=2)
-```
-
-
-### Faceting
-
-Facets display subsets of the data in different panels. There are a couple ways to do this, but `facet_wrap()` tries to sensibly wrap a series of facets into a 2-dimensional grid of small multiples. Just give it a formula specifying which variables to facet by. We can continue adding more layers, such as smoothing. If you have a look at the help for `?facet_wrap()` you'll see that we can control how the wrapping is laid out.
-
-```{r scatter_facet1, eval=TRUE, fig.keep="last", fig.width=5, fig.height=12}
-p + geom_point() + facet_wrap(~continent)
-p + geom_point() + geom_smooth() + facet_wrap(~continent, ncol = 1)
-```
-
-### Saving plots
-
-There are a few ways to save ggplots. The quickest way, that works in an interactive session, is to use the `ggsave()` function. You give it a file name and by default it saves the last plot that was printed to the screen. 
-
-```{r, eval=FALSE}
-p + geom_point()
-ggsave(file="myplot.png")
-```
-
-But if you're running this through a script, the best way to do it is to pass `ggsave()` the object containing the plot that is meant to be saved. We can also adjust things like the width, height, and resolution. `ggsave()` also recognizes the name of the file extension and saves the appropriate kind of file. Let's save a PDF.
-
-```{r, eval=FALSE}
-pfinal <- p + geom_point() + geom_smooth() + facet_wrap(~continent, ncol=1)
-ggsave(pfinal, file="myplot.pdf", width=5, height=15)
-```
-
-
-----
-
-**EXERCISE `r .ex``r .ex=.ex+1`**
-
-1. Make a scatter plot of `lifeExp` on the y-axis against `year` on the x.
-1. Make a series of small multiples faceting on continent.
-1. Add a fitted curve, smooth or lm, with and without facets.
-
-```{r, include=FALSE, eval=FALSE}
-p <- ggplot(gm, aes(year, lifeExp)) 
-p + geom_point() #A
-p + geom_point() + facet_wrap(~continent) #B
-p + geom_point() + geom_smooth() #C
-p + geom_point() + geom_smooth() + facet_wrap(~continent) #C
-```
-
-1. **Bonus**: using `geom_line()` and an aesthetic mapping `country` to `group=`, make a "spaghetti plot", showing _semitransparent_ lines connected for each country, faceted by continent. Add a smoothed loess curve with a thick (`lwd=3`) line with no standard error stripe. Reduce the opacity (`alpha=`) of the individual black lines. _Don't_ show Oceania countries (that is, `filter()` the data where `continent!="Oceania"` before you plot it).
-
-```{r spaghetti, echo=FALSE, eval=TRUE, fig.keep="last", fig.width=8}
-p <- ggplot(filter(gm, continent!="Oceania"), aes(year, lifeExp))
-#p + facet_wrap(~continent) + geom_line()
-#p + facet_wrap(~continent) + geom_line(aes(group=country))
-p + facet_wrap(~continent) + geom_line(aes(group=country), alpha=.5) + geom_smooth(lwd=3, se=FALSE)
-
-p + geom_line(aes(group=country), alpha=.5) + geom_smooth(lwd=3, se=FALSE) +
-  facet_wrap(~continent)
-```
-
-
-----
-
-
-## Plotting bivariate data: continuous Y by categorical X
-
-With the last example we examined the relationship between a continuous Y variable against a continuous X variable. A scatter plot was the obvious kind of data visualization. But what if we wanted to visualize a continuous Y variable against a categorical X variable? We sort of saw what that looked like in the last exercise. `year` is a continuous variable, but in this dataset, it's broken up into 5-year segments, so you could almost think of each year as a categorical variable. But a better example would be life expectancy against continent or country. 
+But what if we wanted to visualize a categorical X variable and a continuous Y variable? One example would be x= who_region and y = incidence_100k. 
 
 First, let's set up the basic plot:
 
-```{r, eval=TRUE}
-p <- ggplot(gm, aes(continent, lifeExp)) 
+```{r}
+p <- ggplot(tb, aes(who_region, incidence_100k))
 ```
 
-Then add points:
+Add points
 
 ```{r}
 p + geom_point()
 ```
 
-That's not terribly useful. There's a big overplotting problem. We can try to solve with transparency:
+That's not terribly useful. There's a big overplotting problem because there is no variability in "AFR".
 
-```{r}
-p + geom_point(alpha=1/4)
-```
-
-But that really only gets us so far. What if we spread things out by adding a little bit of horizontal noise (aka "jitter") to the data.
+What if we spread things out by adding a little bit of horizontal noise (aka "jitter") to the data.
 
 ```{r}
 p + geom_jitter()
 ```
 
-Note that the little bit of horizontal noise that's added to the jitter is random. If you run that command over and over again, each time it will look slightly different. The idea is to visualize the density at each vertical position, and spreading out the points horizontally allows you to do that. If there were still lots of over-plotting you might think about adding some transparency by setting the `alpha=` value for the jitter.
+Note that the little bit of horizontal noise that's added to the jitter is random. If you run that command over and over again, each time it will look slightly different. The idea is to visualize the density at each vertical position, and spreading out the points horizontally allows you to do that. 
+
+Because there is still overplotting, let's add some transparency by setting the `alpha` value for the jitter.
 
 ```{r}
-p + geom_jitter(alpha=1/2)
+p + geom_jitter(alpha = .2)
 ```
 
-Probably a more common visualization is to show a box plot:
+We can also add in the log scale for the y-axis using the same code as before
+
+```{r}
+p + 
+  geom_jitter(alpha = .2) +
+  scale_y_log10()
+```
+
+Let's save the scaled axis onto p and then recreate the plot
+
+```{r}
+p <- p + scale_y_log10()
+
+p + geom_jitter(alpha = .2)
+```
+
+Probably a more common visualization to show is a box plot:
 
 ```{r}
 p + geom_boxplot()
 ```
 
-But why not show the summary and the raw data?
+Let's raw data using jitter and the summary using a boxplot.
 
 ```{r}
-p + geom_jitter() + geom_boxplot()
+p + 
+  geom_jitter(alpha = .2) +
+  geom_boxplot()
 ```
 
-Notice how in that example we first added the jitter layer then added the boxplot layer. But the boxplot is now superimposed over the jitter layer. Let's make the jitter layer go on top. Also, go back to just the boxplots. Notice that the outliers are represented as points. But there's no distinction between the outlier point from the boxplot geom and all the other points from the jitter geom. Let's change that. Notice the British spelling.
+Here, I added the jitter layer then added the boxplot layer, so the boxplot is plotted on top of the jitter layer. 
+
+Notice that the outliers in the boxplot layer are represented as points. But there's no distinction between the outlier point from the boxplot geom and all the other points from the jitter geom. 
+
+Let's change that by coloring the outliers.
 
 ```{r}
-p + geom_boxplot(outlier.colour = "red") + geom_jitter(alpha=1/2)
+p + 
+  geom_jitter(alpha = .2) +
+  geom_boxplot(outlier.color = "red")
 ```
 
 There's another geom that's useful here, called a voilin plot.
@@ -376,7 +447,9 @@ There's another geom that's useful here, called a voilin plot.
 ```{r}
 p + geom_violin()
 
-p + geom_violin() + geom_jitter(alpha=1/2)
+p + 
+  geom_jitter(alpha = .2) + 
+  geom_violin()
 ```
 
 Let's go back to our boxplot for a moment.
@@ -385,210 +458,370 @@ Let's go back to our boxplot for a moment.
 p + geom_boxplot()
 ```
 
-This plot would be a lot more effective if the continents were shown in some sort of order other than alphabetical. To do that, we'll have to go back to our basic build of the plot again and use the `reorder` function in our original aesthetic mapping. Here, reorder is taking the first variable, which is some categorical variable, and ordering it by the level of the mean of the second variable, which is a continuous variable. It looks like this
+This plot would be a lot more effective if the who_regions were shown in some sort of order other than alphabetical. To do that, we'll have to go back to our basic build of the plot again and use the `reorder()` function in our original aesthetic mapping. 
 
-```{r, eval=TRUE}
-#reorder continent by lifeExp
-p <- ggplot(gm, aes(x=reorder(continent, lifeExp), y=lifeExp))
+`reorder()` takes the first variable, which is some categorical variable, and orders it by the level of the mean of the second variable, which is a continuous variable. 
+
+It looks like this
+
+```{r}
+#reorder region by incidence
+ggplot(tb, aes(x = reorder(who_region, incidence_100k), y = incidence_100k)) + 
+  scale_y_log10() + 
+  geom_boxplot()
 ```
 
-```{r boxplot, eval=TRUE, fig.keep='last'}
-p + geom_boxplot()
+### EXERCISE 3
+
+A. Make a jitter plot of who_region on x and hiv_incidence_100k on y. 
+
+<details><summary>SHOW ANSWER A</summary>
+
+```{r}
+ggplot(tb, aes(x = who_region, y = hiv_incidence_100k)) +
+  geom_jitter()
 ```
 
+</details>
+<br>
+</br>
 
-----
+B. Add a log-scale to the y-axis. 
 
-**EXERCISE `r .ex``r .ex=.ex+1`**
+<details><summary>SHOW ANSWER B</summary>
 
-1. Make a jittered strip plot of GDP per capita against continent.
-1. Make a box plot of GDP per capita against continent.
-1. Using a log<sub>10</sub> y-axis scale, overlay semitransparent jittered points on top of box plots, where outlying points are colored. 
-1. **BONUS**: Try to reorder the continents on the x-axis by GDP per capita. Why isn't this working as expected? See `?reorder` for clues.
-
-```{r, echo=FALSE}
-p <- ggplot(gm, aes(continent, gdpPercap))
-p + geom_jitter() #A
-p + geom_boxplot() #B
-
-p + scale_y_log10() + 
-  geom_boxplot(outlier.colour = "red") + 
-  geom_jitter(alpha = .25) #C
-
-p <- ggplot(gm, aes(reorder(continent, gdpPercap), gdpPercap))
-p <- p + scale_y_log10()
-p + geom_boxplot(outlier.colour="red") + geom_jitter(alpha=1/2)
-
-library(dplyr)
-gm %>% group_by(continent) %>% summarize(mean(gdpPercap))
-gm %>% group_by(continent) %>% summarize(mean(log10(gdpPercap)))
-p <- ggplot(gm, aes(reorder(continent, gdpPercap, FUN=function(x) mean(log10(x))), gdpPercap))
-p <- p + scale_y_log10()
-p + geom_boxplot(outlier.colour="red") + geom_jitter(alpha=1/2)
+```{r}
+ggplot(tb, aes(x = who_region, y = hiv_incidence_100k)) +
+  geom_jitter() +
+  scale_y_log10()
 ```
 
-Reorder was operating on the mean of the raw variable. We need a mean of the log10 transformed gdpPercap
+</details>
+<br>
+</br>
+
+C. Add transparency.
+
+<details><summary>SHOW ANSWER C</summary>
+
+```{r}
+ggplot(tb, aes(x = who_region, y = hiv_incidence_100k)) +
+  geom_jitter(alpha = .2) +
+  scale_y_log10()
+```
+
+</details>
+<br>
+</br>
+
+D. Overlay a box plot with colored outliers.
+
+<details><summary>SHOW ANSWER D</summary>
+
+```{r}
+ggplot(tb, aes(x = who_region, y = hiv_incidence_100k)) +
+  geom_jitter(alpha = .2) +
+  geom_boxplot(outlier.color = "red") +
+  scale_y_log10()
+```
+
+</details>
+<br>
+</br>
+
+BONUS. Reorder the plot by hiv_incidence_100k
+
+<details><summary>SHOW BONUS ANSWER</summary>
+
+```{r}
+# reorder by LOG10 incidence!
+ggplot(tb, aes(x = reorder(who_region, log10(hiv_incidence_100k)), y = hiv_incidence_100k)) +
+  geom_jitter(alpha = .2) +
+  geom_boxplot(outlier.color = "red") +
+  scale_y_log10()
+```
+
+</details>
+<br>
+</br>
 
 ## Plotting univariate continuous data
 
 What if we just wanted to visualize distribution of a single continuous variable? A histogram is the usual go-to visualization. Here we only have one aesthetic mapping instead of two.
 
-```{r init_histogram, eval=TRUE}
-p <- ggplot(gm, aes(lifeExp))
+```{r}
+ggplot(tb, aes(incidence_100k))
+
+# set this as the canvas
+p <- ggplot(tb, aes(incidence_100k))
 ```
 
+Add `geom_histogram()`
+
 ```{r}
+p  + geom_histogram()
+```
+
+Add the log scale to the canvas and then re-create the plot
+
+```{r}
+p <- p + scale_x_log10()
+
 p + geom_histogram()
 ```
 
-When we do this ggplot lets us know that we're automatically selecting the width of the bins, and we might want to think about this a little further.
+Notice the message in the console that geom_histogram is using `bins = 30` as a default. Let's change the number of bins
 
 ```{r}
-p + geom_histogram(bins=30)
-p + geom_histogram(bins=10)
-p + geom_histogram(bins=200)
+p + geom_histogram(bins = 100)
 ```
 
-```{r histogram, eval=TRUE, fig.keep="last"}
-p + geom_histogram(bins=60)
+Now try to color by who_region.
+
+```{r}
+p + geom_histogram(aes(color = who_region), bins = 50)
 ```
 
-Alternatively we could plot a smoothed density curve instead of a histogram:
+Well, that is not exactly what I meant. I wanted the inside of the bars colored. Many geoms have arguments that control the outside of the geom (color) and the inside of the geom (fill) separately. We wanted the argument fill instead of color
+
+```{r}
+p + geom_histogram(aes(fill = who_region), bins = 50)
+```
+
+If you look at the help for `?geom_histogram` you'll see that by default it stacks overlapping data, so if two regions have a log incidence = 10, one is plotted on the bottom and the second is plotted stacked on top of the first. This is good to visualize the distribution of incidence_100k overall, but because we wanted to see a separate distribution for each region, this is misleading. 
+
+Let's change the position argument so that each region has a baseline of 0.
+
+```{r}
+p + geom_histogram(aes(fill = who_region), bins = 50, position = "identity")
+```
+
+That's better, but still not great. Try transparency
+
+```{r}
+p + geom_histogram(aes(fill = who_region), bins = 50, position = "identity", alpha = .2)
+```
+
+Nope. That did not help at all. Try faceting instead. 
+
+```{r}
+p + geom_histogram(aes(fill = who_region), bins = 50, position = "identity") +
+  facet_wrap(~who_region)
+```
+
+Great!
+
+Let's start back at p and plot a smoothed density curve instead of a histogram:
 
 ```{r}
 p + geom_density()
 ```
 
-Back to histograms. What if we wanted to color this by continent?
+Notice that a density plot has a different y-axis than histograms. I like histograms when the actual count is important and density plots when comparing the shape across groups (ignoring the differences in sample size) is important.
+
+Now color that by who_region
 
 ```{r}
-p + geom_histogram(aes(color=continent))
+p + geom_density(aes(color = who_region))
 ```
 
-That's not what we had in mind. That's just the outline of the bars. We want to change the _fill_ color of the bars.
+This could work for 2 or 3 groups, but with 6, this is crazy. Let's facet instead
 
 ```{r}
-p + geom_histogram(aes(fill=continent))
+p + 
+  geom_density(aes(color = who_region)) +
+  facet_wrap(~who_region)
 ```
 
-Well, that's not exactly what we want either. If you look at the help for `?geom_histogram` you'll see that by default it stacks overlapping points. This isn't really an effective visualization. Let's change the position argument.
+Change color to fill
 
 ```{r}
-p + geom_histogram(aes(fill=continent), position="identity")
+p + 
+  geom_density(aes(fill = who_region)) +
+  facet_wrap(~who_region)
 ```
 
-But the problem there is that the histograms are blocking each other. What if we tried transparency? Faceting?
+## Saving plots
+
+There are a few ways to save ggplots. The quickest way, that works in an interactive session, is to use the `ggsave()` function. You give this function a file name and by default it saves the most recent plot that was printed to the screen. 
+
+```{r, eval=FALSE}
+ggsave(filename = "incidence.png")
+```
+
+That worked but the best way to save a plot is to pass `ggsave()` an R object containing the plot and then the file name. 
+
+First let's create an R object containing our plot. I'll use the opportunity to show you how to dictate the dimensions of the facet
 
 ```{r}
-p + geom_histogram(aes(fill=continent), position="identity", alpha=1/3)
+pfinal <- p + 
+  geom_density(aes(fill = who_region)) +
+  facet_wrap(~who_region, ncol = 1)
+pfinal
 ```
 
-That's somewhat helpful, and might work for two distributions, but it gets cumbersome with 5.
-Try faceting:
+Now we'll call `ggsave()` to save out the plot. 
+
+We can adjust things like the width, height, and resolution. `ggsave()` also recognizes the name of the file extension and saves the appropriate kind of file. Let's save `pfinal` as a PDF with dimensions 5x15 (inches).
+
+```{r, eval=FALSE}
+ggsave(pfinal, filename = "incidence.pdf", width=5, height=15)
+```
+
+### EXERCISE 4
+
+A. Start with a `filter()` statement to subset tb for just data from the year 2017. 
+
+<details><summary>SHOW ANSWER A</summary>
 
 ```{r}
-p + geom_histogram() + facet_wrap(~continent)
+tb %>%
+  filter(year == 2017)
 ```
 
-Let's go back and try this with density plots, first changing the color of the line:
+</details>
+<br>
+</br>
+
+B. Using your filtered dataset, create a density plot for the log-transformed incidence_100k
+
+<details><summary>SHOW ANSWER B</summary>
 
 ```{r}
-p + geom_density(aes(color=continent), lwd = 2)
+# keep piping using tb %>% filter() as the dataset
+tb %>%
+  filter(year == 2017) %>%
+  ggplot(aes(incidence_100k)) +
+  scale_x_log10() + 
+  geom_density()
 ```
 
-Then by changing the color of the fill and setting the transparency to 25%:
+</details>
+<br>
+</br>
 
-```{r densityplot, eval=TRUE, fig.keep="last"}
-p + geom_density(aes(fill=continent), alpha=1/4)
+C. Facet by who_region and fill by region
+
+<details><summary>SHOW ANSWER C</summary>
+
+```{r}
+tb %>%
+  filter(year == 2017) %>%
+  ggplot(aes(incidence_100k)) +
+  scale_x_log10() + 
+  geom_density(aes(fill = who_region)) +
+  facet_wrap(~who_region)
 ```
 
+</details>
+<br>
+</br>
 
-----
+D. Save your figure in #3 to a 6x10 PDF file
 
-**EXERCISE `r .ex``r .ex=.ex+1`**
+<details><summary>SHOW ANSWER D</summary>
 
-1. Plot a histogram of GDP Per Capita.
-1. Do the same but use a log<sub>10</sub> x-axis.
-1. Still on the log<sub>10</sub> x-axis scale, try a density plot mapping continent to the fill of each density distribution, and reduce the opacity.
-1. Still on the log<sub>10</sub> x-axis scale, make a histogram faceted by continent _and_ filled by continent. Facet with a single column (see `?facet_wrap` for help). 
-1. Save this figure to a 6x10 PDF file.
+```{r, eval=FALSE}
+# first create an object out of the answer to C
+plot4 <- tb %>%
+  filter(year == 2017) %>%
+  ggplot(aes(incidence_100k)) +
+  scale_x_log10() + 
+  geom_density(aes(fill = who_region)) +
+  facet_wrap(~who_region)
 
-```{r, echo=FALSE, eval=FALSE}
-p <- ggplot(gm, aes(gdpPercap))
-p + geom_histogram() #A
-
-p <- p + scale_x_log10()
-p + geom_histogram() #B
-
-p + geom_density(aes(fill=continent), alpha=1/4) #C
-
-p + geom_histogram(aes(fill=continent)) + facet_wrap(~continent, ncol=1) #D
-ggsave("myplot.pdf", width=6, height=10) #E
+#then save
+ggsave(plot4, filename = "incidence2017.pdf", width = 10, height = 6)
 ```
 
+</details>
+<br>
+</br>
 
-----
+## Publication ready graphics
 
+Let's make a plot we made earlier (x = incidence_100k, y = hiv_incidence_100k) with darkgray, transparent points and smooth curves colored by region without the standard error ribbon
 
-## Publication-ready plots & themes
+```{r}
+# create the canvas
+p <- ggplot(tb, aes(x = incidence_100k, y = hiv_incidence_100k)) +
+  scale_x_log10() +
+  scale_y_log10()
 
-Let's make a plot we made earlier (life expectancy versus the log of GDP per capita with points colored by continent with lowess smooth curves overlaid without the standard error ribbon):
+p
 
-```{r, eval=TRUE}
-p <- ggplot(gm, aes(gdpPercap, lifeExp)) 
-p <- p + scale_x_log10()
-p <- p + aes(col=continent) + geom_point() + geom_smooth(lwd=2, se=FALSE)
+# add the layers and save them onto p
+p <- p +
+  geom_point(alpha = .1, color = "darkgrey") +
+  geom_smooth(aes(color = who_region), se = FALSE)
+
+p
 ```
 
-Give the plot a title and axis labels:
+Let's add proper axes labels using labs(). Keep adding to create a title, subtitle, and better legend title (color)
 
-```{r, eval=TRUE}
-p <- p + ggtitle("Life expectancy vs GDP by Continent")
-p <- p + xlab("GDP Per Capita (USD)") + ylab("Life Expectancy (years)")
+```{r}
+p + labs(x = "TB Incidence per 100k")
+
+p + labs(x = "TB Incidence per 100k",
+         y = "HIV Incidence per 100k TB cases")
+
+p + labs(x = "TB Incidence per 100k",
+         y = "HIV Incidence per 100k TB cases",
+         title = "TB and HIV in TB are directly related",
+         subtitle = "Excluding incidences = 0",
+         color = "WHO Region")
+
+# save the labs onto p
+p <- p + labs(x = "TB Incidence per 100k",
+         y = "HIV Incidence per 100k TB cases",
+         title = "TB and HIV in TB are directly related",
+         subtitle = "Excluding incidences = 0",
+         color = "WHO Region")
 ```
 
-By default, the "gray" theme is the usual background (I've changed this course website to use the black and white background for all images).
-
-```{r theme_gray, eval=TRUE, fig.keep="last"}
-p + theme_gray()
-```
-
-We could also get a black and white background:
+All of the plots we have seen so far have used the default "gray" theme. A theme sets the background color, the look of the axes, color schemes, and the fonts. Let's see some other options for themes
 
 ```{r}
 p + theme_bw()
-```
-
-Or go a step further and remove the gridlines:
-
-```{r theme_classic, eval=TRUE, fig.keep="last"}
 p + theme_classic()
 ```
 
-Finally, there's another package that gives us lots of different themes. Install it if you don't have it already. Install all its dependencies along with it.
+Check out other [ggthemes](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/) if you'd like to see more options
+
+### Custom colors
+
+Finally, we get to choose our own colors! So far we have only used the default ggplot2 colors. Let's choose custom colors by name by adding a layer `scale_color_manual()` to our plot. Inside that function we will specify a vector of color names. Remember that to create a vector we use the function `c()` which stands for concatenate or combine.
+
+```{r}
+p + scale_color_manual(values = c("red", "orange", "yellow", "green", "blue", "purple"))
+```
+
+To see all the colors with names in R:
 
 ```{r, eval=FALSE}
-install.packages("ggthemes", dependencies = TRUE)
+colors()
 ```
 
-```{r themes, eval=FALSE}
-library(ggthemes)
-p <- ggplot(gm, aes(gdpPercap, lifeExp)) 
-p <- p + scale_x_log10()
-p <- p + aes(col=continent) + geom_point() + geom_smooth(lwd=2, se=FALSE)
-p + theme_excel()
-p + theme_excel() + scale_colour_excel()
-p + theme_gdocs() + scale_colour_gdocs()
-p + theme_stata() + scale_colour_stata()
-p + theme_wsj() + scale_colour_wsj()
-p + theme_economist() 
-p + theme_fivethirtyeight()
-p + theme_tufte()
-```
+There is a beautiful color pallette now built into ggplot2 called viridis. The viridis color scales are easier to read by those with colorblindness, and print well in grey scale. You can read more about the [viridis color scheme](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
 
-Finally, to add custom colors use scale_color_manual
+When you start typing `scale_color_viridis`, you will see that there is a function ending in `_c` and one ending in `_d`. The c stands for continuous and the d is for discrete. Because our who-region is discrete, let's choose that option.
+
+Here is a basic discrete color scale:
+
 ```{r}
-p + theme_tufte() + scale_color_manual(values = c("red", "orange", "yellow", "green", "blue"))
+p + scale_color_viridis_d()
 ```
 
-----
+Finally, the [RColorBrewer package](https://cran.r-project.org/web/packages/RColorBrewer/RColorBrewer.pdf) is also worth a look for several beautiful color combos.
+
+Hopefully now you feel more confident in creating your own custom graphics in R using ggplot2
+
+## Learn More ggplot2
+
+- Chapters 3, 7 and 28 in [R 4 Data Science](http://r4ds.had.co.nz/)
+- [R Graphics Cookbook](http://www.cookbook-r.com/Graphs/)
+- [ggplot2 cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
+- [viridis color scale](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
+- [ggthemes package](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/)
+- [Color in R](http://www.sthda.com/english/wiki/colors-in-r)
