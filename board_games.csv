@@ -1,160 +1,160 @@
-game_id,name,max_players,max_playtime,min_age,min_players,min_playtime,playing_time,year_published,cat1,cat2,cat3,cat4,cat5,cat6,cat7,cat8,designer,family,mechanic,average_rating,users_rated,rating_adj_value
-13,Catan,4,120,10,3,60,120,1995,Negotiation,NA,NA,NA,NA,NA,NA,NA,Klaus Teuber,"Catan,Promotional Board Games","Dice Rolling,Hand Management,Modular Board,Route/Network Building,Trading",7.26569,67655,0
-822,Carcassonne,5,45,8,2,30,45,2000,City Building,Medieval,Territory Building,NA,NA,NA,NA,NA,Klaus-Jürgen Wrede,"Carcassonne,Country: France","Area Control / Area Influence,Tile Placement",7.43536,67056,1
-30549,Pandemic,4,45,8,2,45,45,2008,Medical,NA,NA,NA,NA,NA,NA,NA,Matt Leacock,Pandemic,"Action Point Allowance System,Co-operative Play,Hand Management,Point to Point Movement,Set Collection,Trading,Variable Player Powers",7.67234,62377,5
-36218,Dominion,4,30,13,2,30,30,2008,Card Game,Medieval,NA,NA,NA,NA,NA,NA,Donald X. Vaccarino,"Crowdfunding: Wspieram,Dominion,Mensa Select","Card Drafting,Deck / Pool Building,Hand Management",7.69995,55930,NA
-68448,7 Wonders,7,30,10,2,30,30,2010,Ancient,Card Game,City Building,Civilization,NA,NA,NA,NA,Antoine Bauza,"7 Wonders,Tableau Building","Card Drafting,Hand Management,Set Collection,Simultaneous Action Selection,Variable Player Powers",7.83595,51688,9
-31260,Agricola,5,150,12,1,30,150,2007,Animals,Economic,Farming,NA,NA,NA,NA,NA,Uwe Rosenberg,"Agricola,Animals: Cattle,Animals: Horses,Animals: Pigs,Animals: Sheep,Harvest Series,Solitaire Games,Tableau Building","Card Drafting,Hand Management,Variable Player Powers,Worker Placement",8.05581,48261,2
-9209,Ticket to Ride,5,60,8,2,30,60,2004,Trains,Travel,NA,NA,NA,NA,NA,NA,Alan R. Moon,"Country: USA,Ticket to Ride","Hand Management,Route/Network Building,Set Collection",7.48301,48227,2
-3076,Puerto Rico,5,150,12,2,90,150,2002,City Building,Economic,Farming,NA,NA,NA,NA,NA,Andreas Seyfarth,"Alea Big Box,Colonial Theme,Country: Puerto Rico,Puerto Rico,Tableau Building",Variable Phase Order,8.09157,47789,9
-40692,Small World,5,80,8,2,40,80,2009,Fantasy,Fighting,Territory Building,NA,NA,NA,NA,NA,Philippe Keyaerts,Small World,"Area Control / Area Influence,Area Movement,Dice Rolling,Variable Player Powers",7.35735,43144,7
-2651,Power Grid,6,120,12,2,120,120,2004,Economic,Industry / Manufacturing,NA,NA,NA,NA,NA,NA,Friedemann Friese,"Country: Germany,Country: USA,Power Grid","Auction/Bidding,Route/Network Building",7.94499,42036,7
-478,Citadels,8,60,10,2,20,60,2000,Bluffing,Card Game,City Building,Fantasy,Medieval,NA,NA,NA,Bruno Faidutti,"Fantasy Flight Silver Line Games,Tableau Building","Card Drafting,Set Collection,Simultaneous Action Selection,Variable Phase Order,Variable Player Powers",7.14768,37607,2
-70323,King of Tokyo,6,30,8,2,30,30,2011,Dice,Fighting,Movies / TV / Radio theme,Science Fiction,NA,NA,NA,NA,Richard Garfield,"Asian Theme,Cities: Tokyo,Country: Japan,Kaiju,King of Tokyo,Monsters","Area Control / Area Influence,Card Drafting,Dice Rolling,Player Elimination,Press Your Luck",7.30706,36394,6
-129622,Love Letter,4,20,10,2,20,20,2012,Card Game,Deduction,Renaissance,NA,NA,NA,NA,NA,Seiji Kanai,"AEG: 5 Minute Fun,AEG: Big in Japan,AEG: Pocket Game,Card Games: Draw and Discard Games,Holidays: Christmas,Love Letter,Munchkin,Tempest: Shared World","Hand Management,Player Elimination",7.32011,35776,8
-14996,Ticket to Ride: Europe,5,60,8,2,30,60,2005,Trains,Travel,NA,NA,NA,NA,NA,NA,Alan R. Moon,Ticket to Ride,"Card Drafting,Hand Management,Route/Network Building,Set Collection",7.59192,35535,9
-28143,Race for the Galaxy,4,60,12,2,30,60,2007,Card Game,Civilization,Economic,Science Fiction,Space Exploration,NA,NA,NA,Thomas Lehmann,"Race for the Galaxy,Tableau Building","Hand Management,Simultaneous Action Selection,Variable Phase Order,Variable Player Powers",7.77137,34242,NA
-39856,Dixit,6,30,6,3,30,30,2008,Card Game,Humor,Party Game,NA,NA,NA,NA,NA,Jean-Louis Roubira,Dixit,"Simultaneous Action Selection,Storytelling,Voting",7.35989,31078,0
-34635,Stone Age,4,90,10,2,60,90,2008,Dice,Prehistoric,NA,NA,NA,NA,NA,NA,Bernd Brunnhofer,Stone Age,"Dice Rolling,Set Collection,Worker Placement",7.6334,30432,10
-15987,Arkham Horror,8,240,12,1,120,240,2005,Adventure,Fantasy,Fighting,Horror,Novel-based,NA,NA,NA,"Richard Launius,Kevin Wilson","Arkham Horror,Cthulhu Mythos,Solitaire Games","Co-operative Play,Dice Rolling,Hand Management,Point to Point Movement,Role Playing,Variable Player Powers",7.35197,30050,8
-178900,Codenames,8,15,14,2,15,15,2015,Card Game,Deduction,Party Game,Spies/Secret Agents,Word Game,NA,NA,NA,Vlaada Chvátil,Codenames,"Memory,Partnerships,Pattern Recognition,Press Your Luck",7.90348,29622,2
-148228,Splendor,4,30,10,2,30,30,2014,Card Game,Economic,Renaissance,NA,NA,NA,NA,NA,Marc André,Splendor,"Card Drafting,Set Collection",7.54035,29395,9
-110327,Lords of Waterdeep,5,120,12,2,60,120,2012,City Building,Fantasy,NA,NA,NA,NA,NA,NA,"Peter Lee,Rodney Thompson","Dungeons & Dragons,From RPG books to board games","Set Collection,Take That,Worker Placement",7.79639,28912,7
-1927,Munchkin,6,120,10,3,60,120,2001,Card Game,Fantasy,Fighting,Humor,NA,NA,NA,NA,Steve Jackson (I),Munchkin,"Card Drafting,Dice Rolling,Hand Management,Take That,Variable Player Powers",5.95463,28807,8
-11,Bohnanza,7,45,13,2,45,45,1997,Card Game,Farming,Negotiation,NA,NA,NA,NA,NA,Uwe Rosenberg,"Bohnanza,Lookout Bean Games","Hand Management,Set Collection,Trading",7.06751,28354,5
-12333,Twilight Struggle,2,180,13,2,180,180,2005,Modern Warfare,Political,Wargame,NA,NA,NA,NA,NA,"Ananda Gupta,Jason Matthews","Country: Russia,Country: USA","Area Control / Area Influence,Campaign / Battle Card Driven,Dice Rolling,Hand Management,Simultaneous Action Selection",8.35801,27008,10
-65244,Forbidden Island,4,30,10,2,30,30,2010,Adventure,Card Game,Fantasy,NA,NA,NA,NA,NA,Matt Leacock,"Forbidden Games,Mensa Select","Action Point Allowance System,Co-operative Play,Grid Movement,Hand Management,Modular Board,Pick-up and Deliver,Set Collection,Variable Player Powers",6.85993,26804,2
-50,Lost Cities,2,30,10,2,30,30,1999,Card Game,Exploration,NA,NA,NA,NA,NA,NA,Reiner Knizia,"Archaeology,Card Games: Draw and Discard Games,Kosmos two-player series,Lost Cities","Hand Management,Set Collection",7.14784,26686,6
-41114,The Resistance,10,30,13,5,30,30,2009,Bluffing,Deduction,Negotiation,Party Game,Science Fiction,Spies/Secret Agents,NA,NA,Don Eskridge,"Dystopian Universe,Postcard Box Games,Werewolf / Mafia","Partnerships,Simultaneous Action Selection,Voting",7.4311,25555,5
-37111,Battlestar Galactica,6,300,10,3,120,300,2008,Bluffing,Deduction,Movies / TV / Radio theme,Political,Science Fiction,Space Exploration,Spies/Secret Agents,NA,Corey Konieczka,Battlestar Galactica,"Area Movement,Co-operative Play,Dice Rolling,Hand Management,Partnerships,Role Playing,Variable Player Powers",7.77466,25372,9
-84876,The Castles of Burgundy,4,90,12,2,30,90,2011,Dice,Medieval,Territory Building,NA,NA,NA,NA,NA,Stefan Feld,"Alea Big Box,Country: France","Dice Rolling,Set Collection,Tile Placement,Variable Phase Order",8.1121200000000009,24876,10
-98778,Hanabi,5,25,8,2,25,25,2010,Card Game,Deduction,Memory,NA,NA,NA,NA,NA,Antoine Bauza,"Country: Japan,Headband deduction games","Co-operative Play,Hand Management,Memory,Set Collection",7.21583,23717,10
-120677,Terra Mystica,5,150,12,2,60,150,2012,Civilization,Economic,Fantasy,Territory Building,NA,NA,NA,NA,"Jens Drögemüller,Helge Ostertag",Terra Mystica,"Route/Network Building,Variable Phase Order,Variable Player Powers",8.29198,23684,5
-40834,Dominion: Intrigue,4,30,13,2,30,30,2009,Card Game,Medieval,NA,NA,NA,NA,NA,NA,Donald X. Vaccarino,"Crowdfunding: Wspieram,Dominion","Card Drafting,Deck / Pool Building,Hand Management",7.79419,23156,2
-463,Magic: The Gathering,2,20,13,2,20,20,1993,Card Game,Collectible Components,Fantasy,Fighting,NA,NA,NA,NA,Richard Garfield,"CCGs (Collectible Card Games),Mensa Select","Hand Management,Player Elimination",7.43768,22883,5
-150376,Dead of Winter: A Crossroads Game,5,210,14,2,45,210,2014,Bluffing,Horror,Zombies,NA,NA,NA,NA,NA,"Jonathan Gilmour,Isaac Vega",Crossroads Series,"Action Point Allowance System,Area Movement,Co-operative Play,Dice Rolling,Hand Management,Storytelling,Trading,Variable Player Powers,Voting",7.86596,22830,10
-181,Risk,6,120,10,2,120,120,1959,Negotiation,Territory Building,Wargame,NA,NA,NA,NA,NA,"Albert Lamorisse,Michael I. Levin","Components: Miniatures,Hasbro Nostalgia Series,Risk","Area Control / Area Influence,Area Movement,Dice Rolling,Partnerships,Player Elimination,Set Collection",5.57906,21836,10
-18602,Caylus,5,150,12,2,60,150,2005,City Building,Economic,Medieval,NA,NA,NA,NA,NA,William Attia,"Caylus,Country: France,Ystari originals",Worker Placement,7.86152,21806,1
-10547,Betrayal at House on the Hill,6,60,12,3,60,60,2004,Adventure,Exploration,Horror,Miniatures,NA,NA,NA,NA,"Rob Daviau,Bruce Glassco,Bill McQuillan,Mike Selinker,Teeuwynn Woodruff",NA,"Co-operative Play,Dice Rolling,Modular Board,Partnerships,Player Elimination,Role Playing,Storytelling,Variable Player Powers",7.144,21688,10
-6249,Alhambra,6,60,8,2,45,60,2003,Arabian,City Building,Medieval,NA,NA,NA,NA,NA,Dirk Henn,"Alhambra,Cities: Granada,Country: Spain","Card Drafting,Hand Management,Set Collection,Tile Placement",7.04424,21317,NA
-131357,Coup,6,15,9,2,15,15,2012,Bluffing,Card Game,Deduction,Party Game,Political,NA,NA,NA,Rikki Tahta,"Crowdfunding: Kickstarter,Dystopian Universe,Postcard Box Games","Memory,Player Elimination,Take That,Variable Player Powers",7.12316,20679,NA
-31481,Galaxy Trucker,4,60,10,2,60,60,2007,Humor,Real-time,Science Fiction,Space Exploration,Transportation,NA,NA,NA,Vlaada Chvátil,NA,"Dice Rolling,Tile Placement",7.47467,20647,NA
-72125,Eclipse,6,200,14,2,60,200,2011,Civilization,Fighting,Science Fiction,Space Exploration,Wargame,NA,NA,NA,Touko Tahkokallio,"4X games,Eclipse","Area Control / Area Influence,Dice Rolling,Grid Movement,Modular Board,Player Elimination,Tile Placement,Variable Phase Order,Variable Player Powers",8.01311,20285,NA
-124742,Android: Netrunner,2,45,14,2,45,45,2012,Bluffing,Card Game,Collectible Components,Science Fiction,NA,NA,NA,NA,"Richard Garfield,Lukas Litzsinger","Android,Android: Netrunner LCG,CCGs (Collectible Card Games),Cyberpunk,Hackers,Living Card Game","Action Point Allowance System,Hand Management,Secret Unit Deployment,Variable Player Powers",8.0044,20271,2
-15062,Shadows over Camelot,7,80,10,3,60,80,2005,Adventure,Deduction,Fantasy,Medieval,Mythology,NA,NA,NA,"Bruno Cathala,Serge Laget","The Legend of King Arthur and the Knights of the Round Table,Shadows over Camelot","Co-operative Play,Hand Management,Partnerships,Player Elimination,Set Collection,Variable Player Powers",7.1574,20216,4
-42,Tigris & Euphrates,4,90,12,2,90,90,1997,Abstract Strategy,Ancient,Civilization,Territory Building,NA,NA,NA,NA,Reiner Knizia,"Desert Theme,Knizia tile-laying trilogy,Middle Eastern Theme,Rivers: Euphrates,Rivers: Tigris,Tigris & Euphrates","Area Control / Area Influence,Hand Management,Set Collection,Tile Placement",7.72379,20166,4
-173346,7 Wonders Duel,2,30,10,2,30,30,2015,Ancient,Card Game,City Building,Civilization,NA,NA,NA,NA,"Antoine Bauza,Bruno Cathala","7 Wonders,7 Wonders Duel,Tableau Building","Card Drafting,Set Collection",8.1939,20088,4
-2655,Hive,2,20,9,2,20,20,2001,Abstract Strategy,Animals,NA,NA,NA,NA,NA,NA,John Yianni,"Animals: Ants,Animals: Bees,Animals: Grasshoppers,Animals: Spiders,Combinatorial,Hive,Mensa Select","Grid Movement,Tile Placement",7.34252,20026,9
-70919,Takenoko,4,45,8,2,45,45,2011,Animals,Environmental,Farming,Territory Building,NA,NA,NA,NA,Antoine Bauza,"Animals: Pandas,Asian Theme,Country: Japan","Dice Rolling,Grid Movement,Modular Board,Pattern Building,Set Collection,Tile Placement",7.35247,19888,1
-3955,BANG!,7,40,8,4,20,40,2002,American West,Bluffing,Card Game,Deduction,Fighting,NA,NA,NA,Emiliano Sciarra,BANG!,"Hand Management,Partnerships,Player Elimination,Take That,Variable Player Powers",6.55752,19678,1
-18,RoboRally,8,120,12,2,45,120,1994,Miniatures,Racing,Science Fiction,NA,NA,NA,NA,NA,Richard Garfield,Robots,"Action / Movement Programming,Grid Movement,Modular Board,Simultaneous Action Selection",7.15355,19371,7
-10630,Memoir '44,6,60,8,2,30,60,2004,Miniatures,Wargame,World War II,NA,NA,NA,NA,NA,Richard Borg,"Commands & Colors,Memoir '44","Area Control / Area Influence,Campaign / Battle Card Driven,Dice Rolling,Grid Movement,Hand Management,Modular Board,Simulation",7.53029,19351,2
-35677,Le Havre,5,150,12,1,30,150,2008,City Building,Economic,Industry / Manufacturing,Nautical,NA,NA,NA,NA,Uwe Rosenberg,"Country: France,Harvest Series,Le Havre,Solitaire Games",Worker Placement,7.93096,18934,6
-39463,Cosmic Encounter,5,120,12,3,60,120,2008,Bluffing,Negotiation,Science Fiction,Space Exploration,NA,NA,NA,NA,"Bill Eberle,Jack Kittredge,Bill Norton,Peter Olotka,Kevin Wilson",Cosmic Encounter,"Hand Management,Partnerships,Take That,Variable Player Powers",7.60639,18851,10
-8217,San Juan,4,60,10,2,45,60,2004,Card Game,City Building,Economic,NA,NA,NA,NA,NA,Andreas Seyfarth,"Alea Small Box,Colonial Theme,Country: Puerto Rico,Puerto Rico,Tableau Building","Hand Management,Set Collection,Variable Phase Order",7.29723,18718,10
-147020,Star Realms,2,20,12,2,20,20,2014,Card Game,Fighting,Science Fiction,NA,NA,NA,NA,NA,"Robert Dougherty,Darwin Kastle","Crowdfunding: Kickstarter,Star Realms","Card Drafting,Deck / Pool Building,Player Elimination,Take That",7.64123,18434,9
-93,El Grande,5,120,12,2,60,120,1995,Renaissance,NA,NA,NA,NA,NA,NA,NA,"Wolfgang Kramer,Richard Ulrich","Country: Spain,El Grande","Area Control / Area Influence,Area Movement,Auction/Bidding,Card Drafting,Hand Management,Memory,Simultaneous Action Selection",7.80446,18423,8
-163412,Patchwork,2,30,8,2,15,30,2014,Abstract Strategy,Puzzle,NA,NA,NA,NA,NA,NA,Uwe Rosenberg,"Combinatorial,Lookout Games Fur Zwei Spieler Series,Polyominoes","Tile Placement,Time Track",7.83164,18379,9
-54043,Jaipur,2,30,12,2,30,30,2009,Animals,Card Game,NA,NA,NA,NA,NA,NA,Sébastien Pauchon,"Animals: Camels,Asian Theme,Country: India","Card Drafting,Hand Management,Set Collection",7.54421,18252,9
-96848,Mage Knight Board Game,4,150,14,1,150,150,2011,Adventure,Exploration,Fantasy,Fighting,NA,NA,NA,NA,Vlaada Chvátil,"Clix,Components: Miniatures,Mage Knight Universe,Solitaire Games","Card Drafting,Co-operative Play,Deck / Pool Building,Dice Rolling,Grid Movement,Hand Management,Modular Board,Role Playing,Tile Placement,Variable Player Powers",8.13794,18160,4
-121921,Robinson Crusoe: Adventures on the Cursed Island,4,180,14,1,90,180,2012,Adventure,Exploration,Fighting,Novel-based,NA,NA,NA,NA,Ignacy Trzewiczek,"Robinson Crusoe: Adventure on the Cursed Island,Solitaire Games","Action / Movement Programming,Co-operative Play,Dice Rolling,Modular Board,Simultaneous Action Selection,Storytelling,Tile Placement,Variable Player Powers,Worker Placement",8.01707,17999,5
-126163,Tzolk'in: The Mayan Calendar,4,90,13,2,90,90,2012,Ancient,Civilization,Economic,Farming,Mythology,NA,NA,NA,"Simone Luciani,Daniele Tascini","Country: Guatemala,Country: Mexico,Tropical theme","Set Collection,Worker Placement",7.94181,17762,2
-103343,A Game of Thrones: The Board Game (Second Edition),6,240,14,3,120,240,2011,Bluffing,Fantasy,Negotiation,Novel-based,Political,Wargame,NA,NA,Christian T. Petersen,"A Game of Thrones: The Board Game,A Song of Ice and Fire","Area Control / Area Influence,Area Movement,Auction/Bidding,Hand Management,Player Elimination,Simultaneous Action Selection,Variable Player Powers",7.74,17718,8
-133473,Sushi Go!,5,15,8,2,15,15,2013,Card Game,NA,NA,NA,NA,NA,NA,NA,Phil Walker-Harding,"Country: Japan,Crowdfunding: Indiegogo,Food / Cooking","Card Drafting,Hand Management,Set Collection,Simultaneous Action Selection",7.14811,17506,3
-161936,Pandemic Legacy: Season 1,4,60,13,2,60,60,2015,Environmental,Medical,NA,NA,NA,NA,NA,NA,"Rob Daviau,Matt Leacock","Campaign Games,Legacy,Pandemic","Action Point Allowance System,Co-operative Play,Hand Management,Point to Point Movement,Set Collection,Trading,Variable Player Powers",8.66878,17251,6
-157354,Five Tribes,4,80,13,2,40,80,2014,Arabian,Fantasy,Mythology,NA,NA,NA,NA,NA,Bruno Cathala,"Animals: Camels,Country: Saudi Arabia","Area Control / Area Influence,Auction/Bidding,Modular Board,Set Collection,Variable Phase Order",7.83284,17225,1
-2453,Blokus,4,20,5,2,20,20,2000,Abstract Strategy,Territory Building,NA,NA,NA,NA,NA,NA,Bernard Tavitian,"Blokus Series,Combinatorial,Mensa Select,Polyominoes,Solitaire Games","Area Enclosure,Tile Placement",6.94393,16879,9
-102794,Caverna: The Cave Farmers,7,210,12,1,30,210,2013,Animals,Economic,Fantasy,Farming,NA,NA,NA,NA,Uwe Rosenberg,"Animals: Sheep,Harvest Series,Mining,Solitaire Games","Tile Placement,Worker Placement",8.18155,16798,7
-103885,Star Wars: X-Wing Miniatures Game,2,45,14,2,30,45,2012,Aviation / Flight,Bluffing,Collectible Components,Miniatures,Movies / TV / Radio theme,Science Fiction,Wargame,NA,"Steven Kimball,James Kniffen,Corey Konieczka,Jason Little,Brady Sadler,Adam Sadler","FlightPath,Star Wars,Star Wars: X-Wing Miniatures Game","Action / Movement Programming,Dice Rolling,Player Elimination,Simultaneous Action Selection,Variable Player Powers",7.8786,16772,3
-9220,Saboteur,10,30,8,3,30,30,2004,Bluffing,Card Game,Exploration,Party Game,NA,NA,NA,NA,Fréderic Moyersoen,"Mining,Saboteur","Hand Management,Partnerships,Route/Network Building,Take That",6.6393,16460,2
-146021,Eldritch Horror,8,240,14,1,120,240,2013,Adventure,Fantasy,Fighting,Horror,Novel-based,NA,NA,NA,"Corey Konieczka,Nikki Valens","Arkham Horror,Cthulhu Mythos,Eldritch Horror,Solitaire Games","Co-operative Play,Dice Rolling,Point to Point Movement,Variable Player Powers",7.94433,16196,4
-122522,Smash Up,4,45,12,2,45,45,2012,Card Game,Fantasy,Humor,Pirates,Science Fiction,Zombies,NA,NA,Paul Peterson,Smash Up,"Area Control / Area Influence,Hand Management,Take That,Variable Player Powers",6.89171,15954,10
-128882,The Resistance: Avalon,10,30,13,5,30,30,2012,Bluffing,Card Game,Deduction,Fantasy,Medieval,Negotiation,Party Game,NA,Don Eskridge,"Crowdfunding: Kickstarter,The Legend of King Arthur and the Knights of the Round Table,Postcard Box Games,Werewolf / Mafia","Memory,Partnerships,Simultaneous Action Selection,Variable Player Powers,Voting",7.72088,15896,4
-172,For Sale,6,20,8,3,20,20,1997,Card Game,Economic,NA,NA,NA,NA,NA,NA,Stefan Dorra,Gryphon Games bookshelf series,"Auction/Bidding,Hand Management",7.22213,15544,6
-143884,Machi Koro,4,30,10,2,30,30,2012,Card Game,City Building,Dice,NA,NA,NA,NA,NA,Masao Suganuma,"Asian Theme,Country: Japan,Machi Koro","Card Drafting,Dice Rolling",6.76032,15456,9
-12,Ra,5,60,12,2,45,60,1999,Ancient,Mythology,NA,NA,NA,NA,NA,NA,Reiner Knizia,"Alea Big Box,Country: Egypt,Ra","Auction/Bidding,Press Your Luck,Set Collection",7.47505,15378,5
-25613,Through the Ages: A Story of Civilization,4,240,12,2,240,240,2006,City Building,Civilization,Economic,NA,NA,NA,NA,NA,Vlaada Chvátil,Tableau Building,"Action Point Allowance System,Auction/Bidding,Card Drafting,Hand Management",8.09024,15337,7
-116,Guillotine,5,30,12,2,30,30,1998,Card Game,Humor,NA,NA,NA,NA,NA,NA,Paul Peterson,Country: France,Hand Management,6.53873,15334,10
-8203,"Hey, That's My Fish!",4,20,8,2,20,20,2003,Abstract Strategy,Animals,NA,NA,NA,NA,NA,NA,"Günter Cornett,Alvydas Jakeliunas","Animals: Fishes,Animals: Penguins,Antarctic Theme,Sports: Fishing / Angling","Area Enclosure,Grid Movement,Modular Board",6.77453,15267,5
-100423,Elder Sign,8,90,13,1,90,90,2011,Adventure,Card Game,Dice,Fantasy,Fighting,Horror,Novel-based,NA,"Richard Launius,Kevin Wilson","Arkham Horror,Cthulhu Mythos,Elder Sign,Fantasy Flight Silver Line Games,Solitaire Games","Co-operative Play,Dice Rolling,Modular Board,Variable Player Powers",7.01705,15248,8
-27162,Kingsburg,5,90,13,2,90,90,2007,City Building,Dice,Fantasy,Medieval,NA,NA,NA,NA,"Andrea Chiarvesio,Luca Iennaco",NA,"Dice Rolling,Worker Placement",7.24092,15211,0
-5,Acquire,6,90,12,3,90,90,1964,Economic,NA,NA,NA,NA,NA,NA,NA,Sid Sackson,3M Bookshelf Series,"Hand Management,Stock Holding,Tile Placement",7.3583,15195,8
-16992,Tsuro,8,15,8,2,15,15,2004,Abstract Strategy,Fantasy,NA,NA,NA,NA,NA,NA,Tom McMurchie,"Animals: Dragons,Asian Theme","Hand Management,Player Elimination,Route/Network Building,Tile Placement",6.68825,15151,4
-21790,Thurn and Taxis,4,60,13,2,60,60,2006,Renaissance,Transportation,NA,NA,NA,NA,NA,NA,"Andreas Seyfarth,Karen Seyfarth","Country: Germany,Thurn and Taxis","Card Drafting,Hand Management,Route/Network Building,Set Collection",7.13008,15146,7
-157969,Sheriff of Nottingham,5,60,13,3,60,60,2014,Bluffing,Card Game,Humor,Medieval,Negotiation,Novel-based,Party Game,NA,"Sérgio Halaban,André Zatz","Cities: Nottingham,Dice Tower Essentials","Card Drafting,Hand Management,Role Playing,Set Collection",7.35219,15055,1
-12493,Twilight Imperium (Third Edition),6,300,12,3,180,300,2005,Civilization,Negotiation,Political,Science Fiction,Space Exploration,Wargame,NA,NA,Christian T. Petersen,"4X games,Components: Miniatures,Fantasy Flight Big Box,Twilight Imperium","Action Point Allowance System,Area-Impulse,Dice Rolling,Hex-and-Counter,Modular Board,Trading,Variable Phase Order,Variable Player Powers,Voting",7.92399,14996,7
-77423,The Lord of the Rings: The Card Game,2,60,13,1,60,60,2011,Card Game,Collectible Components,Fantasy,Novel-based,NA,NA,NA,NA,Nate French,"CCGs (Collectible Card Games),Living Card Game,Lord of the Rings: The Card Game (LCG),Solitaire Games,Tolkien Games","Co-operative Play,Hand Management,Variable Player Powers",7.64522,14834,6
-169786,Scythe,5,115,14,1,90,115,2016,Civilization,Economic,Fighting,Science Fiction,Territory Building,NA,NA,NA,Jamey Stegmaier,"Alternate History,Crowdfunding: Kickstarter,Scythe,Solitaire Games,Tableau Building","Area Control / Area Influence,Grid Movement,Variable Player Powers",8.33346,14817,10
-123260,Suburbia,4,90,8,1,90,90,2012,City Building,Economic,NA,NA,NA,NA,NA,NA,Ted Alspach,"Mensa Select,Solitaire Games,Suburbia","Card Drafting,Set Collection,Tile Placement",7.64467,14757,5
-136063,Forbidden Desert,5,45,10,2,45,45,2013,Adventure,Fantasy,Science Fiction,NA,NA,NA,NA,NA,Matt Leacock,"Desert Theme,Forbidden Games,Mensa Select","Action Point Allowance System,Co-operative Play,Grid Movement,Modular Board,Pick-up and Deliver,Set Collection,Variable Player Powers",7.28635,14698,5
-74,Apples to Apples,10,30,12,4,30,30,1999,Card Game,Humor,Party Game,NA,NA,NA,NA,NA,"Matthew Kirby,Mark Alan Osterhaus","Apples to Apples,Mensa Select","Hand Management,Simultaneous Action Selection,Voting",5.95458,14611,3
-104162,Descent: Journeys in the Dark (Second Edition),5,120,14,2,120,120,2012,Adventure,Exploration,Fantasy,Fighting,Miniatures,NA,NA,NA,"Daniel Clark (I),Corey Konieczka,Adam Sadler,Kevin Wilson","Campaign Games,Components: Miniatures,Descent,Monsters,The Realms of Terrinoth","Action Point Allowance System,Dice Rolling,Grid Movement,Hand Management,Modular Board,Partnerships,Variable Player Powers",7.79832,14520,3
-12942,No Thanks!,7,30,8,3,20,30,2004,Card Game,NA,NA,NA,NA,NA,NA,NA,Thorsten Gimmler,NA,"Auction/Bidding,Press Your Luck,Set Collection",7.04283,14475,10
-132531,Roll for the Galaxy,5,45,13,2,45,45,2014,Civilization,Dice,Economic,Science Fiction,Space Exploration,NA,NA,NA,"Wei-Hwa Huang,Thomas Lehmann","Crowdfunding: Wspieram,Race for the Galaxy,Tableau Building","Deck / Pool Building,Dice Rolling,Simultaneous Action Selection,Variable Phase Order,Variable Player Powers,Worker Placement",7.85096,14158,7
-37046,Ghost Stories,4,60,12,1,60,60,2008,Fantasy,Fighting,Horror,Mythology,NA,NA,NA,NA,Antoine Bauza,"Asian Theme,Ghost Stories,Ghosts,Solitaire Games","Co-operative Play,Dice Rolling,Grid Movement,Modular Board,Variable Player Powers",7.3889,14147,4
-50381,Cards Against Humanity,30,30,17,4,30,30,2009,Card Game,Humor,Mature / Adult,Party Game,Print & Play,NA,NA,NA,"Josh Dillon,Daniel Dranove,Eli Halpern,Ben Hantoot,David Munk,David Pinsof,Max Temkin,Eliot Weinstein","Cards Against Humanity,Crowdfunding: Kickstarter","Hand Management,Simultaneous Action Selection",6.21198,14042,2
-108745,Seasons,4,60,14,2,60,60,2012,Card Game,Dice,Fantasy,NA,NA,NA,NA,NA,Régis Bonnessée,Kingdom of Xidit,"Card Drafting,Dice Rolling,Hand Management,Take That",7.46803,13930,4
-5782,Coloretto,5,30,8,2,30,30,2003,Animals,Card Game,NA,NA,NA,NA,NA,NA,Michael Schacht,"Animals: Chameleons,Coloretto Series","Card Drafting,Set Collection",6.97404,13769,7
-100901,Flash Point: Fire Rescue,6,45,10,1,45,45,2011,Adventure,NA,NA,NA,NA,NA,NA,NA,Kevin Lanzing,"Crowdfunding: Kickstarter,Firefighting,Flash Point: Fire Rescue,Solitaire Games","Action Point Allowance System,Co-operative Play,Dice Rolling,Grid Movement,Pick-up and Deliver,Simulation,Variable Player Powers",7.27877,13740,8
-104006,Village,4,90,12,2,60,90,2011,Farming,Medieval,NA,NA,NA,NA,NA,NA,"Inka Brand,Markus Brand",Village,"Set Collection,Worker Placement",7.56775,13707,7
-54,Tikal,4,90,13,2,90,90,1999,Exploration,Territory Building,NA,NA,NA,NA,NA,NA,"Michael Kiesling,Wolfgang Kramer","Archaeology,Country: Guatemala,The Mask Trilogy,Promotional Board Games,Tropical theme","Action Point Allowance System,Area Control / Area Influence,Auction/Bidding,Grid Movement,Set Collection,Tile Placement",7.34313,13674,7
-2653,Survive: Escape from Atlantis!,4,60,8,2,60,60,1982,Adventure,Animals,Bluffing,Nautical,NA,NA,NA,NA,Julian Courtland-Smith,"Animals: Dolphins,Animals: Sharks,Atlantis,Survive!","Action Point Allowance System,Dice Rolling,Grid Movement,Memory,Modular Board,Secret Unit Deployment",7.32987,13655,2
-170216,Blood Rage,4,90,14,2,60,90,2015,Fantasy,Fighting,Miniatures,Mythology,NA,NA,NA,NA,Eric M. Lang,"Components: Miniatures,Crowdfunding: Kickstarter,Vikings","Action Point Allowance System,Area Control / Area Influence,Area Movement,Card Drafting,Hand Management,Memory,Simultaneous Action Selection",8.1584,13352,9
-107529,Kingdom Builder,4,45,8,2,45,45,2011,Medieval,Territory Building,NA,NA,NA,NA,NA,NA,Donald X. Vaccarino,"Kingdom Builder,Queen Yellow Wave Box Series","Area Control / Area Influence,Area Enclosure,Modular Board,Route/Network Building",7.0317,13164,3
-155426,Castles of Mad King Ludwig,4,90,13,1,90,90,2014,Post-Napoleonic,NA,NA,NA,NA,NA,NA,NA,Ted Alspach,"Country: Germany,Crowdfunding: Wspieram,Mensa Select","Card Drafting,Pattern Building,Set Collection,Tile Placement",7.74079,13140,7
-2223,UNO,10,30,6,2,30,30,1971,Card Game,Comic Book / Strip,Movies / TV / Radio theme,Number,NA,NA,NA,NA,Merle Robbins,"Anime & Manga,Card Games: Matching Games,Card Games: Outplay Games,Characters: Monster High,Comics: Marvel Universe,Diary of a Wimpy Kid,Eights Group,Pinkalicious,Promotional Board Games,Shedding Games,Toy Story,TV Series: Family Guy,TV Series: The Simpsons,UNO",Hand Management,5.33351,13135,10
-24480,The Pillars of the Earth,4,120,12,2,90,120,2006,Economic,Medieval,Novel-based,Religious,NA,NA,NA,NA,"Michael Rieneck,Stefan Stadler","Country: England,Ken Follett novels,Kosmos Literature Series,The Pillars of the Earth",Worker Placement,7.32224,13126,4
-555,The Princes of Florence,5,100,12,2,75,100,2000,City Building,Renaissance,NA,NA,NA,NA,NA,NA,"Wolfgang Kramer,Richard Ulrich,Jens Christopher Ulrich","Alea Big Box,Cities: Florence,Country: Italy,Polyominoes","Auction/Bidding,Tile Placement",7.59407,13115,8
-62219,Dominant Species,6,240,14,2,120,240,2010,Animals,Environmental,Prehistoric,NA,NA,NA,NA,NA,Chad Jensen,"4X games,Evolution","Area Control / Area Influence,Card Drafting,Grid Movement,Modular Board,Tile Placement,Variable Player Powers,Worker Placement",7.86573,12918,3
-9674,Ingenious,4,45,10,1,45,45,2004,Abstract Strategy,NA,NA,NA,NA,NA,NA,NA,Reiner Knizia,"Ingenious,Mensa Select,Solitaire Games","Hand Management,Partnerships,Pattern Building,Tile Placement",7.17603,12910,NA
-129437,Legendary: A Marvel Deck Building Game,5,45,14,1,45,45,2012,Card Game,Comic Book / Strip,NA,NA,NA,NA,NA,NA,Devin Low,"Comics: Marvel Universe,Legendary,Solitaire Games,Superheroes","Co-operative Play,Deck / Pool Building",7.63589,12468,3
-9217,Saint Petersburg,4,60,10,2,45,60,2004,Age of Reason,Card Game,Economic,NA,NA,NA,NA,NA,Bernd Brunnhofer,"Cities: St Petersburg / Petrograd / Leningrad,Country: Russia,Saint Petersburg,Tableau Building","Card Drafting,Set Collection",7.3346,12411,10
-2471,Zombies!!!,6,60,12,2,60,60,2001,Exploration,Fighting,Horror,Miniatures,Movies / TV / Radio theme,Zombies,NA,NA,"Todd Breitenstein,Kerry Breitenstein",Zombies!!!,"Dice Rolling,Grid Movement,Hand Management,Modular Board,Roll / Spin and Move",5.87659,12380,10
-258,Fluxx,6,30,8,2,5,30,1997,Card Game,NA,NA,NA,NA,NA,NA,NA,"Andrew Looney,Kristin Looney","Fluxx,Mensa Select","Hand Management,Set Collection",5.69886,12304,8
-760,Battle Line,2,30,12,2,30,30,2000,Ancient,Card Game,Deduction,NA,NA,NA,NA,NA,Reiner Knizia,Schotten-Totten,"Hand Management,Set Collection",7.42393,12222,9
-148949,Istanbul,5,60,10,2,40,60,2014,Economic,NA,NA,NA,NA,NA,NA,NA,Rüdiger Dorn,"Cities: Istanbul,Istanbul","Dice Rolling,Grid Movement,Modular Board,Pick-up and Deliver",7.63302,12216,4
-154203,Imperial Settlers,4,90,10,1,45,90,2014,Ancient,Card Game,City Building,Civilization,NA,NA,NA,NA,Ignacy Trzewiczek,"Ancient Rome,Country: Egypt,Country: Japan,Solitaire Games,Tableau Building","Card Drafting,Hand Management,Take That,Variable Player Powers",7.58838,12195,3
-37904,Formula D,10,60,8,2,60,60,2008,Racing,Sports,NA,NA,NA,NA,NA,NA,"Laurent Lavaur,Eric Randall","Country: Monaco,Formula De/De mini/D,Sports: Auto Racing","Dice Rolling,Grid Movement,Player Elimination,Press Your Luck,Roll / Spin and Move,Simulation",7.05892,12145,9
-54998,Cyclades,5,90,13,2,60,90,2009,Ancient,City Building,Civilization,Fighting,Miniatures,Mythology,Nautical,NA,"Bruno Cathala,Ludovic Maublanc","Country: Greece,Cyclades,Islands: Cyclades","Area Control / Area Influence,Area Movement,Auction/Bidding,Card Drafting,Dice Rolling",7.53957,12093,9
-153938,Camel Up,8,30,8,2,20,30,2014,Animals,Dice,Racing,NA,NA,NA,NA,NA,Steffen Bogen,"3D Games,Animals: Camels,Country: Egypt","Betting/Wagering,Dice Rolling,Roll / Spin and Move",7.11254,12092,5
-3,Samurai,4,60,10,2,30,60,1998,Abstract Strategy,Medieval,NA,NA,NA,NA,NA,NA,Reiner Knizia,"Asian Theme,Country: Japan,Knizia tile-laying trilogy,Samurai","Area Control / Area Influence,Hand Management,Set Collection,Tile Placement",7.44119,12019,1
-29368,Last Night on Earth: The Zombie Game,6,90,12,2,90,90,2007,Fighting,Horror,Miniatures,Zombies,NA,NA,NA,NA,Jason C. Hill,Last Night on Earth Game Engine,"Dice Rolling,Hand Management,Modular Board,Partnerships,Roll / Spin and Move,Variable Player Powers",7.02902,12012,10
-181304,Mysterium,7,42,10,2,42,42,2015,Deduction,Murder/Mystery,Party Game,NA,NA,NA,NA,NA,"Oleksandr Nevskiy,Oleg Sidorenko","Ghosts,Mysterium","Co-operative Play,Hand Management,Pattern Recognition",7.53521,11985,6
-158899,Colt Express,6,40,10,2,30,40,2014,American West,Fighting,Trains,NA,NA,NA,NA,NA,Christophe Raimbault,3D Games,"Action / Movement Programming,Hand Management,Memory,Modular Board,Take That,Variable Player Powers",7.24238,11881,4
-62871,Zombie Dice,99,20,10,2,10,20,2010,Dice,Horror,Humor,Party Game,Zombies,NA,NA,NA,Steve Jackson (I),Zombie Dice,"Dice Rolling,Press Your Luck",6.23942,11835,7
-823,Lord of the Rings,5,60,12,2,60,60,2000,Adventure,Fantasy,Novel-based,NA,NA,NA,NA,NA,Reiner Knizia,"Fantasy Flight Silver Line Games,Kosmos Literature Series,Lord of the Rings (Reiner Knizia's co-op game),Tolkien Games","Co-operative Play,Dice Rolling,Hand Management,Set Collection,Variable Player Powers",6.78475,11826,2
-38453,Space Alert,5,30,12,1,30,30,2008,Electronic,Real-time,Science Fiction,Space Exploration,NA,NA,NA,NA,Vlaada Chvátil,"CD Board Games,Solitaire Games","Action / Movement Programming,Area Movement,Co-operative Play,Hand Management,Simultaneous Action Selection",7.533,11825,5
-21763,Mr. Jack,2,30,9,2,30,30,2006,Deduction,Murder/Mystery,NA,NA,NA,NA,NA,NA,"Bruno Cathala,Ludovic Maublanc","Characters: Jack the Ripper,Characters: Sherlock Holmes,Cities: London,Country: England,Mr. Jack","Grid Movement,Variable Player Powers",7.08759,11800,9
-122515,Keyflower,6,120,12,2,90,120,2012,City Building,Economic,Nautical,Renaissance,Territory Building,NA,NA,NA,"Sebastian Bleasdale,Richard Breese","Colonial Theme,Crowdfunding: Kickstarter,Key-series,Keyflower,Quined Master Print Edition Series","Auction/Bidding,Memory,Modular Board,Pick-up and Deliver,Route/Network Building,Set Collection,Tile Placement,Worker Placement",7.94075,11717,5
-27588,Zooloretto,5,45,8,2,45,45,2007,Animals,NA,NA,NA,NA,NA,NA,NA,Michael Schacht,"Animals: Apes / Monkeys,Animals: Camels,Animals: Elephants,Animals: Kangaroos,Animals: Pandas,Animals: Zebras,Coloretto Series","Set Collection,Tile Placement",6.87856,11699,1
-432,6 nimmt!,10,45,8,2,45,45,1994,Card Game,NA,NA,NA,NA,NA,NA,NA,Wolfgang Kramer,"6 nimmt!,Animals: Cattle,Mensa Select","Hand Management,Simultaneous Action Selection",6.88907,11674,9
-113294,Escape: The Curse of the Temple,5,10,8,1,10,10,2012,Adventure,Dice,Electronic,Exploration,Real-time,NA,NA,NA,Kristian Amundsen Østby,"Archaeology,CD Board Games,Crowdfunding: Kickstarter,Queen Games Escape Series,Queen Yellow Wave Box Series,Solitaire Games","Co-operative Play,Dice Rolling,Grid Movement,Modular Board,Tile Placement",7.10329,11469,1
-118,Modern Art,5,45,10,3,45,45,1992,Card Game,Economic,NA,NA,NA,NA,NA,NA,Reiner Knizia,Visual Arts: Painting,"Auction/Bidding,Commodity Speculation,Hand Management",7.30341,11439,10
-91536,Quarriors!,4,30,14,2,30,30,2011,Dice,Fantasy,Fighting,NA,NA,NA,NA,NA,"Mike Elliott,Eric M. Lang",Quarriors Pool Building system,"Card Drafting,Deck / Pool Building,Dice Rolling",6.81755,11407,7
-77130,Sid Meier's Civilization: The Board Game,4,240,13,2,120,240,2010,City Building,Civilization,Exploration,Negotiation,Video Game Theme,NA,NA,NA,Kevin Wilson,"4X games,Civilization","Card Drafting,Deck / Pool Building,Grid Movement,Hand Management,Modular Board,Rock-Paper-Scissors,Simultaneous Action Selection,Trading,Variable Player Powers",7.50935,11366,2
-48726,Alien Frontiers,4,90,13,2,90,90,2010,Dice,Science Fiction,NA,NA,NA,NA,NA,NA,Tory Niemann,"Aliens,Crowdfunding: Kickstarter,Crowdfunding: ulule","Area Control / Area Influence,Card Drafting,Dice Rolling,Worker Placement",7.49687,11327,7
-43111,Chaos in the Old World,4,120,13,3,60,120,2009,Fantasy,Fighting,Horror,Mythology,Wargame,NA,NA,NA,Eric M. Lang,Warhammer Fantasy Board Games,"Action Point Allowance System,Area Control / Area Influence,Area Movement,Dice Rolling,Hand Management,Role Playing,Take That,Variable Player Powers",7.6853,11213,10
-73439,Troyes,4,90,12,1,90,90,2010,Dice,Economic,Medieval,NA,NA,NA,NA,NA,"Sébastien Dujardin,Xavier Georges,Alain Orban","Cities: Troyes (France),Country: France","Area Control / Area Influence,Dice Rolling,Worker Placement",7.75823,11200,1
-147949,One Night Ultimate Werewolf,10,10,8,3,10,10,2014,Bluffing,Card Game,Deduction,Horror,Party Game,NA,NA,NA,"Ted Alspach,Akihisa Okui","Crowdfunding: Kickstarter,One Night Ultimate,Werewolf / Mafia","Role Playing,Variable Player Powers,Voting",7.36703,11182,9
-278,Catan Card Game,2,90,10,2,90,90,1996,Card Game,City Building,Territory Building,NA,NA,NA,NA,NA,Klaus Teuber,"Catan,Die Siedler von Catan: Das Kartenspiel / Catan Card Game,Kosmos two-player series","Card Drafting,Dice Rolling,Hand Management,Trading",6.77393,11105,1
-164153,Star Wars: Imperial Assault,5,120,14,2,60,120,2014,Adventure,Fighting,Miniatures,Movies / TV / Radio theme,Science Fiction,Wargame,NA,NA,"Justin Kemppainen,Corey Konieczka,Jonathan Ying","Campaign Games,Fantasy Flight Big Box,Star Wars,Star Wars: Imperial Assault","Dice Rolling,Grid Movement,Modular Board,Partnerships,Role Playing,Variable Player Powers",8.2048,11017,8
-102652,Sentinels of the Multiverse,5,60,8,1,30,60,2011,Card Game,Comic Book / Strip,Fighting,NA,NA,NA,NA,NA,"Christopher Badell,Paul Bender,Adam Rebottaro","Crowdfunding: Kickstarter,Sentinel Comics,Solitaire Games,Superheroes","Co-operative Play,Hand Management,Variable Player Powers",7.35481,11002,7
-113924,Zombicide,6,180,13,1,45,180,2012,Horror,Miniatures,Zombies,NA,NA,NA,NA,NA,"Raphaël Guiton,Jean-Baptiste Lullien,Nicolas Raoult","Crowdfunding: Kickstarter,Solitaire Games,Zombicide","Action Point Allowance System,Co-operative Play,Dice Rolling,Hand Management,Modular Board,Player Elimination,Variable Player Powers",7.32574,10977,8
-63888,Innovation,4,60,12,2,45,60,2010,Card Game,Civilization,NA,NA,NA,NA,NA,NA,Carl Chudyk,"Innovation,Tableau Building","Hand Management,Variable Phase Order",7.26191,10890,3
-19857,Glory to Rome,5,60,12,2,60,60,2005,Ancient,Card Game,City Building,Economic,NA,NA,NA,NA,"Ed Carter,Carl Chudyk","Ancient Rome,Cities: Rome,Crowdfunding: Kickstarter,Tableau Building","Card Drafting,Hand Management,Set Collection,Variable Phase Order",7.5029,10874,3
-124708,Mice and Mystics,4,120,7,1,120,120,2012,Adventure,Dice,Exploration,Fantasy,Fighting,Miniatures,NA,NA,Jerry Hawthorne,"Animals: Mice,Campaign Games,Mice and Mystics,Solitaire Games","Area Movement,Co-operative Play,Dice Rolling,Role Playing,Variable Player Powers",7.47734,10804,10
-45315,Dungeon Lords,4,90,12,2,90,90,2009,Economic,Fantasy,Fighting,Humor,NA,NA,NA,NA,Vlaada Chvátil,Dungeon Lords,"Action / Movement Programming,Hand Management,Simultaneous Action Selection,Tile Placement,Worker Placement",7.45872,10718,10
-28720,Brass: Lancashire,4,180,14,2,120,180,2007,Economic,Industry / Manufacturing,Transportation,NA,NA,NA,NA,NA,Martin Wallace,"Cities: Manchester,Country: England","Hand Management,Route/Network Building",8.00918,10659,3
-83330,Mansions of Madness,5,120,13,2,120,120,2011,Adventure,Exploration,Fantasy,Fighting,Horror,Miniatures,Murder/Mystery,Puzzle,Corey Konieczka,"Arkham Horror,Cthulhu Mythos","Area Movement,Dice Rolling,Hand Management,Modular Board,Partnerships,Pick-up and Deliver,Role Playing,Variable Player Powers",7.39545,10570,7
-215,Tichu,10,60,10,3,60,60,1991,Card Game,NA,NA,NA,NA,NA,NA,NA,Urs Hostettler,"Asian Theme,Climbing Games,Country: China,Shedding Games,Traditional Card Games,Z-Man / Filosofia deluxe card game series","Betting/Wagering,Hand Management,Partnerships,Trick-taking",7.60888,10556,8
-503,Through the Desert,5,45,10,2,45,45,1998,Abstract Strategy,Animals,Arabian,NA,NA,NA,NA,NA,Reiner Knizia,"Animals: Camels,Desert Theme,Fantasy Flight Silver Line Games,Knizia tile-laying trilogy","Area Enclosure,Route/Network Building",7.04787,10553,8
-143741,BANG! The Dice Game,8,15,8,3,15,15,2013,American West,Bluffing,Deduction,Dice,Fighting,Party Game,NA,NA,"Michael Palm,Lukas Zach",BANG!,"Dice Rolling,Partnerships,Player Elimination,Press Your Luck,Variable Player Powers",7.02834,10490,5
-20551,Shogun,5,150,12,3,150,150,2006,Economic,Medieval,Territory Building,NA,NA,NA,NA,NA,Dirk Henn,"Asian Theme,Country: Japan,Samurai","Action / Movement Programming,Area Control / Area Influence,Area Movement,Auction/Bidding,Simultaneous Action Selection,Variable Phase Order",7.5801,10439,6
-123540,Tokaido,5,45,8,2,45,45,2012,Travel,NA,NA,NA,NA,NA,NA,NA,Antoine Bauza,"Asian Theme,Country: Japan,Food / Cooking,Tokaido,Visual Arts: Painting","Point to Point Movement,Set Collection,Time Track,Variable Player Powers",7.08426,10416,1
-25669,Qwirkle,4,45,6,2,45,45,2006,Abstract Strategy,NA,NA,NA,NA,NA,NA,NA,Susan McKinley Ross,"Mensa Select,Qwirkle","Hand Management,Pattern Building,Tile Placement",6.81855,10373,10
-438,Scotland Yard,6,45,10,3,45,45,1983,Deduction,Travel,NA,NA,NA,NA,NA,NA,"Manfred Burggraf,Dorothy Garrels,Wolf Hoermann,Fritz Ifland,Werner Scheerer,Werner Schlegel","Characters: Mister X,Cities: London,Country: England","Partnerships,Point to Point Movement,Secret Unit Deployment",6.51215,10344,3
-28023,Jamaica,6,60,8,2,30,60,2007,Nautical,Pirates,Racing,Transportation,NA,NA,NA,NA,"Malcolm Braff,Bruno Cathala,Sébastien Pauchon","Colonial Theme,Country: Jamaica,Tropical theme","Dice Rolling,Hand Management,Simultaneous Action Selection",7.09862,10323,10
-166384,Spyfall,8,15,12,3,15,15,2014,Bluffing,Deduction,Humor,Party Game,Spies/Secret Agents,NA,NA,NA,Alexandr Ushan,NA,"Role Playing,Voting",7.2134,10317,2
-17226,Descent: Journeys in the Dark,5,240,12,2,240,240,2005,Adventure,Exploration,Fantasy,Fighting,Miniatures,NA,NA,NA,Kevin Wilson,"Descent,Fantasy Flight Big Box,The Realms of Terrinoth","Dice Rolling,Grid Movement,Modular Board,Partnerships,Role Playing,Variable Player Powers",7.3496,10281,10
-146508,T.I.M.E Stories,4,90,12,2,90,90,2015,Adventure,Mature / Adult,Medieval,Science Fiction,NA,NA,NA,NA,"Peggy Chassenet,Manuel Rozoy","T.I.M.E Stories,Time Travel","Co-operative Play,Dice Rolling,Role Playing,Storytelling,Time Track,Variable Player Powers,Voting",8.05386,10214,7
-43443,Castle Panic,6,60,10,1,60,60,2009,Fantasy,Fighting,Medieval,NA,NA,NA,NA,NA,Justin De Witt,"Castle Panic,Monsters,Solitaire Games,Tower Defense","Campaign / Battle Card Driven,Chit-Pull System,Co-operative Play,Dice Rolling,Hand Management,Trading,Variable Player Powers",6.71044,10208,0
+name,max_players,max_playtime,min_age,min_players,min_playtime,playing_time,year_published,cat1,average_rating,users_rated,rating_adj_value
+Catan,4,120,10,3,60,120,1995,Negotiation,7.26569,67655,0
+Carcassonne,5,45,8,2,30,45,2000,Other,7.43536,67056,1
+Pandemic,4,45,8,2,45,45,2008,Other,7.67234,62377,5
+Dominion,4,30,13,2,30,30,2008,Card Game,7.69995,55930,NA
+7 Wonders,7,30,10,2,30,30,2010,Card Game,7.83595,51688,9
+Agricola,5,150,12,1,30,150,2007,Economic,8.05581,48261,2
+Ticket to Ride,5,60,8,2,30,60,2004,Other,7.48301,48227,2
+Puerto Rico,5,150,12,2,90,150,2002,Economic,8.09157,47789,9
+Small World,5,80,8,2,40,80,2009,Fantasy,7.35735,43144,7
+Power Grid,6,120,12,2,120,120,2004,Economic,7.94499,42036,7
+Citadels,8,60,10,2,20,60,2000,Bluffing,7.14768,37607,2
+King of Tokyo,6,30,8,2,30,30,2011,Other,7.30706,36394,6
+Love Letter,4,20,10,2,20,20,2012,Card Game,7.32011,35776,8
+Ticket to Ride: Europe,5,60,8,2,30,60,2005,Other,7.59192,35535,9
+Race for the Galaxy,4,60,12,2,30,60,2007,Economic,7.77137,34242,NA
+Dixit,6,30,6,3,30,30,2008,Card Game,7.35989,31078,0
+Stone Age,4,90,10,2,60,90,2008,Other,7.6334,30432,10
+Arkham Horror,8,240,12,1,120,240,2005,Adventure,7.35197,30050,8
+Codenames,8,15,14,2,15,15,2015,Card Game,7.90348,29622,2
+Splendor,4,30,10,2,30,30,2014,Economic,7.54035,29395,9
+Lords of Waterdeep,5,120,12,2,60,120,2012,Fantasy,7.79639,28912,7
+Munchkin,6,120,10,3,60,120,2001,Fantasy,5.95463,28807,8
+Bohnanza,7,45,13,2,45,45,1997,Negotiation,7.06751,28354,5
+Twilight Struggle,2,180,13,2,180,180,2005,Other,8.35801,27008,10
+Forbidden Island,4,30,10,2,30,30,2010,Adventure,6.85993,26804,2
+Lost Cities,2,30,10,2,30,30,1999,Card Game,7.14784,26686,6
+The Resistance,10,30,13,5,30,30,2009,Bluffing,7.4311,25555,5
+Battlestar Galactica,6,300,10,3,120,300,2008,Bluffing,7.77466,25372,9
+The Castles of Burgundy,4,90,12,2,30,90,2011,Other,8.11212,24876,10
+Hanabi,5,25,8,2,25,25,2010,Card Game,7.21583,23717,10
+Terra Mystica,5,150,12,2,60,150,2012,Economic,8.29198,23684,5
+Dominion: Intrigue,4,30,13,2,30,30,2009,Card Game,7.79419,23156,2
+Magic: The Gathering,2,20,13,2,20,20,1993,Fantasy,7.43768,22883,5
+Dead of Winter: A Crossroads Game,5,210,14,2,45,210,2014,Bluffing,7.86596,22830,10
+Risk,6,120,10,2,120,120,1959,Negotiation,5.57906,21836,10
+Caylus,5,150,12,2,60,150,2005,Economic,7.86152,21806,1
+Betrayal at House on the Hill,6,60,12,3,60,60,2004,Adventure,7.144,21688,10
+Alhambra,6,60,8,2,45,60,2003,Other,7.04424,21317,NA
+Coup,6,15,9,2,15,15,2012,Bluffing,7.12316,20679,NA
+Galaxy Trucker,4,60,10,2,60,60,2007,Other,7.47467,20647,NA
+Eclipse,6,200,14,2,60,200,2011,Other,8.01311,20285,NA
+Android: Netrunner,2,45,14,2,45,45,2012,Bluffing,8.0044,20271,2
+Shadows over Camelot,7,80,10,3,60,80,2005,Fantasy,7.1574,20216,4
+Tigris & Euphrates,4,90,12,2,90,90,1997,Strategy,7.72379,20166,4
+7 Wonders Duel,2,30,10,2,30,30,2015,Card Game,8.1939,20088,4
+Hive,2,20,9,2,20,20,2001,Strategy,7.34252,20026,9
+Takenoko,4,45,8,2,45,45,2011,Other,7.35247,19888,1
+BANG!,7,40,8,4,20,40,2002,Bluffing,6.55752,19678,1
+RoboRally,8,120,12,2,45,120,1994,Other,7.15355,19371,7
+Memoir '44,6,60,8,2,30,60,2004,Other,7.53029,19351,2
+Le Havre,5,150,12,1,30,150,2008,Economic,7.93096,18934,6
+Cosmic Encounter,5,120,12,3,60,120,2008,Negotiation,7.60639,18851,10
+San Juan,4,60,10,2,45,60,2004,Economic,7.29723,18718,10
+Star Realms,2,20,12,2,20,20,2014,Card Game,7.64123,18434,9
+El Grande,5,120,12,2,60,120,1995,Other,7.80446,18423,8
+Patchwork,2,30,8,2,15,30,2014,Strategy,7.83164,18379,9
+Jaipur,2,30,12,2,30,30,2009,Card Game,7.54421,18252,9
+Mage Knight Board Game,4,150,14,1,150,150,2011,Adventure,8.13794,18160,4
+Robinson Crusoe: Adventures on the Cursed Island,4,180,14,1,90,180,2012,Adventure,8.01707,17999,5
+Tzolk'in: The Mayan Calendar,4,90,13,2,90,90,2012,Economic,7.94181,17762,2
+A Game of Thrones: The Board Game (Second Edition),6,240,14,3,120,240,2011,Negotiation,7.74,17718,8
+Sushi Go!,5,15,8,2,15,15,2013,Card Game,7.14811,17506,3
+Pandemic Legacy: Season 1,4,60,13,2,60,60,2015,Other,8.66878,17251,6
+Five Tribes,4,80,13,2,40,80,2014,Fantasy,7.83284,17225,1
+Blokus,4,20,5,2,20,20,2000,Strategy,6.94393,16879,9
+Caverna: The Cave Farmers,7,210,12,1,30,210,2013,Economic,8.18155,16798,7
+Star Wars: X-Wing Miniatures Game,2,45,14,2,30,45,2012,Bluffing,7.8786,16772,3
+Saboteur,10,30,8,3,30,30,2004,Card Game,6.6393,16460,2
+Eldritch Horror,8,240,14,1,120,240,2013,Fantasy,7.94433,16196,4
+Smash Up,4,45,12,2,45,45,2012,Fantasy,6.89171,15954,10
+The Resistance: Avalon,10,30,13,5,30,30,2012,Negotiation,7.72088,15896,4
+For Sale,6,20,8,3,20,20,1997,Economic,7.22213,15544,6
+Machi Koro,4,30,10,2,30,30,2012,Card Game,6.76032,15456,9
+Ra,5,60,12,2,45,60,1999,Other,7.47505,15378,5
+Through the Ages: A Story of Civilization,4,240,12,2,240,240,2006,Economic,8.09024,15337,7
+Guillotine,5,30,12,2,30,30,1998,Card Game,6.53873,15334,10
+"Hey, That's My Fish!",4,20,8,2,20,20,2003,Strategy,6.77453,15267,5
+Elder Sign,8,90,13,1,90,90,2011,Adventure,7.01705,15248,8
+Kingsburg,5,90,13,2,90,90,2007,Fantasy,7.24092,15211,0
+Acquire,6,90,12,3,90,90,1964,Economic,7.3583,15195,8
+Tsuro,8,15,8,2,15,15,2004,Strategy,6.68825,15151,4
+Thurn and Taxis,4,60,13,2,60,60,2006,Other,7.13008,15146,7
+Sheriff of Nottingham,5,60,13,3,60,60,2014,Negotiation,7.35219,15055,1
+Twilight Imperium (Third Edition),6,300,12,3,180,300,2005,Negotiation,7.92399,14996,7
+The Lord of the Rings: The Card Game,2,60,13,1,60,60,2011,Fantasy,7.64522,14834,6
+Scythe,5,115,14,1,90,115,2016,Economic,8.33346,14817,10
+Suburbia,4,90,8,1,90,90,2012,Economic,7.64467,14757,5
+Forbidden Desert,5,45,10,2,45,45,2013,Adventure,7.28635,14698,5
+Apples to Apples,10,30,12,4,30,30,1999,Card Game,5.95458,14611,3
+Descent: Journeys in the Dark (Second Edition),5,120,14,2,120,120,2012,Adventure,7.79832,14520,3
+No Thanks!,7,30,8,3,20,30,2004,Card Game,7.04283,14475,10
+Roll for the Galaxy,5,45,13,2,45,45,2014,Economic,7.85096,14158,7
+Ghost Stories,4,60,12,1,60,60,2008,Fantasy,7.3889,14147,4
+Cards Against Humanity,30,30,17,4,30,30,2009,Card Game,6.21198,14042,2
+Seasons,4,60,14,2,60,60,2012,Fantasy,7.46803,13930,4
+Coloretto,5,30,8,2,30,30,2003,Card Game,6.97404,13769,7
+Flash Point: Fire Rescue,6,45,10,1,45,45,2011,Adventure,7.27877,13740,8
+Village,4,90,12,2,60,90,2011,Other,7.56775,13707,7
+Tikal,4,90,13,2,90,90,1999,Other,7.34313,13674,7
+Survive: Escape from Atlantis!,4,60,8,2,60,60,1982,Bluffing,7.32987,13655,2
+Blood Rage,4,90,14,2,60,90,2015,Fantasy,8.1584,13352,9
+Kingdom Builder,4,45,8,2,45,45,2011,Other,7.0317,13164,3
+Castles of Mad King Ludwig,4,90,13,1,90,90,2014,Other,7.74079,13140,7
+UNO,10,30,6,2,30,30,1971,Card Game,5.33351,13135,10
+The Pillars of the Earth,4,120,12,2,90,120,2006,Economic,7.32224,13126,4
+The Princes of Florence,5,100,12,2,75,100,2000,Other,7.59407,13115,8
+Dominant Species,6,240,14,2,120,240,2010,Other,7.86573,12918,3
+Ingenious,4,45,10,1,45,45,2004,Strategy,7.17603,12910,NA
+Legendary: A Marvel Deck Building Game,5,45,14,1,45,45,2012,Card Game,7.63589,12468,3
+Saint Petersburg,4,60,10,2,45,60,2004,Economic,7.3346,12411,10
+Zombies!!!,6,60,12,2,60,60,2001,Other,5.87659,12380,10
+Fluxx,6,30,8,2,5,30,1997,Card Game,5.69886,12304,8
+Battle Line,2,30,12,2,30,30,2000,Card Game,7.42393,12222,9
+Istanbul,5,60,10,2,40,60,2014,Economic,7.63302,12216,4
+Imperial Settlers,4,90,10,1,45,90,2014,Card Game,7.58838,12195,3
+Formula D,10,60,8,2,60,60,2008,Other,7.05892,12145,9
+Cyclades,5,90,13,2,60,90,2009,Other,7.53957,12093,9
+Camel Up,8,30,8,2,20,30,2014,Other,7.11254,12092,5
+Samurai,4,60,10,2,30,60,1998,Strategy,7.44119,12019,1
+Last Night on Earth: The Zombie Game,6,90,12,2,90,90,2007,Other,7.02902,12012,10
+Mysterium,7,42,10,2,42,42,2015,Other,7.53521,11985,6
+Colt Express,6,40,10,2,30,40,2014,Other,7.24238,11881,4
+Zombie Dice,99,20,10,2,10,20,2010,Other,6.23942,11835,7
+Lord of the Rings,5,60,12,2,60,60,2000,Fantasy,6.78475,11826,2
+Space Alert,5,30,12,1,30,30,2008,Other,7.533,11825,5
+Mr. Jack,2,30,9,2,30,30,2006,Other,7.08759,11800,9
+Keyflower,6,120,12,2,90,120,2012,Economic,7.94075,11717,5
+Zooloretto,5,45,8,2,45,45,2007,Other,6.87856,11699,1
+6 nimmt!,10,45,8,2,45,45,1994,Card Game,6.88907,11674,9
+Escape: The Curse of the Temple,5,10,8,1,10,10,2012,Adventure,7.10329,11469,1
+Modern Art,5,45,10,3,45,45,1992,Economic,7.30341,11439,10
+Quarriors!,4,30,14,2,30,30,2011,Fantasy,6.81755,11407,7
+Sid Meier's Civilization: The Board Game,4,240,13,2,120,240,2010,Negotiation,7.50935,11366,2
+Alien Frontiers,4,90,13,2,90,90,2010,Other,7.49687,11327,7
+Chaos in the Old World,4,120,13,3,60,120,2009,Fantasy,7.6853,11213,10
+Troyes,4,90,12,1,90,90,2010,Economic,7.75823,11200,1
+One Night Ultimate Werewolf,10,10,8,3,10,10,2014,Bluffing,7.36703,11182,9
+Catan Card Game,2,90,10,2,90,90,1996,Card Game,6.77393,11105,1
+Star Wars: Imperial Assault,5,120,14,2,60,120,2014,Adventure,8.2048,11017,8
+Sentinels of the Multiverse,5,60,8,1,30,60,2011,Card Game,7.35481,11002,7
+Zombicide,6,180,13,1,45,180,2012,Other,7.32574,10977,8
+Innovation,4,60,12,2,45,60,2010,Card Game,7.26191,10890,3
+Glory to Rome,5,60,12,2,60,60,2005,Economic,7.5029,10874,3
+Mice and Mystics,4,120,7,1,120,120,2012,Adventure,7.47734,10804,10
+Dungeon Lords,4,90,12,2,90,90,2009,Economic,7.45872,10718,10
+Brass: Lancashire,4,180,14,2,120,180,2007,Economic,8.00918,10659,3
+Mansions of Madness,5,120,13,2,120,120,2011,Fantasy,7.39545,10570,7
+Tichu,10,60,10,3,60,60,1991,Card Game,7.60888,10556,8
+Through the Desert,5,45,10,2,45,45,1998,Strategy,7.04787,10553,8
+BANG! The Dice Game,8,15,8,3,15,15,2013,Bluffing,7.02834,10490,5
+Shogun,5,150,12,3,150,150,2006,Economic,7.5801,10439,6
+Tokaido,5,45,8,2,45,45,2012,Other,7.08426,10416,1
+Qwirkle,4,45,6,2,45,45,2006,Strategy,6.81855,10373,10
+Scotland Yard,6,45,10,3,45,45,1983,Other,6.51215,10344,3
+Jamaica,6,60,8,2,30,60,2007,Other,7.09862,10323,10
+Spyfall,8,15,12,3,15,15,2014,Bluffing,7.2134,10317,2
+Descent: Journeys in the Dark,5,240,12,2,240,240,2005,Fantasy,7.3496,10281,10
+T.I.M.E Stories,4,90,12,2,90,90,2015,Adventure,8.05386,10214,7
+Castle Panic,6,60,10,1,60,60,2009,Fantasy,6.71044,10208,0
